@@ -82,17 +82,17 @@ export default function FilterDropdown({
         aria-haspopup="listbox"
         aria-controls={listboxId}
         onClick={onToggle}
-        className={`group flex h-14 w-full items-center justify-between border px-5 text-left transition-all duration-200 outline-none focus-visible:ring-1 focus-visible:ring-gold/40 ${
+        className={`group flex h-14 min-w-[44px] items-center justify-between border px-5 text-left transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 ${
           isOpen
-            ? "border-gold/50 bg-white"
-            : "border-zinc-200 bg-white hover:border-gold/40"
+            ? "border-neutral-900 bg-white"
+            : "border-neutral-200 bg-white hover:border-neutral-400"
         }`}
       >
         <span
           className={`truncate text-[11px] font-medium sm:text-xs ${
             hasSelection
-              ? "tracking-[0.06em] text-zinc-950"
-              : "tracking-[0.24em] text-zinc-800"
+              ? "tracking-[0.06em] text-neutral-900"
+              : "tracking-[0.24em] text-neutral-600"
           }`}
         >
           {displayText}
@@ -111,15 +111,15 @@ export default function FilterDropdown({
             const selected = value === option;
             return (
               <li key={option} role="none">
-                <button
+                 <button
                   type="button"
                   role="option"
                   aria-selected={selected}
                   onClick={() => onSelect(option)}
-                  className={`flex w-full items-center px-4 py-3 text-left text-[12px] tracking-[0.04em] transition-colors duration-150 outline-none focus-visible:bg-gold/10 sm:text-[13px] ${
+                  className={`flex min-h-[44px] w-full items-center px-4 py-3 text-left text-[12px] tracking-[0.04em] transition-colors duration-150 outline-none focus-visible:bg-neutral-100 sm:text-[13px] ${
                     selected
-                      ? "bg-gold/10 text-gold"
-                      : "text-zinc-800 hover:bg-zinc-50 hover:text-zinc-950"
+                      ? "bg-neutral-100 text-neutral-900"
+                      : "text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900"
                   }`}
                 >
                   {option}

@@ -14,6 +14,7 @@ export default function Logo({ priority = false }: LogoProps) {
         width={1122}
         height={1402}
         priority={priority}
+        quality={95}
         sizes="80px"
         className="h-12 w-auto max-h-12 object-contain sm:h-[3.35rem] sm:max-h-[3.35rem]"
       />

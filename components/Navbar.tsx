@@ -83,14 +83,14 @@ export default function Navbar({ overHero = false }: NavbarProps) {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`relative pb-1.5 text-[10px] font-medium tracking-[0.24em] transition-colors lg:text-[11px] ${
+                className={`relative min-h-[44px] inline-flex items-center pb-1.5 text-[10px] font-medium tracking-[0.24em] transition-colors lg:text-[11px] focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 ${
                   heroNav
                     ? active
                       ? "text-white"
                       : "text-white/75 hover:text-white"
                     : active
-                      ? "text-zinc-950"
-                      : "text-zinc-800 hover:text-zinc-950"
+                      ? "text-neutral-900"
+                      : "text-neutral-700 hover:text-neutral-900"
                 }`}
               >
                 {link.label}
@@ -104,7 +104,7 @@ export default function Navbar({ overHero = false }: NavbarProps) {
 
         <button
           type="button"
-          className={`absolute right-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center max-md:flex sm:right-8 ${
+          className={`absolute right-4 top-1/2 z-20 flex h-14 w-14 -translate-y-1/2 items-center justify-center max-md:flex sm:right-8 ${
             heroNav ? "text-white" : "text-zinc-900"
           }`}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -142,19 +142,19 @@ export default function Navbar({ overHero = false }: NavbarProps) {
               const active = isActive(pathname, link.href);
               return (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className={`text-[11px] font-medium tracking-[0.24em] ${
-                      heroNav
-                        ? active
-                          ? "text-gold"
-                          : "text-white/80"
-                        : active
-                          ? "text-gold"
-                          : "text-zinc-800"
-                    }`}
-                    onClick={() => setOpen(false)}
-                  >
+                   <Link
+                     href={link.href}
+                     className={`text-[11px] min-h-[44px] inline-flex items-center font-medium tracking-[0.24em] focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 ${
+                       heroNav
+                         ? active
+                           ? "text-gold"
+                           : "text-white/80"
+                         : active
+                           ? "text-neutral-900"
+                           : "text-neutral-700"
+                     }`}
+                     onClick={() => setOpen(false)}
+                   >
                     {link.label}
                   </Link>
                 </li>

@@ -140,7 +140,7 @@ function SlideIndicators({
               onClick={() => onSelect(i)}
               aria-label={`Show slide ${n}`}
               aria-current={active ? "true" : undefined}
-              className={`flex items-center gap-3 text-[12px] tracking-[0.18em] transition-colors ${
+              className={`flex min-h-[44px] min-w-[44px] items-center gap-3 text-[12px] tracking-[0.18em] transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 ${
                 active ? "text-gold" : "text-white/70 hover:text-white"
               }`}
             >
@@ -171,7 +171,7 @@ export default function Hero() {
             alt={i === index ? slide.alt : ""}
             fill
             priority={i === 0}
-            quality={i === 0 ? 90 : 75}
+            quality={i === 0 ? 100 : 90}
             sizes="100vw"
             aria-hidden={i !== index}
             className={`object-cover transition-opacity duration-700 ${slide.objectPosition} ${
@@ -216,7 +216,7 @@ export default function Hero() {
             >
               <Link
                 href="/#contact"
-                className="mt-8 inline-flex items-center justify-center border border-gold px-7 py-3.5 text-[11px] font-semibold tracking-[0.22em] text-white transition-colors duration-300 hover:bg-gold hover:text-zinc-950 sm:mt-9 sm:px-9 sm:py-4 sm:text-[12px]"
+                className="mt-8 inline-flex min-h-[44px] items-center justify-center border border-gold px-7 py-3.5 text-[11px] font-semibold tracking-[0.22em] text-white transition-colors duration-300 hover:bg-gold hover:text-zinc-950 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 sm:mt-9 sm:px-9 sm:py-4 sm:text-[12px]"
               >
                 VISIT SHOWROOM
               </Link>

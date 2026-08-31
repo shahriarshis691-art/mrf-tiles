@@ -25,10 +25,10 @@ function PhoneIcon() {
 }
 
 const inputClass =
-  "w-full border border-neutral-200 bg-white px-4 py-3.5 text-[13px] text-[#0F0F0F] placeholder:text-neutral-400 transition-colors outline-none focus:border-neutral-900 focus-visible:ring-1 focus-visible:ring-neutral-900/30";
+  "w-full border border-neutral-200 bg-white px-4 py-3.5 text-[13px] text-[#0F0F0F] placeholder:text-neutral-400 transition-colors outline-none focus:border-neutral-900 focus-visible:ring-2 focus-visible:ring-neutral-900/30";
 
 const outlineButtonClass =
-  "mt-8 inline-flex h-14 w-full items-center justify-center border border-[#0F0F0F] bg-transparent px-8 text-[12px] font-medium uppercase tracking-[0.08em] text-[#0F0F0F] transition-colors duration-300 hover:bg-[#0F0F0F] hover:text-white sm:w-auto";
+  "mt-8 inline-flex h-14 min-w-[44px] items-center justify-center border border-[#0F0F0F] bg-transparent px-8 text-[12px] font-medium uppercase tracking-[0.08em] text-[#0F0F0F] transition-colors duration-300 hover:bg-[#0F0F0F] hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 sm:w-auto";
 
 export default function ContactSection() {
   const [interest, setInterest] = useState("");
@@ -114,7 +114,7 @@ export default function ContactSection() {
                     <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
                       <a
                         href={`tel:${outlet.phone}`}
-                        className="inline-flex items-center gap-2 text-[12px] font-medium tracking-[0.08em] text-neutral-900 transition-colors hover:text-neutral-500"
+                        className="inline-flex min-h-[44px] items-center gap-2 text-[12px] font-medium tracking-[0.08em] text-neutral-900 transition-colors hover:text-neutral-600 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1"
                       >
                         <PhoneIcon />
                         {outlet.phoneDisplay}
@@ -123,7 +123,7 @@ export default function ContactSection() {
                         href={`https://wa.me/${outlet.whatsapp}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[12px] font-medium tracking-[0.08em] text-neutral-600 transition-colors hover:text-neutral-900"
+                        className="inline-flex min-h-[44px] items-center text-[12px] text-neutral-600 transition-colors hover:text-neutral-900 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1"
                       >
                         WhatsApp
                       </a>
@@ -131,7 +131,7 @@ export default function ContactSection() {
                         href={outlet.mapsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[12px] font-medium tracking-[0.08em] text-neutral-600 transition-colors hover:text-neutral-900"
+                        className="inline-flex min-h-[44px] items-center text-[12px] text-neutral-600 transition-colors hover:text-neutral-900 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1"
                       >
                         Map
                       </a>

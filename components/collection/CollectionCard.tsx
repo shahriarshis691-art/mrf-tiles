@@ -20,7 +20,7 @@ export default function CollectionCard({
         <p className="text-[8px] font-medium uppercase tracking-[0.2em] text-neutral-500 sm:text-[9px]">
           {collection.eyebrow}
         </p>
-        <h3 className="mt-3 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#0F0F0F] sm:text-[14px]">
+        <h3 className="mt-3 text-[13px] font-semibold uppercase tracking-[0.2em] text-neutral-900 sm:text-[14px]">
           {collection.title}
         </h3>
         <p className="mt-4 max-w-[18rem] text-[10px] leading-relaxed tracking-[0.02em] text-neutral-600 sm:text-[11px]">

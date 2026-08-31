@@ -13,7 +13,7 @@ export default function CollectionSection() {
       <div className="mx-auto max-w-[1180px]">
         <ScrollReveal variant="fadeInUp">
           <header className="text-center">
-            <p className="text-[11px] font-medium tracking-[0.2em] text-[#E5D5C5] uppercase">
+            <p className="text-[11px] font-medium tracking-[0.2em] text-neutral-200 uppercase">
               The Collection
             </p>
             <h2
@@ -22,10 +22,10 @@ export default function CollectionSection() {
             >
               Curated Surfaces
             </h2>
-            <span className="mx-auto mt-5 block h-px w-12 bg-[#E5D5C5]/80" />
+            <span className="mx-auto mt-5 block h-px w-12 bg-white/60" />
             <Link
               href="/collection"
-              className="mt-6 inline-block text-[11px] font-medium uppercase tracking-[0.2em] text-[#E5D5C5] transition-colors hover:text-white"
+              className="mt-6 inline-block text-[11px] font-medium uppercase tracking-[0.2em] text-neutral-200 transition-colors hover:text-white"
             >
               View Full Catalog →
             </Link>

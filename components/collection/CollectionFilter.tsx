@@ -55,8 +55,8 @@ export default function CollectionFilter({
   const hasActiveFilters = Object.values(selectedValues).some(Boolean);
 
   return (
-    <div className="overflow-visible rounded-sm border border-zinc-200 bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
-      <p className="text-center text-[13px] tracking-[0.08em] text-zinc-800 sm:text-sm">
+    <div className="overflow-visible rounded-sm border border-neutral-200 bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+      <p className="text-center text-[13px] tracking-[0.08em] text-neutral-800 sm:text-sm">
         Find your collection
       </p>
 
@@ -80,7 +80,7 @@ export default function CollectionFilter({
           <button
             type="button"
             onClick={handleClear}
-            className="text-[10px] font-semibold tracking-[0.24em] text-zinc-800 transition-colors hover:text-gold"
+            className="text-[10px] min-h-[44px] min-w-[44px] font-semibold tracking-[0.24em] text-neutral-800 transition-colors hover:text-neutral-900 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1"
           >
             CLEAR FILTERS
           </button>

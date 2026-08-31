@@ -1,5 +1,6 @@
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import FounderSection from "@/components/FounderSection";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import SanitarySection from "@/components/SanitarySection";
@@ -21,6 +22,7 @@ export default function Home() {
         <SanitarySection />
         <OutletsSection />
         <ContactSection />
+        <FounderSection />
       </main>
     </>
   );

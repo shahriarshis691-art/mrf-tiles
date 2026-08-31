@@ -45,14 +45,14 @@ function BranchBlock({
         <p className="text-[10px] font-medium tracking-[0.2em] text-neutral-500 uppercase">
           Branch {index + 1}
         </p>
-        <p className="mt-2 text-[13px] font-semibold leading-snug text-[#0F0F0F] sm:text-sm">
+        <p className="mt-2 text-[13px] font-semibold leading-snug text-neutral-900 sm:text-sm">
           {outlet.locationLine}
         </p>
         <p className="mt-2 text-[11px] tracking-[0.06em] text-neutral-600">
           Branch Incharge:{" "}
           <a
             href={`tel:${outlet.phone}`}
-            className="font-medium text-[#0F0F0F] transition-colors hover:text-neutral-500"
+            className="font-medium text-neutral-900 transition-colors hover:text-neutral-600"
           >
             {outlet.phoneDisplay}
           </a>

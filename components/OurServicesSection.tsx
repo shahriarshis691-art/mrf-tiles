@@ -55,7 +55,7 @@ export default function OurServicesSection() {
                 <div className="mt-10">
                   <Link 
                     href="#"
-                    className="inline-flex items-center text-sm font-semibold text-[#0F0F0F] underline underline-offset-8 hover:opacity-70 transition-all duration-300 hover:translate-x-1"
+                    className="inline-flex min-h-[44px] items-center text-sm font-semibold text-[#0F0F0F] underline underline-offset-8 hover:opacity-70 transition-all duration-300 hover:translate-x-1 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1"
                   >
                     EXPLORE SERVICES
                   </Link>

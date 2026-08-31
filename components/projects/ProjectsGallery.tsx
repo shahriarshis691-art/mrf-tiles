@@ -31,8 +31,8 @@ export default function ProjectsGallery() {
               type="button"
               onClick={() => setActiveCategory(category.id)}
               aria-pressed={active}
-              className={`relative pb-2 text-[10px] font-medium tracking-[0.24em] transition-colors sm:text-[11px] ${
-                active ? "text-zinc-950" : "text-zinc-800 hover:text-zinc-950"
+              className={`relative min-h-[44px] min-w-[44px] pb-2 text-[10px] font-medium tracking-[0.24em] transition-colors sm:text-[11px] focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 ${
+                active ? "text-neutral-900" : "text-neutral-700 hover:text-neutral-900"
               }`}
             >
               {category.label}

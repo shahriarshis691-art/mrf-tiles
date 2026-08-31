@@ -85,7 +85,7 @@ export default function CollectionCatalog() {
       />
 
       <div className="mt-10 flex items-center justify-between sm:mt-12">
-        <p className="text-[11px] tracking-[0.16em] text-zinc-800">
+        <p className="text-[11px] tracking-[0.16em] text-neutral-600">
           {filteredProducts.length}{" "}
           {filteredProducts.length === 1 ? "COLLECTION" : "COLLECTIONS"}
           {hasActiveFilters ? " FOUND" : ""}
@@ -103,11 +103,11 @@ export default function CollectionCatalog() {
           ))}
         </div>
       ) : (
-        <div className="mt-16 border border-zinc-200 bg-white px-8 py-16 text-center">
-          <p className="text-[11px] font-semibold tracking-[0.22em] text-gold">
+        <div className="mt-16 border border-neutral-200 bg-white px-8 py-16 text-center">
+          <p className="text-[11px] font-semibold tracking-[0.22em] text-neutral-500 uppercase">
             NO MATCHES
           </p>
-          <p className="mt-4 text-[13px] text-zinc-800">
+          <p className="mt-4 text-[13px] text-neutral-600">
             Try adjusting your filters to discover more collections.
           </p>
         </div>
