@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 
 const LINKS = [
@@ -26,21 +26,39 @@ function isActive(pathname: string, href: string) {
   return false;
 }
 
-export default function Navbar() {
+type NavbarProps = {
+  overHero?: boolean;
+};
+
+export default function Navbar({ overHero = false }: NavbarProps) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const onHome = overHero && pathname === "/";
+  const heroNav = onHome && !scrolled;
+
+  useEffect(() => {
+    if (!onHome) {
+      setScrolled(false);
+      return;
+    }
+
+    const onScroll = () => setScrolled(window.scrollY > 72);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [onHome]);
 
   return (
     <header
-      className={`inset-x-0 top-0 z-50 ${
-        isHome
-          ? "absolute"
-          : "fixed bg-[#050505]/85 backdrop-blur-sm"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        heroNav
+          ? "border-b border-white/10 bg-transparent"
+          : "border-b border-zinc-200 bg-white"
       }`}
     >
       <div className="relative mx-auto flex h-[4.85rem] max-w-[1440px] items-center justify-between px-6 pr-16 sm:h-[5.25rem] sm:px-10 md:pr-10 lg:px-14">
-        <Logo />
+        <Logo light={heroNav} />
 
         <nav
           className="hidden items-center md:flex md:gap-9 lg:gap-12 xl:gap-[3.4rem]"
@@ -53,7 +71,13 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 className={`relative pb-1.5 text-[10px] font-medium tracking-[0.24em] transition-colors lg:text-[11px] ${
-                  active ? "text-white" : "text-white/70 hover:text-white"
+                  heroNav
+                    ? active
+                      ? "text-white"
+                      : "text-white/75 hover:text-white"
+                    : active
+                      ? "text-zinc-950"
+                      : "text-zinc-800 hover:text-zinc-950"
                 }`}
               >
                 {link.label}
@@ -67,7 +91,9 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="absolute right-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center text-white max-md:flex sm:right-8"
+          className={`absolute right-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center max-md:flex sm:right-8 ${
+            heroNav ? "text-white" : "text-zinc-900"
+          }`}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -88,11 +114,13 @@ export default function Navbar() {
         </button>
       </div>
 
-      <div className="mx-6 h-px bg-gold/35 sm:mx-10 lg:mx-14" />
-
       {open ? (
         <nav
-          className="absolute inset-x-0 top-full border-b border-gold/20 bg-[#0b0d10]/95 px-6 py-5 backdrop-blur-md md:hidden"
+          className={`absolute inset-x-0 top-full border-b px-6 py-5 md:hidden ${
+            heroNav
+              ? "border-white/10 bg-zinc-950/95 backdrop-blur-md"
+              : "border-zinc-200 bg-white"
+          }`}
           aria-label="Mobile"
         >
           <ul className="flex flex-col gap-4">
@@ -103,7 +131,13 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={`text-[11px] font-medium tracking-[0.24em] ${
-                      active ? "text-gold" : "text-white/80"
+                      heroNav
+                        ? active
+                          ? "text-gold"
+                          : "text-white/80"
+                        : active
+                          ? "text-gold"
+                          : "text-zinc-800"
                     }`}
                     onClick={() => setOpen(false)}
                   >

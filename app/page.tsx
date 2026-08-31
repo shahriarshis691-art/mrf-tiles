@@ -9,9 +9,9 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 export default function Home() {
   return (
     <>
-      <div className="relative h-dvh bg-[#0b0d10]">
+      <div className="relative bg-zinc-950">
         <Hero />
-        <Navbar />
+        <Navbar overHero />
       </div>
       <AboutSection />
       <CollectionSection />

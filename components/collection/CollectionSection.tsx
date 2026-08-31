@@ -7,13 +7,13 @@ export default function CollectionSection() {
     <section
       id="collection"
       aria-labelledby="collection-heading"
-      className="bg-[#F6F2EC] px-6 py-20 sm:px-10 sm:py-24 lg:px-14 lg:py-28"
+      className="bg-white px-6 py-20 sm:px-10 sm:py-24 lg:px-14 lg:py-28"
     >
       <div className="mx-auto max-w-[1180px]">
         <header className="text-center">
           <h2
             id="collection-heading"
-            className="text-[11px] font-light lowercase tracking-[0.22em] text-[#4A473F]/70"
+            className="text-[11px] font-semibold lowercase tracking-[0.22em] text-zinc-950"
           >
             collection
           </h2>

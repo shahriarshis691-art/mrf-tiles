@@ -31,7 +31,7 @@ export default function ProjectsGallery() {
               type="button"
               onClick={() => setActiveCategory(category.id)}
               className={`relative pb-2 text-[10px] font-medium tracking-[0.24em] transition-colors sm:text-[11px] ${
-                active ? "text-white" : "text-white/45 hover:text-white/70"
+                active ? "text-zinc-950" : "text-zinc-800 hover:text-zinc-950"
               }`}
             >
               {category.label}

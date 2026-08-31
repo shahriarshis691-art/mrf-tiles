@@ -20,7 +20,7 @@ function ChevronDownIcon({ open }: { open: boolean }) {
       viewBox="0 0 14 14"
       fill="none"
       aria-hidden="true"
-      className={`shrink-0 text-white/45 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+      className={`shrink-0 text-zinc-800 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
     >
       <path
         d="M3 5.5L7 9.5L11 5.5"
@@ -84,15 +84,15 @@ export default function FilterDropdown({
         onClick={onToggle}
         className={`group flex h-14 w-full items-center justify-between border px-5 text-left transition-all duration-200 outline-none focus-visible:ring-1 focus-visible:ring-gold/40 ${
           isOpen
-            ? "border-gold/40 bg-[#101010]"
-            : "border-white/12 bg-[#080808] hover:border-gold/30 hover:bg-[#0c0c0c]"
+            ? "border-gold/50 bg-white"
+            : "border-zinc-200 bg-white hover:border-gold/40"
         }`}
       >
         <span
           className={`truncate text-[11px] font-medium sm:text-xs ${
             hasSelection
-              ? "tracking-[0.06em] text-white"
-              : "tracking-[0.24em] text-white/85"
+              ? "tracking-[0.06em] text-zinc-950"
+              : "tracking-[0.24em] text-zinc-800"
           }`}
         >
           {displayText}
@@ -104,7 +104,7 @@ export default function FilterDropdown({
         id={listboxId}
         role="listbox"
         aria-label={placeholder}
-        className={`absolute left-0 right-0 top-[calc(100%+6px)] z-40 max-h-56 overflow-y-auto border border-white/10 bg-[#101010] shadow-[0_16px_48px_rgba(0,0,0,0.65)] transition-all duration-200 ease-out ${
+        className={`absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-56 overflow-y-auto border border-zinc-200 bg-white transition-all duration-200 ease-out ${
           isOpen
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-1 opacity-0"
@@ -119,10 +119,10 @@ export default function FilterDropdown({
                 role="option"
                 aria-selected={selected}
                 onClick={() => onSelect(option)}
-                className={`flex w-full items-center px-4 py-3 text-left text-[12px] font-light tracking-[0.04em] transition-colors duration-150 outline-none focus-visible:bg-gold/10 sm:text-[13px] ${
+                className={`flex w-full items-center px-4 py-3 text-left text-[12px] tracking-[0.04em] transition-colors duration-150 outline-none focus-visible:bg-gold/10 sm:text-[13px] ${
                   selected
                     ? "bg-gold/10 text-gold"
-                    : "text-white/75 hover:bg-white/[0.04] hover:text-white"
+                    : "text-zinc-800 hover:bg-zinc-50 hover:text-zinc-950"
                 }`}
               >
                 {option}

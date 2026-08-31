@@ -23,7 +23,10 @@ function PhoneIcon() {
 }
 
 const inputClass =
-  "w-full border border-white/12 bg-[#0a0a0a] px-4 py-3.5 text-[13px] font-light text-white placeholder:text-white/35 transition-colors outline-none focus:border-gold/40 focus-visible:ring-1 focus-visible:ring-gold/30";
+  "w-full border border-zinc-200 bg-white px-4 py-3.5 text-[13px] text-zinc-950 placeholder:text-zinc-500 transition-colors outline-none focus:border-gold/60 focus-visible:ring-1 focus-visible:ring-gold/30";
+
+const outlineButtonClass =
+  "mt-8 inline-flex h-14 w-full items-center justify-center border border-gold bg-transparent px-8 text-[12px] font-medium uppercase tracking-[0.08em] text-zinc-900 transition-colors duration-300 hover:border-zinc-900 hover:bg-zinc-900 hover:text-white sm:w-auto";
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -38,7 +41,7 @@ export default function ContactSection() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="bg-[#0b0d10] px-6 py-20 sm:px-10 sm:py-24 lg:px-14 lg:py-28"
+      className="bg-white px-6 py-20 sm:px-10 sm:py-24 lg:px-14 lg:py-28"
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-20 xl:gap-28">
@@ -49,14 +52,14 @@ export default function ContactSection() {
 
             <h2
               id="contact-heading"
-              className="mt-5 font-sans text-[2rem] font-light uppercase leading-[1.05] tracking-[0.06em] text-white sm:text-[2.35rem]"
+              className="mt-5 font-sans text-[2rem] font-semibold uppercase leading-[1.05] tracking-[0.06em] text-zinc-950 sm:text-[2.35rem]"
             >
               Contact Us
             </h2>
 
             <span className="mt-5 block h-px w-12 bg-gold/70" />
 
-            <p className="mt-7 max-w-md text-[13px] font-light leading-relaxed text-white/55 sm:text-sm">
+            <p className="mt-7 max-w-md text-[13px] leading-relaxed text-zinc-800 sm:text-sm">
               Visit our showrooms, request a consultation, or reach out for
               project guidance. Our team is ready to help you select the
               perfect surfaces for your space.
@@ -65,11 +68,11 @@ export default function ContactSection() {
             <div className="mt-10 space-y-6">
               {OUTLETS.map((outlet) => (
                 <div key={outlet.name}>
-                  <p className="text-[10px] font-medium tracking-[0.24em] text-white/70">
+                  <p className="text-[10px] font-semibold tracking-[0.24em] text-zinc-950">
                     {outlet.name.toUpperCase()}
                   </p>
                   <address className="mt-2 not-italic">
-                    <p className="text-[12px] font-light leading-relaxed text-white/45 sm:text-[13px]">
+                    <p className="text-[12px] leading-relaxed text-zinc-800 sm:text-[13px]">
                       {outlet.address.map((line, index) => (
                         <span key={line}>
                           {line}
@@ -86,7 +89,7 @@ export default function ContactSection() {
 
             <a
               href={`tel:${primaryOutlet.phone}`}
-              className="mt-10 inline-flex items-center gap-2.5 text-[12px] font-medium tracking-[0.08em] text-gold transition-colors hover:text-white"
+              className="mt-10 inline-flex items-center gap-2.5 text-[12px] font-medium tracking-[0.08em] text-gold transition-colors hover:text-zinc-900"
             >
               <PhoneIcon />
               {primaryOutlet.phoneDisplay}
@@ -95,20 +98,20 @@ export default function ContactSection() {
 
           <div>
             {submitted ? (
-              <div className="flex h-full min-h-[20rem] flex-col items-center justify-center border border-gold/30 bg-[#050505] px-8 py-16 text-center">
-                <p className="text-[11px] font-medium tracking-[0.22em] text-gold">
+              <div className="flex h-full min-h-[20rem] flex-col items-center justify-center border border-zinc-200 bg-white px-8 py-16 text-center">
+                <p className="text-[11px] font-semibold tracking-[0.22em] text-gold">
                   MESSAGE RECEIVED
                 </p>
-                <p className="mt-4 max-w-sm text-[13px] font-light leading-relaxed text-white/55">
+                <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-zinc-800">
                   Thank you for reaching out. Our team will contact you shortly.
                 </p>
               </div>
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="border border-white/[0.08] bg-[#050505] px-6 py-10 sm:px-8 sm:py-12"
+                className="border border-zinc-200 bg-white px-6 py-10 sm:px-8 sm:py-12"
               >
-                <p className="text-[11px] font-medium tracking-[0.22em] text-white/70">
+                <p className="text-[11px] font-semibold tracking-[0.22em] text-zinc-950">
                   SEND A MESSAGE
                 </p>
 
@@ -154,10 +157,7 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <button
-                  type="submit"
-                  className="mt-8 inline-flex h-14 w-full items-center justify-center border border-gold bg-transparent px-8 text-[12px] font-medium uppercase tracking-[0.08em] text-white transition-colors duration-300 hover:border-white hover:bg-white hover:text-[#050505] sm:w-auto"
-                >
+                <button type="submit" className={outlineButtonClass}>
                   Send Message
                 </button>
               </form>

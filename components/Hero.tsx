@@ -1,27 +1,29 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
-import { OUTLETS } from "./outlet-data";
-
-const firstOutlet = OUTLETS[0];
-const secondOutlet = OUTLETS[1];
 
 const SLIDES = [
   {
-    src: "/images/villa-dusk.jpg",
-    alt: "MRF Galaxy villa at dusk, front elevation",
-    objectPosition: "object-[12%_34%] sm:object-[16%_32%]",
+    src: "/images/hero-display-centre.jpg",
+    alt: "Luxury tiles display centre with large-format porcelain slabs",
+    objectPosition: "object-center",
   },
   {
-    src: "/images/villa-sun.jpg",
-    alt: "MRF Galaxy villa in daylight with landscaped garden",
-    objectPosition: "object-center",
+    src: "/images/projects/architectural-tile-experience.jpg",
+    alt: "Architectural showroom corridor with premium porcelain flooring",
+    objectPosition: "object-[center_40%]",
   },
   {
     src: "/images/projects/luxury-villa.jpg",
     alt: "Luxury villa terrace with premium porcelain surfaces",
     objectPosition: "object-[center_40%]",
+  },
+  {
+    src: "/images/villa-sun.jpg",
+    alt: "Galaxy villa in daylight with landscaped garden",
+    objectPosition: "object-center",
   },
   {
     src: "/images/projects/modern-sanitary-space.jpg",
@@ -30,109 +32,217 @@ const SLIDES = [
   },
 ];
 
+const FEATURE_CARDS = [
+  {
+    title: "Galaxy Showroom",
+    description:
+      "Visit our luxury tiles display centre and experience the full Galaxy collection.",
+    href: "/#contact",
+    icon: ShowroomIcon,
+  },
+  {
+    title: "Galaxy Collection",
+    description:
+      "Explore premium porcelain surfaces curated for residential and commercial interiors.",
+    href: "/collection",
+    icon: CollectionIcon,
+  },
+  {
+    title: "Galaxy Projects",
+    description:
+      "Discover completed architectural spaces crafted with Galaxy tiles and sanitary fittings.",
+    href: "/projects",
+    icon: ProjectsIcon,
+  },
+];
+
+function ShowroomIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M3 10.5 12 3l9 7.5" />
+      <path d="M5 9.5V21h14V9.5" />
+      <path d="M10 21v-7h4v7" />
+    </svg>
+  );
+}
+
+function CollectionIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="3" y="3" width="7" height="7" />
+      <rect x="14" y="3" width="7" height="7" />
+      <rect x="3" y="14" width="7" height="7" />
+      <rect x="14" y="14" width="7" height="7" />
+    </svg>
+  );
+}
+
+function ProjectsIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="3" y="4" width="18" height="14" />
+      <path d="M3 18h18" />
+      <path d="M8 22h8" />
+    </svg>
+  );
+}
+
+function SlideIndicators({
+  index,
+  onSelect,
+  className,
+}: {
+  index: number;
+  onSelect: (i: number) => void;
+  className?: string;
+}) {
+  return (
+    <ol className={className} aria-label="Hero slides">
+      {SLIDES.map((_, i) => {
+        const n = String(i + 1).padStart(2, "0");
+        const active = i === index;
+        return (
+          <li key={n}>
+            <button
+              type="button"
+              onClick={() => onSelect(i)}
+              aria-label={`Show slide ${n}`}
+              aria-current={active ? "true" : undefined}
+              className={`flex items-center gap-3 text-[12px] tracking-[0.18em] transition-colors ${
+                active ? "text-gold" : "text-white/70 hover:text-white"
+              }`}
+            >
+              {n}
+              <span
+                className={`h-px transition-all duration-300 ${
+                  active ? "w-8 bg-gold" : "w-8 bg-transparent"
+                }`}
+              />
+            </button>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
 export default function Hero() {
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState(0);
 
   return (
-    <section className="absolute inset-0 overflow-hidden bg-[#0b0d10]">
-      <Image
-        src={SLIDES[index].src}
-        alt={SLIDES[index].alt}
-        fill
-        priority
-        quality={100}
-        sizes="100vw"
-        className={`object-cover ${SLIDES[index].objectPosition}`}
-      />
-
-      <div className="pointer-events-none absolute inset-0 bg-[#0b1018]/20" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07090d]/50 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[32%] bg-gradient-to-t from-[#07080a] via-[#07080a]/95 to-transparent" />
-      <div className="pointer-events-none absolute bottom-[12%] left-0 h-[42%] w-[40%] bg-gradient-to-r from-[#07090d]/75 via-[#07090d]/30 to-transparent" />
-
-      <div className="absolute bottom-[38%] left-6 z-10 max-w-[34rem] sm:bottom-[28%] sm:left-10 lg:bottom-[25%] lg:left-[3.5rem]">
-        <p className="font-sans text-[0.95rem] font-normal italic tracking-wide text-gold sm:text-[1.05rem]">
-          Elegance in every detail
-        </p>
-
-        <h1 className="mt-3 font-sans text-[2.45rem] font-light uppercase leading-[0.96] tracking-[0.06em] text-white sm:text-[3.4rem] lg:text-[4.05rem]">
-          GALAXY
-          <br />
-          COLLECTION
-        </h1>
-
-        <span className="mt-4 block h-px w-10 bg-gold" />
-
-        <p className="mt-5 font-sans text-[0.95rem] font-light leading-snug text-white/90 sm:text-[1.05rem]">
-          Designed for a
-          <br />
-          better tomorrow
-        </p>
+    <section className="relative isolate flex min-h-svh flex-col bg-zinc-950">
+      <div className="absolute inset-0 overflow-hidden">
+        {SLIDES.map((slide, i) => (
+          <Image
+            key={slide.src}
+            src={slide.src}
+            alt={slide.alt}
+            fill
+            priority={i === 0}
+            quality={100}
+            sizes="100vw"
+            className={`object-cover transition-opacity duration-700 ${slide.objectPosition} ${
+              i === index ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
       </div>
 
-      <ol className="absolute right-[5%] top-[46%] z-10 hidden -translate-y-1/2 flex-col gap-2.5 sm:flex">
-        {SLIDES.map((_, i) => {
-          const n = String(i + 1).padStart(2, "0");
-          const active = i === index;
-          return (
-            <li key={n}>
-              <button
-                type="button"
-                onClick={() => setIndex(i)}
-                aria-label={`Show slide ${n}`}
-                aria-current={active ? "true" : undefined}
-                className={`flex items-center gap-2 text-[12px] tracking-[0.16em] transition-colors ${
-                  active ? "text-gold" : "text-white/35 hover:text-white/60"
-                }`}
-              >
-                {n}
-                {active ? (
-                  <span className="h-px w-6 bg-gold" />
-                ) : (
-                  <span className="w-6" />
-                )}
-              </button>
-            </li>
-          );
-        })}
-      </ol>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/25"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/35"
+      />
 
-      <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-7 sm:px-10 sm:pb-9 lg:px-14 lg:pb-11">
-        <div className="mx-auto flex max-w-[1440px] flex-col gap-8 sm:flex-row sm:justify-between lg:pr-[12%]">
-          <div className="max-w-[17rem]">
-            <h2 className="text-[11px] font-medium tracking-[0.22em] text-gold">
-              First Branch
-            </h2>
-            <address className="mt-2.5 not-italic">
-              <p className="text-[12px] font-light leading-relaxed text-white/70 sm:text-[13px]">
-                {firstOutlet.address.map((line) => (
-                  <span key={line}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
-                <a href={`tel:${firstOutlet.phone}`}>{firstOutlet.phoneDisplay}</a>
-              </p>
-            </address>
+      <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-[1440px] flex-1 flex-col">
+        <div className="flex flex-1 items-center justify-between gap-6 px-6 pt-24 sm:px-10 lg:px-14">
+          <div className="max-w-[46rem]">
+            <h1 className="font-sans text-[clamp(2.4rem,7vw,6.1rem)] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white">
+              VISIT
+              <br />
+              GALAXY TILES
+            </h1>
+
+            <Link
+              href="/#contact"
+              className="mt-8 inline-flex items-center justify-center border border-gold px-7 py-3.5 text-[11px] font-semibold tracking-[0.22em] text-white transition-colors duration-300 hover:bg-gold hover:text-zinc-950 sm:mt-9 sm:px-9 sm:py-4 sm:text-[12px]"
+            >
+              [ VISIT GALAXY TILES ]
+            </Link>
           </div>
-          <div className="max-w-[17rem] sm:mr-[8%]">
-            <h2 className="text-[11px] font-medium tracking-[0.22em] text-gold">
-              Second Branch
-            </h2>
-            <address className="mt-2.5 not-italic">
-              <p className="text-[12px] font-light leading-relaxed text-white/70 sm:text-[13px]">
-                {secondOutlet.address.map((line) => (
-                  <span key={line}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
-                <a href={`tel:${secondOutlet.phone}`}>
-                  {secondOutlet.phoneDisplay}
-                </a>
-              </p>
-            </address>
-          </div>
+
+          <SlideIndicators
+            index={index}
+            onSelect={setIndex}
+            className="hidden flex-col gap-3 sm:flex"
+          />
+        </div>
+
+        <SlideIndicators
+          index={index}
+          onSelect={setIndex}
+          className="flex gap-5 px-6 pb-2 sm:hidden"
+        />
+
+        <div className="grid shrink-0 grid-cols-1 gap-3 px-6 pb-6 sm:px-10 md:grid-cols-3 md:gap-4 lg:px-14 lg:pb-8">
+          {FEATURE_CARDS.map((card) => {
+            const Icon = card.icon;
+            return (
+              <article
+                key={card.title}
+                className="flex flex-col border border-white/20 bg-white/10 px-5 py-4 backdrop-blur-md sm:px-6 sm:py-5"
+              >
+                <span className="text-gold">
+                  <Icon />
+                </span>
+                <h2 className="mt-3 text-[14px] font-semibold tracking-[0.08em] text-white sm:text-[15px]">
+                  {card.title}
+                </h2>
+                <p className="mt-1.5 line-clamp-2 text-[12px] leading-relaxed text-white/90 sm:text-[13px]">
+                  {card.description}
+                </p>
+                <Link
+                  href={card.href}
+                  className="mt-4 inline-flex text-[11px] font-semibold tracking-[0.18em] text-gold transition-colors hover:text-white"
+                >
+                  LEARN MORE →
+                </Link>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

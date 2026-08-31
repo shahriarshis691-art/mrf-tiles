@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ImageWash, { imageLiftClass } from "../ImageWash";
 import type { CatalogProduct } from "./collection-data";
 
 type RelatedCollectionsProps = {
@@ -17,7 +18,7 @@ export default function RelatedCollections({ products }: RelatedCollectionsProps
         </p>
         <h2
           id="related-collections-heading"
-          className="mt-4 text-[1.35rem] font-light uppercase tracking-[0.22em] text-white sm:text-[1.5rem]"
+          className="mt-4 text-[1.35rem] font-semibold uppercase tracking-[0.22em] text-zinc-950 sm:text-[1.5rem]"
         >
           Related Collections
         </h2>
@@ -29,16 +30,16 @@ export default function RelatedCollections({ products }: RelatedCollectionsProps
           <Link
             key={product.id}
             href={`/collection/${product.id}`}
-            className="group flex aspect-[1/1.7] w-full flex-col overflow-hidden border border-[#C9BF9E]/40 bg-[#F6F2EC] transition-colors duration-500 hover:border-[#B89A62]/60"
+            className="group flex aspect-[1/1.7] w-full flex-col overflow-hidden border border-zinc-200 bg-white transition-colors duration-500 hover:border-gold/60"
           >
             <div className="flex flex-[0.38] flex-col justify-center px-5 py-6 sm:px-6 sm:py-7">
               <p className="text-[8px] font-medium uppercase tracking-[0.32em] text-[#B89A62] sm:text-[9px]">
                 {product.look.toUpperCase()}
               </p>
-              <h3 className="mt-3 text-[13px] font-normal uppercase tracking-[0.18em] text-[#2D2A13] sm:text-[14px]">
+              <h3 className="mt-3 text-[13px] font-semibold uppercase tracking-[0.18em] text-zinc-950 sm:text-[14px]">
                 {product.label}
               </h3>
-              <p className="mt-4 max-w-[18rem] text-[10px] font-light leading-relaxed tracking-[0.02em] text-[#4A473F] sm:text-[11px]">
+              <p className="mt-4 max-w-[18rem] text-[10px] leading-relaxed tracking-[0.02em] text-zinc-800 sm:text-[11px]">
                 {product.description}
               </p>
             </div>
@@ -49,11 +50,12 @@ export default function RelatedCollections({ products }: RelatedCollectionsProps
                 alt={product.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                className={`h-full w-full object-cover ${imageLiftClass} transition-transform duration-700 ease-out group-hover:scale-[1.03]`}
               />
+              <ImageWash />
             </div>
 
-            <div className="flex min-h-[2.75rem] flex-[0.1] items-center justify-between border-t border-[#C9BF9E]/30 px-5 py-3 text-[8px] font-medium uppercase tracking-[0.28em] text-[#4A473F]/80 sm:px-6 sm:text-[9px]">
+            <div className="flex min-h-[2.75rem] flex-[0.1] items-center justify-between border-t border-zinc-200 px-5 py-3 text-[8px] font-medium uppercase tracking-[0.28em] text-zinc-800 sm:px-6 sm:text-[9px]">
               <span>MRF TILES</span>
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 EXPLORE →
