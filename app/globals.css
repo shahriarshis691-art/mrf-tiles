@@ -46,6 +46,7 @@ body {
 html {
   color-scheme: light;
   scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -53,4 +54,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
 }

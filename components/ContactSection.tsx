@@ -3,6 +3,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { buildWhatsAppUrl } from "@/lib/contact";
 import { OUTLETS } from "./outlet-data";
+import ScrollReveal from "@/components/ScrollReveal";
 
 function PhoneIcon() {
   return (
@@ -73,172 +74,176 @@ export default function ContactSection() {
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-20 xl:gap-28">
-          <div>
-            <p className="text-[11px] font-medium tracking-[0.22em] text-gold">
-              GET IN TOUCH
-            </p>
+          <ScrollReveal variant="slideInLeft">
+            <div>
+              <p className="text-[11px] font-medium tracking-[0.22em] text-gold">
+                GET IN TOUCH
+              </p>
 
-            <h2
-              id="contact-heading"
-              className="mt-5 font-sans text-[2rem] font-semibold uppercase leading-[1.05] tracking-[0.06em] text-zinc-950 sm:text-[2.35rem]"
-            >
-              Contact Us
-            </h2>
-
-            <span className="mt-5 block h-px w-12 bg-gold/70" />
-
-            <p className="mt-7 max-w-md text-[13px] leading-relaxed text-zinc-800 sm:text-sm">
-              Visit our showrooms, request a consultation, or send a WhatsApp
-              message. Our team is ready to help you select the perfect
-              surfaces for your space.
-            </p>
-
-            <div className="mt-10 space-y-8">
-              {OUTLETS.map((outlet) => (
-                <div key={outlet.name}>
-                  <p className="text-[10px] font-semibold tracking-[0.24em] text-zinc-950">
-                    {outlet.name.toUpperCase()}
-                  </p>
-                  <address className="mt-2 not-italic">
-                    <p className="text-[12px] leading-relaxed text-zinc-800 sm:text-[13px]">
-                      {outlet.address.map((line, index) => (
-                        <span key={line}>
-                          {line}
-                          {index < outlet.address.length - 1 ? <br /> : null}
-                        </span>
-                      ))}
-                    </p>
-                  </address>
-                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
-                    <a
-                      href={`tel:${outlet.phone}`}
-                      className="inline-flex items-center gap-2 text-[12px] font-medium tracking-[0.08em] text-gold transition-colors hover:text-zinc-900"
-                    >
-                      <PhoneIcon />
-                      {outlet.phoneDisplay}
-                    </a>
-                    <a
-                      href={`https://wa.me/${outlet.whatsapp}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[12px] font-medium tracking-[0.08em] text-zinc-800 transition-colors hover:text-gold"
-                    >
-                      WhatsApp
-                    </a>
-                    <a
-                      href={outlet.mapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[12px] font-medium tracking-[0.08em] text-zinc-800 transition-colors hover:text-gold"
-                    >
-                      Map
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            {whatsappUrl ? (
-              <div className="flex h-full min-h-[20rem] flex-col items-center justify-center border border-zinc-200 bg-white px-8 py-16 text-center">
-                <p className="text-[11px] font-semibold tracking-[0.22em] text-gold">
-                  CONTINUE IN WHATSAPP
-                </p>
-                <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-zinc-800">
-                  Your message is ready to send. Complete it in WhatsApp so our
-                  showroom team can reply.
-                </p>
-                <a href={whatsappUrl} className={outlineButtonClass}>
-                  Open WhatsApp
-                </a>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="border border-zinc-200 bg-white px-6 py-10 sm:px-8 sm:py-12"
+              <h2
+                id="contact-heading"
+                className="mt-5 font-sans text-[2rem] font-semibold uppercase leading-[1.05] tracking-[0.06em] text-zinc-950 sm:text-[2.35rem]"
               >
-                <p className="text-[11px] font-semibold tracking-[0.22em] text-zinc-950">
-                  SEND A MESSAGE
-                </p>
+                Contact Us
+              </h2>
 
-                {interest ? (
-                  <p className="mt-3 text-[12px] text-zinc-800">
-                    Enquiry: {interest}
+              <span className="mt-5 block h-px w-12 bg-gold/70" />
+
+              <p className="mt-7 max-w-md text-[13px] leading-relaxed text-zinc-800 sm:text-sm">
+                Visit our showrooms, request a consultation, or send a WhatsApp
+                message. Our team is ready to help you select the perfect
+                surfaces for your space.
+              </p>
+
+              <div className="mt-10 space-y-8">
+                {OUTLETS.map((outlet) => (
+                  <div key={outlet.name}>
+                    <p className="text-[10px] font-semibold tracking-[0.24em] text-zinc-950">
+                      {outlet.name.toUpperCase()}
+                    </p>
+                    <address className="mt-2 not-italic">
+                      <p className="text-[12px] leading-relaxed text-zinc-800 sm:text-[13px]">
+                        {outlet.address.map((line, index) => (
+                          <span key={line}>
+                            {line}
+                            {index < outlet.address.length - 1 ? <br /> : null}
+                          </span>
+                        ))}
+                      </p>
+                    </address>
+                    <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+                      <a
+                        href={`tel:${outlet.phone}`}
+                        className="inline-flex items-center gap-2 text-[12px] font-medium tracking-[0.08em] text-gold transition-colors hover:text-zinc-900"
+                      >
+                        <PhoneIcon />
+                        {outlet.phoneDisplay}
+                      </a>
+                      <a
+                        href={`https://wa.me/${outlet.whatsapp}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[12px] font-medium tracking-[0.08em] text-zinc-800 transition-colors hover:text-gold"
+                      >
+                        WhatsApp
+                      </a>
+                      <a
+                        href={outlet.mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[12px] font-medium tracking-[0.08em] text-zinc-800 transition-colors hover:text-gold"
+                      >
+                        Map
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal variant="slideInRight" delay={0.15}>
+            <div>
+              {whatsappUrl ? (
+                <div className="flex h-full min-h-[20rem] flex-col items-center justify-center border border-zinc-200 bg-white px-8 py-16 text-center">
+                  <p className="text-[11px] font-semibold tracking-[0.22em] text-gold">
+                    CONTINUE IN WHATSAPP
                   </p>
-                ) : null}
-
-                <div className="mt-8 space-y-4">
-                  <input type="hidden" name="interest" value={interest} />
-                  <div>
-                    <label htmlFor="contact-name" className="sr-only">
-                      Name
-                    </label>
-                    <input
-                      id="contact-name"
-                      name="name"
-                      type="text"
-                      required
-                      autoComplete="name"
-                      placeholder="Your name"
-                      className={inputClass}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="contact-phone" className="sr-only">
-                      Phone
-                    </label>
-                    <input
-                      id="contact-phone"
-                      name="phone"
-                      type="tel"
-                      required
-                      autoComplete="tel"
-                      placeholder="Phone number"
-                      className={inputClass}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="contact-branch" className="sr-only">
-                      Showroom
-                    </label>
-                    <select
-                      id="contact-branch"
-                      name="branch"
-                      value={branchIndex}
-                      onChange={(event) =>
-                        setBranchIndex(Number(event.target.value))
-                      }
-                      className={inputClass}
-                    >
-                      {OUTLETS.map((outlet, index) => (
-                        <option key={outlet.name} value={index}>
-                          {outlet.name} — {outlet.locationLine}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="contact-message" className="sr-only">
-                      Message
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      name="message"
-                      required
-                      rows={5}
-                      placeholder="Tell us about your project"
-                      className={`${inputClass} resize-none`}
-                    />
-                  </div>
+                  <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-zinc-800">
+                    Your message is ready to send. Complete it in WhatsApp so our
+                    showroom team can reply.
+                  </p>
+                  <a href={whatsappUrl} className={outlineButtonClass}>
+                    Open WhatsApp
+                  </a>
                 </div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  className="border border-zinc-200 bg-white px-6 py-10 sm:px-8 sm:py-12"
+                >
+                  <p className="text-[11px] font-semibold tracking-[0.22em] text-zinc-950">
+                    SEND A MESSAGE
+                  </p>
 
-                <button type="submit" className={outlineButtonClass}>
-                  Send on WhatsApp
-                </button>
-              </form>
-            )}
-          </div>
+                  {interest ? (
+                    <p className="mt-3 text-[12px] text-zinc-800">
+                      Enquiry: {interest}
+                    </p>
+                  ) : null}
+
+                  <div className="mt-8 space-y-4">
+                    <input type="hidden" name="interest" value={interest} />
+                    <div>
+                      <label htmlFor="contact-name" className="sr-only">
+                        Name
+                      </label>
+                      <input
+                        id="contact-name"
+                        name="name"
+                        type="text"
+                        required
+                        autoComplete="name"
+                        placeholder="Your name"
+                        className={inputClass}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="contact-phone" className="sr-only">
+                        Phone
+                      </label>
+                      <input
+                        id="contact-phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        autoComplete="tel"
+                        placeholder="Phone number"
+                        className={inputClass}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="contact-branch" className="sr-only">
+                        Showroom
+                      </label>
+                      <select
+                        id="contact-branch"
+                        name="branch"
+                        value={branchIndex}
+                        onChange={(event) =>
+                          setBranchIndex(Number(event.target.value))
+                        }
+                        className={inputClass}
+                      >
+                        {OUTLETS.map((outlet, index) => (
+                          <option key={outlet.name} value={index}>
+                            {outlet.name} — {outlet.locationLine}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="contact-message" className="sr-only">
+                        Message
+                      </label>
+                      <textarea
+                        id="contact-message"
+                        name="message"
+                        required
+                        rows={5}
+                        placeholder="Tell us about your project"
+                        className={`${inputClass} resize-none`}
+                      />
+                    </div>
+                  </div>
+
+                  <button type="submit" className={outlineButtonClass}>
+                    Send on WhatsApp
+                  </button>
+                </form>
+              )}
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

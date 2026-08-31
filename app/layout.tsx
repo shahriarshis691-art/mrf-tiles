@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import { OUTLETS } from "@/components/outlet-data";
+import LenisProvider from "@/components/LenisProvider";
 import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
@@ -82,8 +83,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
-        <Footer />
+        <LenisProvider>
+          {children}
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );

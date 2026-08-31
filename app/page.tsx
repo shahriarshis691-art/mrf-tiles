@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import SanitarySection from "@/components/SanitarySection";
 import CollectionSection from "@/components/collection/CollectionSection";
 import OutletsSection from "@/components/OutletsSection";
-import OurStorySection from "@/components/OurStorySection";
+import OurServicesSection from "@/components/OurServicesSection";
 
 export default function Home() {
   return (
@@ -15,9 +15,9 @@ export default function Home() {
         <div className="relative bg-zinc-950">
           <Hero />
         </div>
-        <OurStorySection />
-        <AboutSection />
         <CollectionSection />
+        <OurServicesSection />
+        <AboutSection />
         <SanitarySection />
         <OutletsSection />
         <ContactSection />

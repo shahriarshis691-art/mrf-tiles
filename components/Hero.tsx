@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { contactHref } from "@/lib/contact";
 
 const SLIDES = [
@@ -190,22 +191,38 @@ export default function Hero() {
       />
 
       <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-[1440px] flex-1 flex-col">
-        <div className="relative flex flex-1 items-center px-6 pt-24 sm:px-10 lg:px-14">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+          className="relative flex flex-1 items-center px-6 pt-24 sm:px-10 lg:px-14"
+        >
           <div className="max-w-[46rem]">
-            <h1 className="font-sans text-[clamp(2.4rem,7vw,6.1rem)] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              className="font-sans text-[clamp(2.4rem,7vw,6.1rem)] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white"
+            >
               GALAXY
               <br />
               TILES
-            </h1>
+            </motion.h1>
 
-            <Link
-              href="/#contact"
-              className="mt-8 inline-flex items-center justify-center border border-gold px-7 py-3.5 text-[11px] font-semibold tracking-[0.22em] text-white transition-colors duration-300 hover:bg-gold hover:text-zinc-950 sm:mt-9 sm:px-9 sm:py-4 sm:text-[12px]"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
             >
-              VISIT SHOWROOM
-            </Link>
+              <Link
+                href="/#contact"
+                className="mt-8 inline-flex items-center justify-center border border-gold px-7 py-3.5 text-[11px] font-semibold tracking-[0.22em] text-white transition-colors duration-300 hover:bg-gold hover:text-zinc-950 sm:mt-9 sm:px-9 sm:py-4 sm:text-[12px]"
+              >
+                VISIT SHOWROOM
+              </Link>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         <SlideIndicators
           index={index}

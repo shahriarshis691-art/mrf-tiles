@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { OUTLETS, SHOWROOM_GALLERY_SLIDES } from "./outlet-data";
+import ScrollReveal from "@/components/ScrollReveal";
 
 function NavArrow({
   direction,
@@ -88,38 +89,40 @@ export default function OutletsSection() {
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-x-10 xl:gap-x-14">
-          <div className="flex flex-col justify-between lg:col-span-5 lg:min-h-[32rem]">
-            <header>
-              <p className="text-[11px] font-medium tracking-[0.22em] text-zinc-700">
-                01/ Outlets
-              </p>
-              <p className="mt-2 text-[10px] font-medium tracking-[0.28em] text-zinc-600">
-                GALAXY TILES &amp; CERAMIC
-              </p>
-              <h2
-                id="outlets-heading"
-                className="mt-6 max-w-md text-[clamp(1.75rem,3.2vw,2.65rem)] font-normal leading-[1.12] tracking-[-0.01em] text-zinc-900"
-              >
-                A Space That{" "}
-                <span className="font-bold">Inspires</span> Your{" "}
-                <span className="font-bold">Luxury Home</span>
-              </h2>
-            </header>
+          <ScrollReveal variant="slideInLeft" className="flex flex-col justify-between lg:col-span-5 lg:min-h-[32rem]">
+            <div>
+              <header>
+                <p className="text-[11px] font-medium tracking-[0.22em] text-zinc-700">
+                  01/ Outlets
+                </p>
+                <p className="mt-2 text-[10px] font-medium tracking-[0.28em] text-zinc-600">
+                  GALAXY TILES &amp; CERAMIC
+                </p>
+                <h2
+                  id="outlets-heading"
+                  className="mt-6 max-w-md text-[clamp(1.75rem,3.2vw,2.65rem)] font-normal leading-[1.12] tracking-[-0.01em] text-zinc-900"
+                >
+                  A Space That{" "}
+                  <span className="font-bold">Inspires</span> Your{" "}
+                  <span className="font-bold">Luxury Home</span>
+                </h2>
+              </header>
 
-            <div className="mt-12 lg:mt-0">
-              <p className="max-w-md text-[13px] leading-relaxed text-zinc-800 sm:text-sm">
-                Experience our curated collections in realistic showroom
-                environments, designed to visualize grandeur for today and
-                enduring elegance for tomorrow.
-              </p>
-              <div className="mt-6 flex items-center gap-3">
-                <NavArrow direction="prev" onClick={goPrev} label="Previous showroom images" />
-                <NavArrow direction="next" onClick={goNext} label="Next showroom images" />
+              <div className="mt-12 lg:mt-0">
+                <p className="max-w-md text-[13px] leading-relaxed text-zinc-800 sm:text-sm">
+                  Experience our curated collections in realistic showroom
+                  environments, designed to visualize grandeur for today and
+                  enduring elegance for tomorrow.
+                </p>
+                <div className="mt-6 flex items-center gap-3">
+                  <NavArrow direction="prev" onClick={goPrev} label="Previous showroom images" />
+                  <NavArrow direction="next" onClick={goNext} label="Next showroom images" />
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
-          <div className="lg:col-span-7">
+          <ScrollReveal variant="slideInRight" delay={0.15} className="lg:col-span-7">
             <div className="flex flex-col gap-8 sm:gap-10">
               {OUTLETS.map((outlet, index) => (
                 <BranchBlock key={outlet.name} outlet={outlet} index={index} />
@@ -143,7 +146,7 @@ export default function OutletsSection() {
                 </figure>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
