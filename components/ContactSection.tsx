@@ -25,10 +25,10 @@ function PhoneIcon() {
 }
 
 const inputClass =
-  "w-full border border-zinc-200 bg-white px-4 py-3.5 text-[13px] text-zinc-950 placeholder:text-zinc-500 transition-colors outline-none focus:border-gold/60 focus-visible:ring-1 focus-visible:ring-gold/30";
+  "w-full border border-neutral-200 bg-white px-4 py-3.5 text-[13px] text-[#0F0F0F] placeholder:text-neutral-400 transition-colors outline-none focus:border-neutral-900 focus-visible:ring-1 focus-visible:ring-neutral-900/30";
 
 const outlineButtonClass =
-  "mt-8 inline-flex h-14 w-full items-center justify-center border border-gold bg-transparent px-8 text-[12px] font-medium uppercase tracking-[0.08em] text-zinc-900 transition-colors duration-300 hover:border-zinc-900 hover:bg-zinc-900 hover:text-white sm:w-auto";
+  "mt-8 inline-flex h-14 w-full items-center justify-center border border-[#0F0F0F] bg-transparent px-8 text-[12px] font-medium uppercase tracking-[0.08em] text-[#0F0F0F] transition-colors duration-300 hover:bg-[#0F0F0F] hover:text-white sm:w-auto";
 
 export default function ContactSection() {
   const [interest, setInterest] = useState("");
@@ -70,26 +70,26 @@ export default function ContactSection() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="bg-white px-6 py-20 sm:px-10 sm:py-24 lg:px-14 lg:py-28"
+      className="bg-white px-6 py-24 sm:px-10 sm:py-32 lg:px-14 lg:py-32"
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-20 xl:gap-28">
           <ScrollReveal variant="slideInLeft">
             <div>
-              <p className="text-[11px] font-medium tracking-[0.22em] text-gold">
-                GET IN TOUCH
+              <p className="text-[11px] font-medium tracking-[0.2em] text-neutral-500 uppercase">
+                Get In Touch
               </p>
 
               <h2
                 id="contact-heading"
-                className="mt-5 font-sans text-[2rem] font-semibold uppercase leading-[1.05] tracking-[0.06em] text-zinc-950 sm:text-[2.35rem]"
+                className="mt-5 font-sans text-[2rem] font-semibold uppercase leading-[1.05] tracking-[0.06em] text-[#0F0F0F] sm:text-[2.35rem]"
               >
                 Contact Us
               </h2>
 
-              <span className="mt-5 block h-px w-12 bg-gold/70" />
+              <span className="mt-5 block h-px w-12 bg-neutral-900" />
 
-              <p className="mt-7 max-w-md text-[13px] leading-relaxed text-zinc-800 sm:text-sm">
+              <p className="mt-7 max-w-md text-[13px] leading-relaxed text-neutral-600 sm:text-sm">
                 Visit our showrooms, request a consultation, or send a WhatsApp
                 message. Our team is ready to help you select the perfect
                 surfaces for your space.
@@ -98,11 +98,11 @@ export default function ContactSection() {
               <div className="mt-10 space-y-8">
                 {OUTLETS.map((outlet) => (
                   <div key={outlet.name}>
-                    <p className="text-[10px] font-semibold tracking-[0.24em] text-zinc-950">
+                    <p className="text-[10px] font-semibold tracking-[0.2em] text-[#0F0F0F] uppercase">
                       {outlet.name.toUpperCase()}
                     </p>
                     <address className="mt-2 not-italic">
-                      <p className="text-[12px] leading-relaxed text-zinc-800 sm:text-[13px]">
+                      <p className="text-[12px] leading-relaxed text-neutral-600 sm:text-[13px]">
                         {outlet.address.map((line, index) => (
                           <span key={line}>
                             {line}
@@ -114,7 +114,7 @@ export default function ContactSection() {
                     <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
                       <a
                         href={`tel:${outlet.phone}`}
-                        className="inline-flex items-center gap-2 text-[12px] font-medium tracking-[0.08em] text-gold transition-colors hover:text-zinc-900"
+                        className="inline-flex items-center gap-2 text-[12px] font-medium tracking-[0.08em] text-neutral-900 transition-colors hover:text-neutral-500"
                       >
                         <PhoneIcon />
                         {outlet.phoneDisplay}
@@ -123,7 +123,7 @@ export default function ContactSection() {
                         href={`https://wa.me/${outlet.whatsapp}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[12px] font-medium tracking-[0.08em] text-zinc-800 transition-colors hover:text-gold"
+                        className="text-[12px] font-medium tracking-[0.08em] text-neutral-600 transition-colors hover:text-neutral-900"
                       >
                         WhatsApp
                       </a>
@@ -131,7 +131,7 @@ export default function ContactSection() {
                         href={outlet.mapsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[12px] font-medium tracking-[0.08em] text-zinc-800 transition-colors hover:text-gold"
+                        className="text-[12px] font-medium tracking-[0.08em] text-neutral-600 transition-colors hover:text-neutral-900"
                       >
                         Map
                       </a>
@@ -145,11 +145,11 @@ export default function ContactSection() {
           <ScrollReveal variant="slideInRight" delay={0.15}>
             <div>
               {whatsappUrl ? (
-                <div className="flex h-full min-h-[20rem] flex-col items-center justify-center border border-zinc-200 bg-white px-8 py-16 text-center">
-                  <p className="text-[11px] font-semibold tracking-[0.22em] text-gold">
-                    CONTINUE IN WHATSAPP
+                <div className="flex h-full min-h-[20rem] flex-col items-center justify-center border border-neutral-200 bg-white px-8 py-16 text-center">
+                  <p className="text-[11px] font-semibold tracking-[0.2em] text-neutral-500 uppercase">
+                    Continue In WhatsApp
                   </p>
-                  <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-zinc-800">
+                  <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-neutral-600">
                     Your message is ready to send. Complete it in WhatsApp so our
                     showroom team can reply.
                   </p>
@@ -160,14 +160,14 @@ export default function ContactSection() {
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="border border-zinc-200 bg-white px-6 py-10 sm:px-8 sm:py-12"
+                  className="border border-neutral-200 bg-white px-6 py-10 sm:px-8 sm:py-12"
                 >
-                  <p className="text-[11px] font-semibold tracking-[0.22em] text-zinc-950">
-                    SEND A MESSAGE
+                  <p className="text-[11px] font-semibold tracking-[0.2em] text-[#0F0F0F] uppercase">
+                    Send A Message
                   </p>
 
                   {interest ? (
-                    <p className="mt-3 text-[12px] text-zinc-800">
+                    <p className="mt-3 text-[12px] text-neutral-600">
                       Enquiry: {interest}
                     </p>
                   ) : null}

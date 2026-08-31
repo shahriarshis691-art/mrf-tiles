@@ -8,13 +8,13 @@ export default function CollectionSection() {
     <section
       id="collection"
       aria-labelledby="collection-heading"
-      className="bg-[#7D7263] px-6 py-20 sm:px-10 sm:py-24 lg:px-14 lg:py-28"
+      className="bg-[#7D7263] px-6 py-24 sm:px-10 sm:py-32 lg:px-14 lg:py-32"
     >
       <div className="mx-auto max-w-[1180px]">
         <ScrollReveal variant="fadeInUp">
           <header className="text-center">
-            <p className="text-[11px] font-medium tracking-[0.22em] text-[#E5D5C5]">
-              THE COLLECTION
+            <p className="text-[11px] font-medium tracking-[0.2em] text-[#E5D5C5] uppercase">
+              The Collection
             </p>
             <h2
               id="collection-heading"
@@ -25,7 +25,7 @@ export default function CollectionSection() {
             <span className="mx-auto mt-5 block h-px w-12 bg-[#E5D5C5]/80" />
             <Link
               href="/collection"
-              className="mt-6 inline-block text-[11px] font-medium uppercase tracking-[0.22em] text-[#E5D5C5] transition-colors hover:text-white"
+              className="mt-6 inline-block text-[11px] font-medium uppercase tracking-[0.2em] text-[#E5D5C5] transition-colors hover:text-white"
             >
               View Full Catalog →
             </Link>

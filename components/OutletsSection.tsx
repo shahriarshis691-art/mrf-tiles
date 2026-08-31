@@ -19,7 +19,7 @@ function NavArrow({
       type="button"
       onClick={onClick}
       aria-label={label}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-zinc-400/80 bg-white/60 text-zinc-900 transition-colors hover:border-zinc-900 hover:bg-white"
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-white text-[#0F0F0F] transition-colors hover:border-neutral-900 hover:bg-neutral-900 hover:text-white"
     >
       <span className="text-lg leading-none" aria-hidden="true">
         {direction === "prev" ? "‹" : "›"}
@@ -38,26 +38,26 @@ function BranchBlock({
   return (
     <article className="flex gap-4 sm:gap-5">
       <span
-        className="w-px shrink-0 bg-gold/70"
+        className="w-px shrink-0 bg-neutral-300"
         aria-hidden="true"
       />
       <div className="min-w-0 flex-1">
-        <p className="text-[10px] font-medium tracking-[0.24em] text-zinc-600">
-          BRANCH {index + 1}
+        <p className="text-[10px] font-medium tracking-[0.2em] text-neutral-500 uppercase">
+          Branch {index + 1}
         </p>
-        <p className="mt-2 text-[13px] font-semibold leading-snug text-zinc-900 sm:text-sm">
+        <p className="mt-2 text-[13px] font-semibold leading-snug text-[#0F0F0F] sm:text-sm">
           {outlet.locationLine}
         </p>
-        <p className="mt-2 text-[11px] tracking-[0.06em] text-zinc-700">
+        <p className="mt-2 text-[11px] tracking-[0.06em] text-neutral-600">
           Branch Incharge:{" "}
           <a
             href={`tel:${outlet.phone}`}
-            className="font-medium text-zinc-900 transition-colors hover:text-gold"
+            className="font-medium text-[#0F0F0F] transition-colors hover:text-neutral-500"
           >
             {outlet.phoneDisplay}
           </a>
         </p>
-        <p className="mt-3 inline-block border border-zinc-300/80 bg-white/50 px-2.5 py-1 text-[9px] font-medium tracking-[0.18em] text-zinc-800">
+        <p className="mt-3 inline-block border border-neutral-200 bg-white px-2.5 py-1 text-[9px] font-medium tracking-[0.18em] text-neutral-700">
           {outlet.tag}
         </p>
       </div>
@@ -78,29 +78,22 @@ export default function OutletsSection() {
     <section
       id="outlets"
       aria-labelledby="outlets-heading"
-      className="relative overflow-hidden bg-stone-200 px-6 py-20 sm:px-10 sm:py-24 lg:px-14 lg:py-28"
-      style={{
-        backgroundImage: [
-          "radial-gradient(circle at 18% 22%, rgba(255,255,255,0.55) 0%, transparent 42%)",
-          "radial-gradient(circle at 82% 78%, rgba(0,0,0,0.04) 0%, transparent 38%)",
-          "linear-gradient(165deg, rgba(255,255,255,0.12) 0%, transparent 48%)",
-        ].join(", "),
-      }}
+      className="relative overflow-hidden bg-[#F9F9FB] px-6 py-24 sm:px-10 sm:py-32 lg:px-14 lg:py-32"
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-x-10 xl:gap-x-14">
           <ScrollReveal variant="slideInLeft" className="flex flex-col justify-between lg:col-span-5 lg:min-h-[32rem]">
             <div>
               <header>
-                <p className="text-[11px] font-medium tracking-[0.22em] text-zinc-700">
-                  01/ Outlets
+                <p className="text-[11px] font-medium tracking-[0.2em] text-neutral-500 uppercase">
+                  01 / Outlets
                 </p>
-                <p className="mt-2 text-[10px] font-medium tracking-[0.28em] text-zinc-600">
-                  GALAXY TILES &amp; CERAMIC
+                <p className="mt-2 text-[10px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
+                  Galaxy Tiles &amp; Ceramic
                 </p>
                 <h2
                   id="outlets-heading"
-                  className="mt-6 max-w-md text-[clamp(1.75rem,3.2vw,2.65rem)] font-normal leading-[1.12] tracking-[-0.01em] text-zinc-900"
+                  className="mt-6 max-w-md text-[clamp(1.75rem,3.2vw,2.65rem)] font-normal leading-[1.12] tracking-[-0.01em] text-[#0F0F0F]"
                 >
                   A Space That{" "}
                   <span className="font-bold">Inspires</span> Your{" "}
@@ -109,7 +102,7 @@ export default function OutletsSection() {
               </header>
 
               <div className="mt-12 lg:mt-0">
-                <p className="max-w-md text-[13px] leading-relaxed text-zinc-800 sm:text-sm">
+                <p className="max-w-md text-[13px] leading-relaxed text-neutral-600 sm:text-sm">
                   Experience our curated collections in realistic showroom
                   environments, designed to visualize grandeur for today and
                   enduring elegance for tomorrow.
@@ -133,13 +126,13 @@ export default function OutletsSection() {
               {currentPair.map((image) => (
                 <figure
                   key={image.src}
-                  className="relative aspect-[4/5] overflow-hidden border border-zinc-300/70 bg-stone-300/40 sm:aspect-[5/6]"
+                  className="relative aspect-[4/5] overflow-hidden border border-neutral-200/60 bg-neutral-100 sm:aspect-[5/6]"
                 >
                   <Image
                     src={image.src}
                     alt={image.alt}
                     fill
-                    quality={90}
+                    quality={95}
                     sizes="(max-width: 768px) 45vw, 28vw"
                     className="object-cover"
                   />
