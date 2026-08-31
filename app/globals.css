@@ -3,8 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #09090b;
-  --gold: #c4a56a;
-  --gold-soft: rgba(196, 165, 106, 0.45);
+  --gold: #8b5a12;
+  --gold-soft: rgba(139, 90, 18, 0.45);
   --muted: #27272a;
 
   --bg-primary: #ffffff;
@@ -14,7 +14,7 @@
   --border: #e4e4e7;
   --text-primary: #09090b;
   --text-secondary: #27272a;
-  --accent: #c4a56a;
+  --accent: #8b5a12;
   --white: #ffffff;
 }
 
@@ -34,6 +34,7 @@
   --color-gold-soft: var(--gold-soft);
   --color-muted: var(--muted);
   --font-sans: var(--font-montserrat);
+  --font-serif: "Playfair Display", serif;
 }
 
 html,

@@ -100,37 +100,35 @@ export default function FilterDropdown({
         <ChevronDownIcon open={isOpen} />
       </button>
 
-      <ul
-        id={listboxId}
-        role="listbox"
-        aria-label={placeholder}
-        className={`absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-56 overflow-y-auto border border-zinc-200 bg-white transition-all duration-200 ease-out ${
-          isOpen
-            ? "pointer-events-auto translate-y-0 opacity-100"
-            : "pointer-events-none -translate-y-1 opacity-0"
-        }`}
-      >
-        {options.map((option) => {
-          const selected = value === option;
-          return (
-            <li key={option} role="none">
-              <button
-                type="button"
-                role="option"
-                aria-selected={selected}
-                onClick={() => onSelect(option)}
-                className={`flex w-full items-center px-4 py-3 text-left text-[12px] tracking-[0.04em] transition-colors duration-150 outline-none focus-visible:bg-gold/10 sm:text-[13px] ${
-                  selected
-                    ? "bg-gold/10 text-gold"
-                    : "text-zinc-800 hover:bg-zinc-50 hover:text-zinc-950"
-                }`}
-              >
-                {option}
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+      {isOpen ? (
+        <ul
+          id={listboxId}
+          role="listbox"
+          aria-label={placeholder}
+          className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-56 overflow-y-auto border border-zinc-200 bg-white"
+        >
+          {options.map((option) => {
+            const selected = value === option;
+            return (
+              <li key={option} role="none">
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected={selected}
+                  onClick={() => onSelect(option)}
+                  className={`flex w-full items-center px-4 py-3 text-left text-[12px] tracking-[0.04em] transition-colors duration-150 outline-none focus-visible:bg-gold/10 sm:text-[13px] ${
+                    selected
+                      ? "bg-gold/10 text-gold"
+                      : "text-zinc-800 hover:bg-zinc-50 hover:text-zinc-950"
+                  }`}
+                >
+                  {option}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      ) : null}
     </div>
   );
 }

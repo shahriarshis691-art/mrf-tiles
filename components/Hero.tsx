@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { contactHref } from "@/lib/contact";
 
 const SLIDES = [
   {
@@ -37,7 +38,7 @@ const FEATURE_CARDS = [
     title: "Galaxy Showroom",
     description:
       "Visit our luxury tiles display centre and experience the full Galaxy collection.",
-    href: "/#contact",
+    href: contactHref("Galaxy Showroom"),
     icon: ShowroomIcon,
   },
   {
@@ -166,11 +167,12 @@ export default function Hero() {
           <Image
             key={slide.src}
             src={slide.src}
-            alt={slide.alt}
+            alt={i === index ? slide.alt : ""}
             fill
             priority={i === 0}
-            quality={100}
+            quality={i === 0 ? 90 : 75}
             sizes="100vw"
+            aria-hidden={i !== index}
             className={`object-cover transition-opacity duration-700 ${slide.objectPosition} ${
               i === index ? "opacity-100" : "opacity-0"
             }`}
@@ -188,33 +190,27 @@ export default function Hero() {
       />
 
       <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-[1440px] flex-1 flex-col">
-        <div className="flex flex-1 items-center justify-between gap-6 px-6 pt-24 sm:px-10 lg:px-14">
+        <div className="relative flex flex-1 items-center px-6 pt-24 sm:px-10 lg:px-14">
           <div className="max-w-[46rem]">
             <h1 className="font-sans text-[clamp(2.4rem,7vw,6.1rem)] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white">
-              VISIT
+              GALAXY
               <br />
-              GALAXY TILES
+              TILES
             </h1>
 
             <Link
               href="/#contact"
               className="mt-8 inline-flex items-center justify-center border border-gold px-7 py-3.5 text-[11px] font-semibold tracking-[0.22em] text-white transition-colors duration-300 hover:bg-gold hover:text-zinc-950 sm:mt-9 sm:px-9 sm:py-4 sm:text-[12px]"
             >
-              [ VISIT GALAXY TILES ]
+              VISIT SHOWROOM
             </Link>
           </div>
-
-          <SlideIndicators
-            index={index}
-            onSelect={setIndex}
-            className="hidden flex-col gap-3 sm:flex"
-          />
         </div>
 
         <SlideIndicators
           index={index}
           onSelect={setIndex}
-          className="flex gap-5 px-6 pb-2 sm:hidden"
+          className="flex gap-5 px-6 pb-2 sm:absolute sm:right-10 sm:top-[42%] sm:-translate-y-1/2 sm:flex-col sm:gap-3 sm:px-0 sm:pb-0 lg:right-14"
         />
 
         <div className="grid shrink-0 grid-cols-1 gap-3 px-6 pb-6 sm:px-10 md:grid-cols-3 md:gap-4 lg:px-14 lg:pb-8">
@@ -238,7 +234,7 @@ export default function Hero() {
                   href={card.href}
                   className="mt-4 inline-flex text-[11px] font-semibold tracking-[0.18em] text-gold transition-colors hover:text-white"
                 >
-                  LEARN MORE →
+                  Learn more about {card.title}
                 </Link>
               </article>
             );

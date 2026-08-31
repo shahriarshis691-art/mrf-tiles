@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SanitaryCard from "./sanitary/SanitaryCard";
 import { SANITARY_CATEGORIES } from "./sanitary/sanitary-data";
+import { contactHref } from "@/lib/contact";
 
 export default function SanitarySection() {
   return (
@@ -40,7 +41,7 @@ export default function SanitarySection() {
 
         <div className="mt-14 text-center sm:mt-16">
           <Link
-            href="/#contact"
+            href={contactHref("Sanitary consultation")}
             className="inline-flex h-14 items-center justify-center border border-gold bg-transparent px-10 text-[12px] font-medium uppercase tracking-[0.08em] text-zinc-900 transition-colors duration-300 hover:border-zinc-900 hover:bg-zinc-900 hover:text-white"
           >
             Request Sanitary Consultation

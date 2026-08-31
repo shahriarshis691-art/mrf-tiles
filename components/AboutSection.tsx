@@ -17,7 +17,7 @@ export default function AboutSection() {
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
         <div className="relative aspect-[4/5] overflow-hidden border border-zinc-200 bg-white sm:aspect-[5/6] lg:aspect-auto lg:min-h-[36rem]">
           <Image
-            src="/images/projects/mrf-experience-showroom.jpg"
+            src="/images/hero-display-centre.jpg"
             alt="MRF Galaxy experience showroom with premium tile displays"
             fill
             quality={90}

@@ -199,7 +199,7 @@ export const CATALOG_PRODUCTS: CatalogProduct[] = [
   },
   {
     id: "antislip-outdoor",
-    label: "ANTSLIP OUTDOOR",
+    label: "ANTISLIP OUTDOOR",
     description: "Durable antislip porcelain for terraces and high-traffic zones.",
     longDescription:
       "Antislip Outdoor is designed for exterior and wet-area applications where safety and durability are paramount. Textured surface grip and frost-resistant composition make it ideal for terraces, pool surrounds, and entryways.",
@@ -310,9 +310,9 @@ export const EDITORIAL_COLLECTIONS: EditorialCollection[] = [
     eyebrow: "THE ART OF FLOORING",
     title: "LUXURY LIVING",
     description:
-      "Premium Khadim Ceramic floor tiles designed to bring elegance, durability and timeless character into modern living spaces.",
+      "Premium Galaxy porcelain floor tiles designed to bring elegance, durability and timeless character into modern living spaces.",
     image: "/images/projects/architectural-tile-experience.jpg",
-    alt: "Luxury interior with prominent Khadim Ceramic floor tiles",
+    alt: "Luxury interior with prominent Galaxy porcelain floor tiles",
     href: "/collection",
     imagePosition: "object-[center_65%]",
   },
@@ -332,20 +332,20 @@ export const EDITORIAL_COLLECTIONS: EditorialCollection[] = [
     eyebrow: "SURFACES WITH CHARACTER",
     title: "MODERN KITCHEN",
     description:
-      "Elegant Khadim Ceramic wall tiles designed to elevate everyday kitchen spaces with refined texture and lasting beauty.",
+      "Elegant Galaxy porcelain wall tiles designed to elevate everyday kitchen spaces with refined texture and lasting beauty.",
     image: "/images/collection/modern-dark.jpg",
-    alt: "Luxury kitchen with Khadim Ceramic wall tile surfaces",
+    alt: "Luxury kitchen with Galaxy porcelain wall tile surfaces",
     href: "/collection?look=Contemporary",
     imagePosition: "object-[center_35%]",
   },
   {
     id: "marcopolo-luxury-room",
     eyebrow: "TIMELESS SURFACES",
-    title: "MARCOPOLO TILES",
+    title: "MARBLE CLASSIC",
     description:
-      "Distinctive surfaces created for interiors where architecture, material and luxury come together.",
+      "Distinctive Galaxy marble-look porcelain created for interiors where architecture, material and luxury come together.",
     image: "/images/projects/minimalist-living-space.jpg",
-    alt: "Premium luxury interior with Marcopolo tile surfaces",
+    alt: "Premium luxury interior with Galaxy marble-look porcelain surfaces",
     href: "/collection?look=Marble",
     imagePosition: "object-center",
   },

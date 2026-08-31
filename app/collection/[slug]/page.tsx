@@ -5,6 +5,7 @@ import {
   getProductBySlug,
   getRelatedProducts,
 } from "@/components/collection/collection-data";
+import { contactHref } from "@/lib/contact";
 import { OUTLETS } from "@/components/outlet-data";
 import ImageWash, { imageLiftClass } from "@/components/ImageWash";
 import type { Metadata } from "next";
@@ -30,11 +31,11 @@ export async function generateMetadata({
   const product = getProductBySlug(slug);
 
   if (!product) {
-    return { title: "Collection Not Found | MRF Galaxy" };
+    return { title: "Collection Not Found" };
   }
 
   return {
-    title: `${product.label} | MRF Galaxy Collection`,
+    title: product.label,
     description: product.description,
   };
 }
@@ -63,7 +64,7 @@ export default async function CollectionDetailPage({
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <article className="px-6 pb-20 pt-28 sm:px-10 sm:pb-24 sm:pt-32 lg:px-14">
+      <main id="main" className="px-6 pb-20 pt-28 sm:px-10 sm:pb-24 sm:pt-32 lg:px-14">
         <div className="mx-auto max-w-[1440px]">
           <Link
             href="/collection"
@@ -168,7 +169,7 @@ export default async function CollectionDetailPage({
               guidance from our team for your upcoming project.
             </p>
             <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:gap-5">
-              <Link href="/#contact" className={actionButtonClass}>
+              <Link href={contactHref(product.label)} className={actionButtonClass}>
                 Request Sample
               </Link>
               <a
@@ -184,7 +185,7 @@ export default async function CollectionDetailPage({
 
           <RelatedCollections products={relatedProducts} />
         </div>
-      </article>
+      </main>
     </div>
   );
 }

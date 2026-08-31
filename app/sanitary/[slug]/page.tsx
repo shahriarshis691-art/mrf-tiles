@@ -5,6 +5,7 @@ import {
   getSanitaryListingsByCategory,
   SANITARY_CATEGORIES,
 } from "@/components/sanitary/sanitary-data";
+import { contactHref } from "@/lib/contact";
 import ImageWash, { imageLiftClass } from "@/components/ImageWash";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -26,11 +27,11 @@ export async function generateMetadata({
   const category = getSanitaryCategoryBySlug(slug);
 
   if (!category) {
-    return { title: "Sanitary Category Not Found | MRF Galaxy" };
+    return { title: "Sanitary Category Not Found" };
   }
 
   return {
-    title: `${category.label} | MRF Galaxy Sanitary`,
+    title: category.label,
     description: category.description,
   };
 }
@@ -51,10 +52,10 @@ export default async function SanitaryListingPage({
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <section className="px-6 pb-20 pt-28 sm:px-10 sm:pb-24 sm:pt-32 lg:px-14">
+      <main id="main" className="px-6 pb-20 pt-28 sm:px-10 sm:pb-24 sm:pt-32 lg:px-14">
         <div className="mx-auto max-w-[1440px]">
           <Link
-            href="/#sanitary"
+            href="/sanitary"
             className="inline-flex items-center gap-2 text-[10px] font-medium tracking-[0.24em] text-zinc-800 transition-colors hover:text-gold sm:text-[11px]"
           >
             <span aria-hidden="true">←</span>
@@ -116,14 +117,14 @@ export default async function SanitaryListingPage({
               person or speak with our team about specifications and installation.
             </p>
             <Link
-              href="/#contact"
+              href={contactHref(category.label)}
               className="mt-8 inline-flex h-14 items-center justify-center border border-gold bg-transparent px-10 text-[12px] font-medium uppercase tracking-[0.08em] text-zinc-900 transition-colors duration-300 hover:border-zinc-900 hover:bg-zinc-900 hover:text-white"
             >
               Request Consultation
             </Link>
           </div>
         </div>
-      </section>
+      </main>
     </div>
   );
 }

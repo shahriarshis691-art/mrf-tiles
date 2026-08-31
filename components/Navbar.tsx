@@ -9,6 +9,7 @@ const LINKS = [
   { href: "/", label: "HOME" },
   { href: "/#about", label: "ABOUT" },
   { href: "/#collection", label: "COLLECTION" },
+  { href: "/sanitary", label: "SANITARY" },
   { href: "/projects", label: "PROJECTS" },
   { href: "/#contact", label: "CONTACT" },
 ];
@@ -16,6 +17,9 @@ const LINKS = [
 function isActive(pathname: string, href: string) {
   if (href === "/projects") {
     return pathname.startsWith("/projects");
+  }
+  if (href === "/sanitary") {
+    return pathname.startsWith("/sanitary");
   }
   if (href === "/#collection") {
     return pathname.startsWith("/collection");
@@ -49,6 +53,15 @@ export default function Navbar({ overHero = false }: NavbarProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [onHome]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
@@ -58,10 +71,10 @@ export default function Navbar({ overHero = false }: NavbarProps) {
       }`}
     >
       <div className="relative mx-auto flex h-[4.85rem] max-w-[1440px] items-center justify-between px-6 pr-16 sm:h-[5.25rem] sm:px-10 md:pr-10 lg:px-14">
-        <Logo light={heroNav} />
+        <Logo priority />
 
         <nav
-          className="hidden items-center md:flex md:gap-9 lg:gap-12 xl:gap-[3.4rem]"
+          className="hidden items-center md:flex md:gap-6 lg:gap-10 xl:gap-12"
           aria-label="Primary"
         >
           {LINKS.map((link) => {
@@ -96,9 +109,9 @@ export default function Navbar({ overHero = false }: NavbarProps) {
           }`}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="sr-only">Menu</span>
           {open ? (
             <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true">
               <rect x="1" y="8" width="16" height="2" transform="rotate(45 9 9)" />
@@ -116,6 +129,7 @@ export default function Navbar({ overHero = false }: NavbarProps) {
 
       {open ? (
         <nav
+          id="mobile-menu"
           className={`absolute inset-x-0 top-full border-b px-6 py-5 md:hidden ${
             heroNav
               ? "border-white/10 bg-zinc-950/95 backdrop-blur-md"

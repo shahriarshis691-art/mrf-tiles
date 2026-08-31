@@ -4,20 +4,24 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import SanitarySection from "@/components/SanitarySection";
 import CollectionSection from "@/components/collection/CollectionSection";
-import FeaturedProjects from "@/components/FeaturedProjects";
+import OutletsSection from "@/components/OutletsSection";
+import OurStorySection from "@/components/OurStorySection";
 
 export default function Home() {
   return (
     <>
-      <div className="relative bg-zinc-950">
-        <Hero />
-        <Navbar overHero />
-      </div>
-      <AboutSection />
-      <CollectionSection />
-      <SanitarySection />
-      <FeaturedProjects />
-      <ContactSection />
+      <Navbar overHero />
+      <main id="main">
+        <div className="relative bg-zinc-950">
+          <Hero />
+        </div>
+        <OurStorySection />
+        <AboutSection />
+        <CollectionSection />
+        <SanitarySection />
+        <OutletsSection />
+        <ContactSection />
+      </main>
     </>
   );
 }

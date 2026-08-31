@@ -5,6 +5,7 @@ import {
   getRelatedProjects,
   PROJECTS,
 } from "@/components/projects/projects-data";
+import { contactHref } from "@/lib/contact";
 import ImageWash, { imageLiftClass } from "@/components/ImageWash";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -26,11 +27,11 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
 
   if (!project) {
-    return { title: "Project Not Found | MRF Galaxy" };
+    return { title: "Project Not Found" };
   }
 
   return {
-    title: `${project.title} | MRF Galaxy`,
+    title: project.title,
     description: project.description,
   };
 }
@@ -57,7 +58,7 @@ export default async function ProjectDetailPage({
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <article className="px-6 pb-20 pt-28 sm:px-10 sm:pb-24 sm:pt-32 lg:px-14">
+      <main id="main" className="px-6 pb-20 pt-28 sm:px-10 sm:pb-24 sm:pt-32 lg:px-14">
         <div className="mx-auto max-w-[1440px]">
           <Link
             href="/projects"
@@ -167,7 +168,7 @@ export default async function ProjectDetailPage({
             </p>
             <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:gap-5">
               <Link
-                href="/#contact"
+                href={contactHref(project.title)}
                 className="inline-flex h-14 w-full items-center justify-center border border-gold bg-transparent px-8 text-[12px] font-medium uppercase tracking-[0.08em] text-zinc-900 transition-colors duration-300 hover:border-zinc-900 hover:bg-zinc-900 hover:text-white sm:w-auto"
               >
                 Get In Touch
@@ -183,7 +184,7 @@ export default async function ProjectDetailPage({
 
           <RelatedProjects projects={relatedProjects} />
         </div>
-      </article>
+      </main>
     </div>
   );
 }

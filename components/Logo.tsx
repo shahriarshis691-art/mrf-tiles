@@ -1,48 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type LogoProps = {
-  light?: boolean;
+  priority?: boolean;
 };
 
-export default function Logo({ light = false }: LogoProps) {
-  const primary = light ? "text-white" : "text-zinc-950";
-  const secondary = light ? "text-white/85" : "text-zinc-800";
-
+export default function Logo({ priority = false }: LogoProps) {
   return (
-    <Link href="/" className="group flex min-w-0 items-center gap-3">
-      <span className="relative grid h-[3.35rem] w-[3.35rem] shrink-0 place-items-center sm:h-[3.85rem] sm:w-[3.85rem]">
-        <svg
-          viewBox="0 0 80 80"
-          className="absolute inset-0 h-full w-full"
-          fill="none"
-          aria-hidden="true"
-        >
-          <circle
-            cx="40"
-            cy="40"
-            r="31"
-            stroke="#C4A56A"
-            strokeWidth="1.7"
-          />
-        </svg>
-        <span
-          className={`relative text-[1.15rem] font-semibold leading-none tracking-[0.06em] sm:text-[1.28rem] ${primary}`}
-        >
-          MRF
-        </span>
-      </span>
-      <span className="flex flex-col justify-center">
-        <span
-          className={`text-[1.28rem] font-semibold leading-none tracking-[0.18em] sm:text-[1.42rem] ${primary}`}
-        >
-          GALAXY
-        </span>
-        <span
-          className={`mt-[0.38rem] whitespace-nowrap text-[0.52rem] font-medium tracking-[0.28em] sm:text-[0.58rem] sm:tracking-[0.32em] ${secondary}`}
-        >
-          TILES &amp; SANITARY
-        </span>
-      </span>
+    <Link href="/" className="inline-flex shrink-0 items-center">
+      <Image
+        src="/images/logo.png"
+        alt="MRF Galaxy Tiles & Sanitary"
+        width={1122}
+        height={1402}
+        priority={priority}
+        sizes="80px"
+        className="h-12 w-auto max-h-12 object-contain sm:h-[3.35rem] sm:max-h-[3.35rem]"
+      />
     </Link>
   );
 }

@@ -18,7 +18,7 @@ export default function CollectionCard({
       className="group flex aspect-[1/1.7] w-full flex-col overflow-hidden border border-zinc-200 bg-white transition-colors duration-500 hover:border-gold/60"
     >
       <div className="flex flex-[0.38] flex-col justify-center px-5 py-6 sm:px-6 sm:py-7">
-        <p className="text-[8px] font-medium uppercase tracking-[0.32em] text-[#B89A62] sm:text-[9px]">
+        <p className="text-[8px] font-medium uppercase tracking-[0.32em] text-gold sm:text-[9px]">
           {collection.eyebrow}
         </p>
         <h3 className="mt-3 text-[13px] font-semibold uppercase tracking-[0.18em] text-zinc-950 sm:text-[14px]">

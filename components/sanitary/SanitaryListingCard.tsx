@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ImageWash, { imageLiftClass } from "../ImageWash";
+import { contactHref } from "@/lib/contact";
 import { formatPriceBdt, type SanitaryListingItem } from "./sanitary-data";
 
 type SanitaryListingCardProps = {
@@ -74,10 +75,10 @@ export default function SanitaryListingCard({
         </dl>
 
         <Link
-          href="/#contact"
+          href={contactHref(item.label)}
           className="mt-5 inline-flex text-[9px] font-semibold tracking-[0.22em] text-zinc-800 transition-colors hover:text-gold"
         >
-          ENQUIRE NOW →
+          Enquire about {item.label}
         </Link>
       </div>
     </article>

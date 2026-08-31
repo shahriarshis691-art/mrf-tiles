@@ -6,14 +6,12 @@ const FOOTER_LINKS = [
   { href: "/#about", label: "ABOUT" },
   { href: "/#collection", label: "COLLECTION" },
   { href: "/collection", label: "CATALOG" },
-  { href: "/#sanitary", label: "SANITARY" },
+  { href: "/sanitary", label: "SANITARY" },
   { href: "/projects", label: "PROJECTS" },
   { href: "/#contact", label: "CONTACT" },
 ];
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="border-t border-zinc-200 bg-white">
       <div className="mx-auto max-w-[1440px] px-6 py-14 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
@@ -70,6 +68,14 @@ export default function Footer() {
                   >
                     {outlet.phoneDisplay}
                   </a>
+                  <a
+                    href={`https://wa.me/${outlet.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-3 text-[12px] text-zinc-800 transition-colors hover:text-gold"
+                  >
+                    WhatsApp
+                  </a>
                 </div>
               ))}
             </div>
@@ -78,7 +84,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-zinc-200 pt-8 sm:flex-row sm:items-center">
           <p className="text-[11px] tracking-wide text-zinc-800">
-            &copy; {year} MRF Galaxy Tiles &amp; Sanitary. All rights reserved.
+            &copy; 2026 MRF Galaxy Tiles &amp; Sanitary. All rights reserved.
           </p>
           <p className="text-[10px] font-medium tracking-[0.16em] text-zinc-800">
             ELEGANCE IN EVERY DETAIL

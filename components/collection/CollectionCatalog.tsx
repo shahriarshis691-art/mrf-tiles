@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import CollectionFilter, {
   type SelectedValues,
 } from "./CollectionFilter";
@@ -37,7 +37,17 @@ function matchesFilters(
   return true;
 }
 
+function toQuery(values: SelectedValues) {
+  const params = new URLSearchParams();
+  if (values.look) params.set("look", values.look);
+  if (values.formats) params.set("formats", values.formats);
+  if (values.material) params.set("material", values.material);
+  return params.toString();
+}
+
 export default function CollectionCatalog() {
+  const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const initialValues = useMemo(
     () => getInitialValues(searchParams),
@@ -50,9 +60,15 @@ export default function CollectionCatalog() {
     material: initialValues.material ?? null,
   });
 
-  const handleFilterChange = useCallback((values: SelectedValues) => {
-    setActiveFilters(values);
-  }, []);
+  const handleFilterChange = useCallback(
+    (values: SelectedValues) => {
+      setActiveFilters(values);
+      const qs = toQuery(values);
+      if (qs === searchParams.toString()) return;
+      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+    },
+    [pathname, router, searchParams],
+  );
 
   const filteredProducts = useMemo(
     () => CATALOG_PRODUCTS.filter((product) => matchesFilters(product, activeFilters)),

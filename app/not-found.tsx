@@ -1,12 +1,20 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Page Not Found",
+};
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="flex min-h-[calc(100dvh-5rem)] flex-col items-center justify-center px-6 pb-20 pt-28 text-center sm:px-10 sm:pt-32 lg:px-14">
+      <main
+        id="main"
+        className="flex min-h-[calc(100dvh-5rem)] flex-col items-center justify-center px-6 pb-20 pt-28 text-center sm:px-10 sm:pt-32 lg:px-14"
+      >
         <p className="text-[11px] font-medium tracking-[0.28em] text-gold">
           404
         </p>

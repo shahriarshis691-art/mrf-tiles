@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: "Collection Catalog | MRF Galaxy Tiles & Sanitary",
+  title: "Collection Catalog",
   description:
     "Browse premium porcelain collections by look, format, and material. Find the perfect surfaces for your project.",
 };
@@ -20,7 +20,10 @@ export default function CollectionPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <section className="px-6 pb-20 pt-28 sm:px-10 sm:pb-24 sm:pt-32 lg:px-14 lg:pb-28">
+      <main
+        id="main"
+        className="px-6 pb-20 pt-28 sm:px-10 sm:pb-24 sm:pt-32 lg:px-14 lg:pb-28"
+      >
         <div className="mx-auto max-w-[1440px]">
           <header className="mx-auto max-w-3xl text-center">
             <h1 className="text-[2rem] font-semibold uppercase tracking-[0.34em] text-zinc-950 sm:text-[2.35rem] lg:text-[2.6rem]">
@@ -40,7 +43,7 @@ export default function CollectionPage() {
             </Suspense>
           </div>
         </div>
-      </section>
+      </main>
     </div>
   );
 }
