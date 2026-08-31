@@ -51,32 +51,32 @@ export default function SanitaryPage() {
             </div>
           </header>
 
-          {/* Dark bottom frame with 3-image showcase grid */}
-          <section className="bg-[#0F0F0F] py-16 sm:py-20 lg:py-24">
+          {/* Sanitary Categories Showcase */}
+          <section className="bg-white py-16 sm:py-20 lg:py-24">
             <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
-                {SANITARY_CATEGORIES.map((category, index) => (
-                  <div key={category.id} className="group relative overflow-hidden">
+                {SANITARY_CATEGORIES.map((category) => (
+                  <div key={category.id} className="group bg-white border border-neutral-200/60">
                     <div className="aspect-[4/5] bg-neutral-100 relative overflow-hidden w-full h-full">
                       <Image
                         src={category.image}
                         alt={category.alt}
                         fill
-                        quality={95}
+                        quality={100}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                        className={`object-cover object-center transition-transform duration-700 group-hover:scale-105 ${category.imagePosition ?? ""}`}
                       />
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-[14px] font-semibold tracking-[0.22em] text-white uppercase mb-2">
+                    <div className="p-5 sm:p-6">
+                      <h3 className="text-[14px] font-semibold tracking-[0.22em] text-neutral-900 uppercase mb-2">
                         {category.label}
                       </h3>
-                      <p className="text-[11px] leading-relaxed text-neutral-300">
+                      <p className="text-[11px] leading-relaxed text-neutral-600">
                         {category.description}
                       </p>
                       <Link 
                         href={`/sanitary/${category.id}`}
-                        className="mt-4 inline-block min-h-[44px] inline-flex items-center text-[11px] font-medium tracking-[0.18em] text-white underline underline-offset-4 hover:underline-offset-8 transition-all focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1"
+                        className="mt-4 inline-block min-h-[44px] inline-flex items-center text-[11px] font-medium tracking-[0.18em] text-neutral-900 underline underline-offset-4 hover:underline-offset-8 transition-all focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1"
                       >
                         Explore Collection
                       </Link>
