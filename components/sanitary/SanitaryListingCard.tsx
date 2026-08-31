@@ -13,8 +13,8 @@ export default function SanitaryListingCard({
   priority = false,
 }: SanitaryListingCardProps) {
   return (
-    <article className="group overflow-hidden rounded-2xl border border-neutral-200/60 bg-white transition-all duration-500 ease-out hover:border-neutral-900 hover:shadow-lg hover:shadow-neutral-900/[0.06]">
-      <div className="relative aspect-square overflow-hidden bg-white">
+    <article className="group overflow-hidden border border-neutral-200/60 bg-white transition-all duration-500 ease-out hover:border-neutral-900">
+      <div className="relative aspect-[4/5] overflow-hidden w-full h-full bg-neutral-100">
         <Image
           src={item.image}
           alt={item.alt}
@@ -22,7 +22,7 @@ export default function SanitaryListingCard({
           priority={priority}
           quality={95}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
         />
       </div>
 

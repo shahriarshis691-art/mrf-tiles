@@ -81,17 +81,17 @@ export default async function ProjectDetailPage({
              </p>
            </header>
 
-           <div className="relative mt-12 aspect-[16/10] overflow-hidden border border-neutral-200/60 bg-white sm:mt-14">
-             <Image
-               src={project.image}
-               alt={project.title}
-               fill
-               priority
-               quality={95}
-               sizes="(max-width: 1440px) 100vw, 1440px"
-               className={`object-cover ${imageLiftClass}`}
-             />
-           </div>
+            <div className="relative mt-12 aspect-[4/5] overflow-hidden w-full h-full bg-neutral-100 border border-neutral-200/60 sm:mt-14">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                priority
+                quality={95}
+                sizes="(max-width: 1440px) 100vw, 1440px"
+                className="object-cover object-center"
+              />
+            </div>
 
            <div className="mt-12 grid grid-cols-1 gap-10 border-y border-neutral-200 py-12 sm:mt-14 lg:grid-cols-[1fr_20rem] lg:gap-16">
              <div>
@@ -133,64 +133,64 @@ export default async function ProjectDetailPage({
              </div>
            </div>
 
-            {project.gallery.length > 0 ? (
-              <div className="mt-12 sm:mt-14">
-                <p className="text-[11px] font-medium tracking-[0.22em] text-neutral-500 uppercase">
-                  Project Gallery
-                </p>
-                <div className="mt-8 grid grid-cols-2 gap-0">
-                  {project.gallery.map((image, index) => (
-                    <figure
-                      key={image.src}
-                      className={`relative aspect-[9/16] overflow-hidden bg-neutral-900 ${index === 0 ? "ring-2 ring-white ring-inset" : ""}`}
-                    >
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        fill
-                        quality={95}
-                        sizes="(max-width: 768px) 50vw, 50vw"
-                        className="h-full w-full object-cover"
-                      />
+             {project.gallery.length > 0 ? (
+               <div className="mt-12 sm:mt-14">
+                 <p className="text-[11px] font-medium tracking-[0.22em] text-neutral-500 uppercase">
+                   Project Gallery
+                 </p>
+                 <div className="mt-8 grid grid-cols-2 gap-4 md:gap-6">
+                   {project.gallery.map((image, index) => (
+                     <figure
+                       key={image.src}
+                       className={`relative aspect-[4/5] overflow-hidden w-full h-full bg-neutral-100 ${index === 0 ? "ring-2 ring-white ring-inset" : ""}`}
+                     >
+                       <Image
+                         src={image.src}
+                         alt={image.alt}
+                         fill
+                         quality={95}
+                         sizes="(max-width: 768px) 50vw, 50vw"
+                         className="h-full w-full object-cover object-center"
+                       />
 
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-black/0 to-black/60" />
+                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-black/0 to-black/60" />
 
-                      <div className="absolute left-3 top-3 sm:left-4 sm:top-4">
-                        <h3 className="text-[10px] font-medium tracking-[0.2em] text-white uppercase sm:text-[11px]">
-                          {project.title}
-                        </h3>
-                        <p className="mt-1 text-[9px] font-medium tracking-[0.18em] text-white/80 uppercase sm:text-[10px]">
-                          IN {project.location.split(",")[0].toUpperCase()}
-                        </p>
-                      </div>
+                       <div className="absolute left-3 top-3 sm:left-4 sm:top-4">
+                         <h3 className="text-[10px] font-medium tracking-[0.2em] text-white uppercase sm:text-[11px]">
+                           {project.title}
+                         </h3>
+                         <p className="mt-1 text-[9px] font-medium tracking-[0.18em] text-white/80 uppercase sm:text-[10px]">
+                           IN {project.location.split(",")[0].toUpperCase()}
+                         </p>
+                       </div>
 
-                      <div className="absolute bottom-3 right-3 origin-bottom-right -rotate-90 sm:bottom-4 sm:right-4">
-                        <span className="text-[9px] font-medium tracking-[0.2em] text-white/70 uppercase sm:text-[10px]">
-                          {project.categoryLabel}
-                        </span>
-                      </div>
+                       <div className="absolute bottom-3 right-3 origin-bottom-right -rotate-90 sm:bottom-4 sm:right-4">
+                         <span className="text-[9px] font-medium tracking-[0.2em] text-white/70 uppercase sm:text-[10px]">
+                           {project.categoryLabel}
+                         </span>
+                       </div>
 
-                      {index === 0 ? (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <svg
-                            width="32"
-                            height="32"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            className="text-white/90 sm:w-10 sm:h-10"
-                          >
-                            <circle cx="11" cy="11" r="7" />
-                            <line x1="16.5" y1="16.5" x2="21" y2="21" />
-                          </svg>
-                        </div>
-                      ) : null}
-                    </figure>
-                  ))}
-                </div>
-              </div>
-            ) : null}
+                       {index === 0 ? (
+                         <div className="absolute inset-0 flex items-center justify-center">
+                           <svg
+                             width="32"
+                             height="32"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             strokeWidth="1.5"
+                             className="text-white/90 sm:w-10 sm:h-10"
+                           >
+                             <circle cx="11" cy="11" r="7" />
+                             <line x1="16.5" y1="16.5" x2="21" y2="21" />
+                           </svg>
+                         </div>
+                       ) : null}
+                     </figure>
+                   ))}
+                 </div>
+               </div>
+             ) : null}
 
            <div className="mt-16 border border-neutral-200 bg-white px-8 py-12 sm:px-12 sm:py-14">
              <p className="text-[11px] font-medium tracking-[0.22em] text-neutral-500 uppercase">

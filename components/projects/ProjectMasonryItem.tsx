@@ -10,7 +10,7 @@ export default function ProjectMasonryItem({ project }: ProjectMasonryItemProps)
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group relative block aspect-[4/5] overflow-hidden rounded-2xl border border-neutral-200/60 bg-white"
+      className="group relative block aspect-[4/5] overflow-hidden w-full h-full bg-neutral-100 border border-neutral-200/60"
     >
       <Image
         src={project.image}
@@ -18,7 +18,7 @@ export default function ProjectMasonryItem({ project }: ProjectMasonryItemProps)
         fill
         quality={95}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${project.imagePosition ?? "object-center"}`}
+        className={`h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 ${project.imagePosition ?? ""}`}
       />
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-white via-white/90 to-transparent" />

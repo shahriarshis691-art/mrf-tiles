@@ -54,33 +54,32 @@ export default function SanitaryPage() {
           {/* Dark bottom frame with 3-image showcase grid */}
           <section className="bg-[#0F0F0F] py-16 sm:py-20 lg:py-24">
             <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
                 {SANITARY_CATEGORIES.map((category, index) => (
                   <div key={category.id} className="group relative overflow-hidden">
-                    <div className="aspect-square bg-neutral-900 relative">
+                    <div className="aspect-[4/5] bg-neutral-100 relative overflow-hidden w-full h-full">
                       <Image
                         src={category.image}
                         alt={category.alt}
                         fill
                         quality={95}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F0F] via-[#0F0F0F]/60 to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <h3 className="text-[14px] font-semibold tracking-[0.22em] text-white uppercase mb-2">
-                          {category.label}
-                        </h3>
-                        <p className="text-[11px] leading-relaxed text-neutral-300">
-                          {category.description}
-                        </p>
-                        <Link 
-                          href={`/sanitary/${category.id}`}
-                          className="mt-4 inline-block min-h-[44px] inline-flex items-center text-[11px] font-medium tracking-[0.18em] text-white underline underline-offset-4 hover:underline-offset-8 transition-all focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1"
-                        >
-                          Explore Collection
-                        </Link>
-                      </div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-[14px] font-semibold tracking-[0.22em] text-white uppercase mb-2">
+                        {category.label}
+                      </h3>
+                      <p className="text-[11px] leading-relaxed text-neutral-300">
+                        {category.description}
+                      </p>
+                      <Link 
+                        href={`/sanitary/${category.id}`}
+                        className="mt-4 inline-block min-h-[44px] inline-flex items-center text-[11px] font-medium tracking-[0.18em] text-white underline underline-offset-4 hover:underline-offset-8 transition-all focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1"
+                      >
+                        Explore Collection
+                      </Link>
                     </div>
                   </div>
                 ))}

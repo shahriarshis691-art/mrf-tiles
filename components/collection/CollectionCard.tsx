@@ -14,7 +14,7 @@ export default function CollectionCard({
   return (
     <Link
       href={collection.href}
-      className="group flex aspect-[1/1.7] w-full flex-col overflow-hidden rounded-2xl border border-neutral-200/60 bg-white transition-all duration-500 ease-out hover:border-neutral-900 hover:shadow-lg hover:shadow-neutral-900/[0.06]"
+      className="group flex aspect-[1/1.7] w-full flex-col overflow-hidden border border-neutral-200/60 bg-white transition-all duration-500 ease-out hover:border-neutral-900"
     >
       <div className="flex flex-[0.38] flex-col justify-center px-5 py-6 sm:px-6 sm:py-7">
         <p className="text-[8px] font-medium uppercase tracking-[0.2em] text-neutral-500 sm:text-[9px]">
@@ -28,7 +28,7 @@ export default function CollectionCard({
         </p>
       </div>
 
-      <div className="relative min-h-0 flex-[0.52] overflow-hidden">
+      <div className="relative min-h-0 flex-[0.52] overflow-hidden w-full h-full bg-neutral-100">
         <Image
           src={collection.image}
           alt={collection.alt}
@@ -36,7 +36,7 @@ export default function CollectionCard({
           priority={priority}
           quality={95}
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${collection.imagePosition ?? "object-center"}`}
+          className={`h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 ${collection.imagePosition ?? ""}`}
         />
       </div>
 

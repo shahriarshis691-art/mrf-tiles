@@ -39,15 +39,15 @@ export default function FounderSection() {
 
           {/* Right: Image Card */}
           <ScrollReveal variant="slideInRight" delay={0.15}>
-            <div className="relative overflow-hidden rounded-2xl border border-neutral-200/60 bg-white shadow-sm shadow-neutral-900/[0.04] transition-transform duration-500 ease-out hover:scale-[1.02]">
-              <div className="relative aspect-[3/4] sm:aspect-auto sm:h-[36rem]">
+            <div className="relative overflow-hidden bg-neutral-100 border border-neutral-200/60 transition-transform duration-500 ease-out hover:scale-[1.02]">
+              <div className="relative aspect-[3/4] w-full h-full bg-neutral-100 sm:aspect-auto sm:h-[36rem]">
                 <Image
                   src="/founder-image/founder.png"
                   alt="Founder and Managing Director of MRF Galaxy Tiles & Sanitary"
                   fill
                   quality={95}
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover object-center"
                   priority
                 />
               </div>

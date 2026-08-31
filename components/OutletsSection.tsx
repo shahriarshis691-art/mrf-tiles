@@ -122,23 +122,23 @@ export default function OutletsSection() {
               ))}
             </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4">
-              {currentPair.map((image) => (
-                <figure
-                  key={image.src}
-                  className="relative aspect-[4/5] overflow-hidden border border-neutral-200/60 bg-neutral-100 sm:aspect-[5/6]"
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    quality={95}
-                    sizes="(max-width: 768px) 45vw, 28vw"
-                    className="object-cover"
-                  />
-                </figure>
-              ))}
-            </div>
+             <div className="mt-10 grid grid-cols-2 gap-4 md:gap-6 sm:mt-12">
+               {currentPair.map((image) => (
+                 <figure
+                   key={image.src}
+                   className="relative aspect-[4/5] overflow-hidden w-full h-full bg-neutral-100 border border-neutral-200/60"
+                 >
+                   <Image
+                     src={image.src}
+                     alt={image.alt}
+                     fill
+                     quality={95}
+                     sizes="(max-width: 768px) 45vw, 28vw"
+                     className="object-cover object-center"
+                   />
+                 </figure>
+               ))}
+             </div>
           </ScrollReveal>
         </div>
       </div>

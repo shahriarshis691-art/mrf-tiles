@@ -43,6 +43,7 @@ export type CatalogProduct = {
   description: string;
   longDescription: string;
   image: string;
+  imagePosition?: string;
   alt: string;
   gallery: { src: string; alt: string }[];
   look: string;

@@ -75,7 +75,7 @@ export default async function SanitaryListingPage({
             </p>
           </header>
 
-          <div className="relative mt-12 aspect-[16/10] overflow-hidden border border-neutral-200/60 bg-white sm:mt-14">
+          <div className="relative mt-12 aspect-[4/5] overflow-hidden w-full h-full bg-neutral-100 border border-neutral-200/60 sm:mt-14">
             <Image
               src={category.image}
               alt={category.alt}
@@ -83,7 +83,7 @@ export default async function SanitaryListingPage({
               priority
               quality={95}
               sizes="(max-width: 1440px) 100vw, 1440px"
-              className={`object-cover ${imageLiftClass} ${category.imagePosition ?? "object-center"}`}
+              className="object-cover object-center"
             />
           </div>
 

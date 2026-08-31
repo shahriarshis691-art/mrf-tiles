@@ -24,12 +24,12 @@ export default function RelatedProjects({ projects }: RelatedProjectsProps) {
         <span className="mx-auto mt-5 block h-px w-12 bg-neutral-300" />
       </header>
 
-      <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
         {projects.map((project) => (
           <Link
             key={project.slug}
             href={`/projects/${project.slug}`}
-            className="group relative block aspect-[4/5] overflow-hidden rounded-2xl border border-neutral-200/60 bg-white"
+            className="group relative block aspect-[4/5] overflow-hidden w-full h-full bg-neutral-100 border border-neutral-200/60"
           >
             <Image
               src={project.image}
@@ -37,7 +37,7 @@ export default function RelatedProjects({ projects }: RelatedProjectsProps) {
               fill
               quality={95}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${project.imagePosition ?? "object-center"}`}
+              className={`h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 ${project.imagePosition ?? ""}`}
             />
 
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-white via-white/90 to-transparent" />

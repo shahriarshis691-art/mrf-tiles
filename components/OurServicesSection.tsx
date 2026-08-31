@@ -66,14 +66,14 @@ export default function OurServicesSection() {
           
           {/* Right Card (Image) */}
           <ScrollReveal variant="slideInRight" delay={0.15} className="flex items-stretch">
-            <div className="relative w-full h-full overflow-hidden rounded-2xl border border-neutral-200/60 shadow-lg shadow-neutral-900/[0.06] transition-transform duration-500 ease-out hover:scale-[1.02]">
+            <div className="relative w-full h-full overflow-hidden border border-neutral-200/60 transition-transform duration-500 ease-out hover:scale-[1.02]">
               <Image
                 src="/service-image/service.png"
                 alt="Service Showcase"
                 width={800}
                 height={600}
                 quality={95}
-                className="object-cover w-full h-full"
+                className="object-cover object-center w-full h-full"
                 priority
               />
             </div>

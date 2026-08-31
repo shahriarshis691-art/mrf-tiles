@@ -87,7 +87,7 @@ export default async function CollectionDetailPage({
             </p>
           </header>
 
-          <div className="relative mt-12 aspect-[16/10] overflow-hidden border border-neutral-200/60 bg-white sm:mt-14">
+          <div className="relative mt-12 aspect-[4/5] overflow-hidden w-full h-full bg-neutral-100 border border-neutral-200/60 sm:mt-14">
             <Image
               src={product.image}
               alt={product.alt}
@@ -95,7 +95,7 @@ export default async function CollectionDetailPage({
               priority
               quality={95}
               sizes="(max-width: 1440px) 100vw, 1440px"
-              className={`object-cover ${imageLiftClass}`}
+              className="object-cover object-center"
             />
           </div>
 
@@ -140,11 +140,11 @@ export default async function CollectionDetailPage({
               <p className="text-[11px] font-medium tracking-[0.22em] text-neutral-500 uppercase">
                 In Context
               </p>
-              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
                 {product.gallery.map((image) => (
                   <figure
                     key={image.src}
-                    className="relative aspect-[4/3] overflow-hidden border border-neutral-200/60 bg-white"
+                    className="relative aspect-[4/5] overflow-hidden w-full h-full bg-neutral-100 border border-neutral-200/60"
                   >
                     <Image
                       src={image.src}
@@ -152,7 +152,7 @@ export default async function CollectionDetailPage({
                       fill
                       quality={95}
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
+                      className="object-cover object-center"
                     />
                   </figure>
                 ))}

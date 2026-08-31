@@ -17,14 +17,14 @@ export default function AboutSection() {
     >
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
         <ScrollReveal variant="slideInLeft">
-          <div className="relative aspect-[4/5] overflow-hidden border border-neutral-200/60 bg-white sm:aspect-[5/6] lg:aspect-auto lg:min-h-[36rem]">
+          <div className="relative aspect-[4/5] overflow-hidden w-full h-full bg-neutral-100 border border-neutral-200/60 sm:aspect-[5/6] lg:aspect-auto lg:min-h-[36rem]">
             <Image
               src="/images/hero-display-centre.jpg"
               alt="MRF Galaxy experience showroom with premium tile displays"
               fill
               quality={95}
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className={`object-cover ${imageLiftClass}`}
+              className="object-cover object-center"
             />
           </div>
         </ScrollReveal>

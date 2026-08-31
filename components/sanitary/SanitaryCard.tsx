@@ -14,9 +14,9 @@ export default function SanitaryCard({
   return (
     <Link
       href={`/sanitary/${category.id}`}
-      className="group relative block overflow-hidden rounded-2xl border border-neutral-200/60 bg-white transition-transform duration-500 ease-out hover:scale-[1.02]"
+      className="group relative block overflow-hidden border border-neutral-200/60 bg-white transition-transform duration-500 ease-out hover:scale-[1.02]"
     >
-      <div className="relative aspect-[3/4] w-full">
+      <div className="relative aspect-[3/4] w-full h-full bg-neutral-100">
         <Image
           src={category.image}
           alt={category.alt}
@@ -24,7 +24,7 @@ export default function SanitaryCard({
           priority={priority}
           quality={95}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
         />
       </div>
 
