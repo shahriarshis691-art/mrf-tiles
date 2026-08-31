@@ -11,7 +11,7 @@ export default function OurStorySection() {
             <div className="flex h-full flex-col justify-center max-w-lg">
               {/* Header Title */}
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F2EB] leading-tight">
-                Our Story
+                Our Services
               </h2>
               
               {/* Service Metadata */}
@@ -23,7 +23,7 @@ export default function OurStorySection() {
               
               {/* Description Body */}
               <p className="mt-8 text-base md:text-lg text-zinc-300 leading-relaxed">
-                MRF Galaxy Tiles & Sanitary brings together premium porcelain surfaces, refined sanitary solutions, and architectural expertise to transform residential and commercial environments across Bangladesh. From large-format slabs to bespoke bathroom installations, every project reflects our commitment to material quality, timeless design, and lasting craftsmanship.
+                MRF Galaxy Tiles & Sanitary offers premium tile installation services, showcasing our expertise in luxury porcelain surfaces and refined sanitary design solutions across Bangladesh.
               </p>
               
               {/* CTA Link */}
