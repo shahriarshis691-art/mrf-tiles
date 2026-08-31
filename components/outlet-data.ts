@@ -11,30 +11,29 @@ export type Outlet = {
 
 export const OUTLETS: Outlet[] = [
   {
-    name: "Edinburgh Grey",
+    name: "First Branch",
     address: [
       "MRF Galaxy Tiles & Sanitary",
-      "House 12, Road 08, Outlet Area",
-      "Dhaka, Bangladesh",
+      "Gomosto para, Rangpur",
     ],
-    phone: "+8801712345678",
-    phoneDisplay: "+880 1712-345678",
-    whatsapp: "8801712345678",
-    mapsUrl: "https://maps.google.com/?q=MRF+Galaxy+Tiles+Dhaka",
+    phone: "+8801870402966",
+    phoneDisplay: "01870402966",
+    whatsapp: "8801870402966",
+    mapsUrl: "https://maps.google.com/?q=Gomosto+para,+Rangpur+MRF+Galaxy+Tiles",
     image: "/images/projects/architectural-tile-experience.jpg",
     alt: "Premium interior with dark grey marble porcelain flooring",
   },
   {
-    name: "Dundee",
+    name: "Second Branch",
     address: [
       "MRF Galaxy Tiles & Sanitary",
-      "House 24, Road 14, Outlet Area",
-      "Dhaka, Bangladesh",
+      "Burirhat, Mohipur Road, Rangpur",
     ],
-    phone: "+8801812345678",
-    phoneDisplay: "+880 1812-345678",
-    whatsapp: "8801812345678",
-    mapsUrl: "https://maps.google.com/?q=MRF+Galaxy+Tiles+Dhaka",
+    phone: "+8801743182524",
+    phoneDisplay: "01743182524",
+    whatsapp: "8801743182524",
+    mapsUrl:
+      "https://maps.google.com/?q=Burirhat,+Mohipur+Road,+Rangpur+MRF+Galaxy+Tiles",
     image: "/images/projects/contemporary-kitchen.jpg",
     alt: "Premium kitchen interior with light stone porcelain surfaces",
   },

@@ -105,12 +105,13 @@ export default function Hero() {
             </h2>
             <address className="mt-2.5 not-italic">
               <p className="text-[12px] font-light leading-relaxed text-white/70 sm:text-[13px]">
-                {firstOutlet.address.map((line, index) => (
+                {firstOutlet.address.map((line) => (
                   <span key={line}>
                     {line}
-                    {index < firstOutlet.address.length - 1 ? <br /> : null}
+                    <br />
                   </span>
                 ))}
+                <a href={`tel:${firstOutlet.phone}`}>{firstOutlet.phoneDisplay}</a>
               </p>
             </address>
           </div>
@@ -120,12 +121,15 @@ export default function Hero() {
             </h2>
             <address className="mt-2.5 not-italic">
               <p className="text-[12px] font-light leading-relaxed text-white/70 sm:text-[13px]">
-                {secondOutlet.address.map((line, index) => (
+                {secondOutlet.address.map((line) => (
                   <span key={line}>
                     {line}
-                    {index < secondOutlet.address.length - 1 ? <br /> : null}
+                    <br />
                   </span>
                 ))}
+                <a href={`tel:${secondOutlet.phone}`}>
+                  {secondOutlet.phoneDisplay}
+                </a>
               </p>
             </address>
           </div>
