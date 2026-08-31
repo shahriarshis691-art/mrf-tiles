@@ -2,8 +2,8 @@ import ProjectsGallery from "./ProjectsGallery";
 
 export default function ProjectsListing() {
   return (
-    <section className="px-6 pb-20 pt-28 sm:px-10 sm:pb-24 sm:pt-32 lg:px-14 lg:pb-28">
-      <div className="mx-auto max-w-[1440px]">
+    <section className="px-4 pb-20 pt-28 sm:px-6 sm:pb-24 sm:pt-32 md:px-10 lg:px-14 lg:pb-28">
+      <div className="mx-auto max-w-7xl">
         <header className="mx-auto max-w-3xl text-center">
           <h1 className="text-[2rem] font-semibold uppercase tracking-[0.34em] text-neutral-900 sm:text-[2.35rem] lg:text-[2.6rem]">
             PROJECTS

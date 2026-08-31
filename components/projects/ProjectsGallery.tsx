@@ -44,11 +44,9 @@ export default function ProjectsGallery() {
         })}
       </nav>
 
-      <div className="mt-12 columns-1 gap-3 sm:mt-14 sm:columns-2 lg:mt-16 lg:columns-3 [&>*]:mb-3">
+      <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-14 md:mt-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
         {filteredProjects.map((project) => (
-          <div key={project.slug} className="break-inside-avoid">
-            <ProjectMasonryItem project={project} />
-          </div>
+          <ProjectMasonryItem key={project.slug} project={project} />
         ))}
       </div>
     </>

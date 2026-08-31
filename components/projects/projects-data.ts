@@ -4,16 +4,13 @@ export type ProjectCategory =
   | "showroom"
   | "hospitality";
 
-export type ProjectAspect = "tall" | "medium" | "wide" | "large";
-
 export type Project = {
   slug: string;
   title: string;
   category: ProjectCategory;
   categoryLabel: string;
   image: string;
-  aspect: ProjectAspect;
-  column: 0 | 1 | 2;
+  imagePosition?: string;
   description: string;
   longDescription: string;
   location: string;
@@ -40,8 +37,7 @@ export const PROJECTS: Project[] = [
     category: "residential",
     categoryLabel: "RESIDENTIAL",
     image: "/images/projects/modern-residence.jpg",
-    aspect: "tall",
-    column: 0,
+    imagePosition: "object-center",
     description:
       "A refined residential interior featuring large-format porcelain slabs, seamless floor transitions, and a muted material palette tailored for contemporary living.",
     longDescription:
@@ -74,8 +70,7 @@ export const PROJECTS: Project[] = [
     category: "residential",
     categoryLabel: "RESIDENTIAL",
     image: "/images/projects/luxury-villa.jpg",
-    aspect: "large",
-    column: 1,
+    imagePosition: "object-center",
     description:
       "An expansive villa project combining stone-textured wall tiles, warm architectural lighting, and premium sanitary selections across open living zones.",
     longDescription:
@@ -108,8 +103,7 @@ export const PROJECTS: Project[] = [
     category: "showroom",
     categoryLabel: "SHOWROOM",
     image: "/images/projects/mrf-experience-showroom.jpg",
-    aspect: "tall",
-    column: 2,
+    imagePosition: "object-center",
     description:
       "A flagship showroom experience designed to present tile collections, surface finishes, and sanitary solutions in an editorial architectural setting.",
     longDescription:
@@ -142,8 +136,7 @@ export const PROJECTS: Project[] = [
     category: "residential",
     categoryLabel: "RESIDENTIAL",
     image: "/images/projects/contemporary-kitchen.jpg",
-    aspect: "wide",
-    column: 0,
+    imagePosition: "object-center",
     description:
       "A kitchen environment defined by clean cabinetry lines, durable porcelain surfaces, and subtle contrast between matte and polished tile finishes.",
     longDescription:
@@ -172,8 +165,7 @@ export const PROJECTS: Project[] = [
     category: "commercial",
     categoryLabel: "COMMERCIAL",
     image: "/images/projects/urban-commercial-space.jpg",
-    aspect: "medium",
-    column: 1,
+    imagePosition: "object-center",
     description:
       "A commercial interior concept using technical porcelain, antislip flooring, and cohesive wall treatments for high-traffic public environments.",
     longDescription:
@@ -202,8 +194,7 @@ export const PROJECTS: Project[] = [
     category: "hospitality",
     categoryLabel: "HOSPITALITY",
     image: "/images/projects/premium-hospitality-interior.jpg",
-    aspect: "medium",
-    column: 2,
+    imagePosition: "object-center",
     description:
       "A hospitality project balancing luxury ambiance with durable surfaces, featuring warm tones, statement walls, and spa-inspired sanitary detailing.",
     longDescription:
@@ -236,8 +227,7 @@ export const PROJECTS: Project[] = [
     category: "residential",
     categoryLabel: "RESIDENTIAL",
     image: "/images/projects/minimalist-living-space.jpg",
-    aspect: "large",
-    column: 0,
+    imagePosition: "object-center",
     description:
       "A minimalist living space showcasing neutral tile tones, soft natural light, and carefully composed flooring patterns for quiet luxury.",
     longDescription:
@@ -266,8 +256,7 @@ export const PROJECTS: Project[] = [
     category: "commercial",
     categoryLabel: "COMMERCIAL",
     image: "/images/projects/architectural-tile-experience.jpg",
-    aspect: "tall",
-    column: 1,
+    imagePosition: "object-center",
     description:
       "An architectural display environment highlighting large slabs, vertical tile applications, and material transitions across commercial volumes.",
     longDescription:
@@ -300,8 +289,7 @@ export const PROJECTS: Project[] = [
     category: "residential",
     categoryLabel: "RESIDENTIAL",
     image: "/images/projects/modern-sanitary-space.jpg",
-    aspect: "wide",
-    column: 2,
+    imagePosition: "object-center",
     description:
       "A modern bathroom and sanitary installation featuring premium fixtures, textured wall tiles, and a spa-like atmosphere with precise detailing.",
     longDescription:
@@ -341,10 +329,3 @@ export function getRelatedProjects(project: Project, limit = 3): Project[] {
   );
   return [...sameCategory, ...others].slice(0, limit);
 }
-
-export const ASPECT_CLASSES: Record<ProjectAspect, string> = {
-  tall: "aspect-[3/5] sm:aspect-auto sm:h-[520px]",
-  medium: "aspect-[4/5] sm:aspect-auto sm:h-[380px]",
-  wide: "aspect-[5/4] sm:aspect-auto sm:h-[300px]",
-  large: "aspect-[4/5] sm:aspect-auto sm:h-[460px]",
-};

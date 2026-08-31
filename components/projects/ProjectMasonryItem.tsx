@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ASPECT_CLASSES, type Project } from "./projects-data";
+import type { Project } from "./projects-data";
 
 type ProjectMasonryItemProps = {
   project: Project;
@@ -10,7 +10,7 @@ export default function ProjectMasonryItem({ project }: ProjectMasonryItemProps)
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className={`group relative block overflow-hidden rounded-2xl border border-neutral-200/60 bg-white ${ASPECT_CLASSES[project.aspect]}`}
+      className="group relative block aspect-[4/5] overflow-hidden rounded-2xl border border-neutral-200/60 bg-white"
     >
       <Image
         src={project.image}
