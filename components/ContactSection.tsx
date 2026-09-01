@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { buildWhatsAppUrl } from "@/lib/contact";
 import { OUTLETS } from "./outlet-data";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -31,15 +31,13 @@ const outlineButtonClass =
   "mt-8 inline-flex h-14 min-w-[44px] items-center justify-center border border-[#0F0F0F] bg-transparent px-8 text-[12px] font-medium uppercase tracking-[0.08em] text-[#0F0F0F] transition-colors duration-300 hover:bg-[#0F0F0F] hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 sm:w-auto";
 
 export default function ContactSection() {
-  const [interest, setInterest] = useState("");
   const [whatsappUrl, setWhatsappUrl] = useState<string | null>(null);
   const [branchIndex, setBranchIndex] = useState(0);
   const selectedOutlet = OUTLETS[branchIndex] ?? OUTLETS[0];
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setInterest(params.get("interest")?.trim() ?? "");
-  }, []);
+  
+  // Initialize interest from URL search params
+  const params = new URLSearchParams(window.location.search);
+  const [interest, setInterest] = useState(params.get("interest")?.trim() ?? "");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

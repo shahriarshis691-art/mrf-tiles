@@ -1,5 +1,4 @@
 import Image from "next/image";
-import ImageWash, { imageLiftClass } from "./ImageWash";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const STATS = [

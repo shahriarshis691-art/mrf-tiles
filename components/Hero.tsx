@@ -162,7 +162,12 @@ export default function Hero() {
   const [index, setIndex] = useState(0);
 
   return (
-    <section className="relative isolate flex min-h-svh flex-col bg-zinc-950">
+    <section className="relative isolate flex flex-col bg-zinc-950" style={{
+  width: '1440px',
+  transformOrigin: '0 0',
+  transform: `scale(calc(100vw / 1440))`,
+  overflowX: 'hidden',
+}}>
       <div className="absolute inset-0 overflow-hidden">
         {SLIDES.map((slide, i) => (
           <Image
@@ -190,19 +195,19 @@ export default function Hero() {
         className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/35"
       />
 
-      <div className="relative z-10 mx-auto flex min-h-svh w-full max-w-[1440px] flex-1 flex-col">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-          className="relative flex flex-1 items-center px-6 pt-24 sm:px-10 lg:px-14"
-        >
+      <div className="relative z-10 flex w-full flex-1 flex-col">
+<motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+            className="relative flex flex-1 items-center px-14 pt-24"
+          >
           <div className="max-w-[46rem]">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-              className="font-sans text-[clamp(2.4rem,7vw,6.1rem)] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white"
+              className="font-sans text-[6.1rem] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white"
             >
               GALAXY
               <br />
@@ -216,7 +221,7 @@ export default function Hero() {
             >
               <Link
                 href="/#contact"
-                className="mt-8 inline-flex min-h-[44px] items-center justify-center border border-gold px-7 py-3.5 text-[11px] font-semibold tracking-[0.22em] text-white transition-colors duration-300 hover:bg-gold hover:text-zinc-950 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 sm:mt-9 sm:px-9 sm:py-4 sm:text-[12px]"
+                className="mt-9 inline-flex min-h-[44px] items-center justify-center border border-gold px-9 py-4 text-[12px] font-semibold tracking-[0.22em] text-white transition-colors duration-300 hover:bg-gold hover:text-zinc-950 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1"
               >
                 VISIT SHOWROOM
               </Link>
@@ -227,24 +232,24 @@ export default function Hero() {
         <SlideIndicators
           index={index}
           onSelect={setIndex}
-          className="flex gap-5 px-6 pb-2 sm:absolute sm:right-10 sm:top-[42%] sm:-translate-y-1/2 sm:flex-col sm:gap-3 sm:px-0 sm:pb-0 lg:right-14"
+          className="flex absolute right-14 top-[42%] -translate-y-1/2 flex-col gap-3 px-0 pb-0"
         />
 
-        <div className="grid shrink-0 grid-cols-1 gap-3 px-6 pb-6 sm:px-10 md:grid-cols-3 md:gap-4 lg:px-14 lg:pb-8">
+        <div className="grid shrink-0 grid-cols-3 gap-4 px-14 pb-8">
           {FEATURE_CARDS.map((card) => {
             const Icon = card.icon;
             return (
               <article
                 key={card.title}
-                className="flex flex-col border border-white/20 bg-white/10 px-5 py-4 backdrop-blur-md sm:px-6 sm:py-5"
+                className="flex flex-col border border-white/20 bg-white/10 px-6 py-5 backdrop-blur-md"
               >
                 <span className="text-gold">
                   <Icon />
                 </span>
-                <h2 className="mt-3 text-[14px] font-semibold tracking-[0.08em] text-white sm:text-[15px]">
+                <h2 className="mt-3 text-[15px] font-semibold tracking-[0.08em] text-white">
                   {card.title}
                 </h2>
-                <p className="mt-1.5 line-clamp-2 text-[12px] leading-relaxed text-white/90 sm:text-[13px]">
+                <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-white/90">
                   {card.description}
                 </p>
                 <Link
