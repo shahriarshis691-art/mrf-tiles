@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import { OUTLETS } from "./outlet-data";
 
 const FOOTER_LINKS = [
-  { href: "/#about", label: "ABOUT" },
+  { href: "/about", label: "ABOUT" },
   { href: "/#collection", label: "COLLECTION" },
   { href: "/collection", label: "CATALOG" },
   { href: "/sanitary", label: "SANITARY" },

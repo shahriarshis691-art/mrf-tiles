@@ -14,21 +14,21 @@ export default function CollectionCard({
   return (
     <Link
       href={collection.href}
-      className="group flex aspect-[1/1.7] w-full flex-col overflow-hidden border border-neutral-200/60 bg-white transition-all duration-500 ease-out hover:border-neutral-900"
+      className="group flex aspect-[1/1.7] w-full flex-col overflow-hidden bg-transparent transition-all duration-500 ease-out"
     >
-      <div className="flex flex-[0.38] flex-col justify-center px-5 py-6 sm:px-6 sm:py-7">
-        <p className="text-[8px] font-medium uppercase tracking-[0.2em] text-neutral-500 sm:text-[9px]">
+      <div className="flex flex-[0.38] flex-col justify-center px-5 py-6 sm:px-6 sm:py-7 bg-transparent">
+        <p className="text-[8px] font-medium uppercase tracking-[0.2em] text-stone-400 sm:text-[9px]">
           {collection.eyebrow}
         </p>
-        <h3 className="mt-3 text-[13px] font-semibold uppercase tracking-[0.2em] text-neutral-900 sm:text-[14px]">
+        <h3 className="mt-3 text-[13px] font-semibold uppercase tracking-[0.2em] text-white sm:text-[14px]">
           {collection.title}
         </h3>
-        <p className="mt-4 max-w-[18rem] text-[10px] leading-relaxed tracking-[0.02em] text-neutral-600 sm:text-[11px]">
+        <p className="mt-4 max-w-[18rem] text-[10px] leading-relaxed tracking-[0.02em] text-stone-300 sm:text-[11px]">
           {collection.description}
         </p>
       </div>
 
-      <div className="relative min-h-0 flex-[0.52] overflow-hidden w-full h-full bg-neutral-100">
+      <div className="relative min-h-0 flex-[0.52] overflow-hidden w-full h-full bg-transparent">
         <Image
           src={collection.image}
           alt={collection.alt}
@@ -40,7 +40,7 @@ export default function CollectionCard({
         />
       </div>
 
-      <div className="flex flex-[0.1] min-h-[2.75rem] items-center justify-between border-t border-neutral-200 px-5 py-3 text-[8px] font-medium uppercase tracking-[0.2em] text-neutral-600 sm:px-6 sm:text-[9px]">
+      <div className="flex flex-[0.1] min-h-[2.75rem] items-center justify-between px-5 py-3 text-[8px] font-medium uppercase tracking-[0.2em] text-stone-400 sm:px-6 sm:text-[9px]">
         <span>MRF TILES</span>
         <span className="transition-transform duration-300 group-hover:translate-x-1">
           Explore →

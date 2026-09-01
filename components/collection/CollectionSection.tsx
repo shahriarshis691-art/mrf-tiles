@@ -1,45 +1,79 @@
 import Link from "next/link";
-import CollectionCard from "./CollectionCard";
-import { EDITORIAL_COLLECTIONS } from "./collection-data";
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
+
+type CollectionCard = {
+  id: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  alt: string;
+  href: string;
+};
+
+const COLLECTION_CARDS: CollectionCard[] = [
+  {
+    id: "art-of-flooring",
+    title: "THE ART OF FLOORING",
+    subtitle: "Porcelain Slabs",
+    image: "/images/collection/modern-dark.jpg",
+    alt: "Dark modern porcelain slab collection",
+    href: "/collection",
+  },
+  {
+    id: "luxury-living",
+    title: "LUXURY LIVING",
+    subtitle: "Designer Tiles",
+    image: "/images/collection/natural-luxury.jpg",
+    alt: "Natural luxury designer tile collection",
+    href: "/collection",
+  },
+  {
+    id: "urban-elegance",
+    title: "URBAN ELEGANCE",
+    subtitle: "Premium Surfaces",
+    image: "/images/collection/urban-elegance.jpg",
+    alt: "Urban elegance premium surface collection",
+    href: "/collection",
+  },
+  {
+    id: "sanitary-solutions",
+    title: "SANITARY SOLUTIONS",
+    subtitle: "Bespoke Bathrooms",
+    image: "/images/projects/modern-sanitary-space.jpg",
+    alt: "Modern sanitary space with premium fixtures",
+    href: "/sanitary",
+  },
+];
 
 export default function CollectionSection() {
   return (
     <section
       id="collection"
-      aria-labelledby="collection-heading"
-      className="bg-[#7D7263] px-6 py-24 sm:px-10 sm:py-32 lg:px-14 lg:py-32"
+      aria-label="Collection"
+      className="relative w-full bg-zinc-950 px-4 py-16 sm:px-10 sm:py-24 lg:px-14 lg:py-28"
     >
-      <div className="mx-auto max-w-[1180px]">
+      <div className="mx-auto max-w-[1440px]">
         <ScrollReveal variant="fadeInUp">
-          <header className="text-center">
-            <p className="text-[11px] font-medium tracking-[0.2em] text-neutral-200 uppercase">
-              The Collection
-            </p>
-            <h2
-              id="collection-heading"
-              className="mt-5 font-sans text-[2rem] font-semibold uppercase leading-[1.05] tracking-[0.06em] text-white sm:text-[2.35rem]"
-            >
-              Curated Surfaces
-            </h2>
-            <span className="mx-auto mt-5 block h-px w-12 bg-white/60" />
-            <Link
-              href="/collection"
-              className="mt-6 inline-block text-[11px] font-medium uppercase tracking-[0.2em] text-neutral-200 transition-colors hover:text-white"
-            >
-              View Full Catalog →
-            </Link>
-          </header>
-        </ScrollReveal>
-
-        <ScrollReveal variant="fadeInUp" delay={0.15}>
-          <div className="mt-14 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-5">
-            {EDITORIAL_COLLECTIONS.map((collection, index) => (
-              <CollectionCard
-                key={collection.id}
-                collection={collection}
-                priority={index < 2}
-              />
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4 lg:gap-4">
+            {COLLECTION_CARDS.map((card, index) => (
+              <Link
+                key={card.id}
+                href={card.href}
+                className="group relative block overflow-hidden bg-neutral-900"
+              >
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                  <Image
+                    src={card.image}
+                    alt={card.alt}
+                    fill
+                    priority={index < 2}
+                    quality={95}
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                </div>
+              </Link>
             ))}
           </div>
         </ScrollReveal>

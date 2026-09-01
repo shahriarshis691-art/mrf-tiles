@@ -7,7 +7,7 @@ import Logo from "./Logo";
 
 const LINKS = [
   { href: "/", label: "HOME" },
-  { href: "/#about", label: "ABOUT" },
+  { href: "/about", label: "ABOUT" },
   { href: "/#collection", label: "COLLECTION" },
   { href: "/sanitary", label: "SANITARY" },
   { href: "/projects", label: "PROJECTS" },
@@ -15,6 +15,9 @@ const LINKS = [
 ];
 
 function isActive(pathname: string, href: string) {
+  if (href === "/about") {
+    return pathname === "/about";
+  }
   if (href === "/projects") {
     return pathname.startsWith("/projects");
   }
@@ -32,14 +35,15 @@ function isActive(pathname: string, href: string) {
 
 type NavbarProps = {
   overHero?: boolean;
+  dark?: boolean;
 };
 
-export default function Navbar({ overHero = false }: NavbarProps) {
+export default function Navbar({ overHero = false, dark = false }: NavbarProps) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const onHome = overHero && pathname === "/";
-  const heroNav = onHome && !scrolled;
+  const heroNav = dark ? true : onHome && !scrolled;
 
   useEffect(() => {
     if (!onHome) {
