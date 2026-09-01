@@ -55,7 +55,7 @@ export default function CollectionSection() {
     >
       <div className="mx-auto max-w-[1440px]">
         <ScrollReveal variant="fadeInUp">
-          <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4 lg:gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:gap-5 lg:grid-cols-4 lg:gap-5">
             {COLLECTION_CARDS.map((card, index) => (
               <Link
                 key={card.id}
@@ -69,7 +69,7 @@ export default function CollectionSection() {
                     fill
                     priority={index < 2}
                     quality={95}
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
