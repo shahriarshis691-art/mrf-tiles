@@ -140,14 +140,14 @@ function SlideIndicators({
               onClick={() => onSelect(i)}
               aria-label={`Show slide ${n}`}
               aria-current={active ? "true" : undefined}
-              className={`flex min-h-[44px] min-w-[44px] items-center gap-3 text-[12px] tracking-[0.18em] transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 ${
+              className={`flex min-h-[44px] min-w-[44px] items-center gap-1 text-[12px] tracking-[0.18em] transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 sm:gap-3 ${
                 active ? "text-gold" : "text-white/70 hover:text-white"
               }`}
             >
               {n}
               <span
                 className={`h-px transition-all duration-300 ${
-                  active ? "w-8 bg-gold" : "w-8 bg-transparent"
+                  active ? "w-4 bg-gold sm:w-8" : "w-4 bg-transparent sm:w-8"
                 }`}
               />
             </button>
@@ -162,12 +162,7 @@ export default function Hero() {
   const [index, setIndex] = useState(0);
 
   return (
-    <section className="relative isolate flex flex-col bg-zinc-950" style={{
-  width: '1440px',
-  transformOrigin: '0 0',
-  transform: `scale(calc(100vw / 1440))`,
-  overflowX: 'hidden',
-}}>
+    <section className="relative isolate flex min-h-[34rem] w-full flex-col overflow-hidden bg-zinc-950">
       <div className="absolute inset-0 overflow-hidden">
         {SLIDES.map((slide, i) => (
           <Image
@@ -200,14 +195,14 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-            className="relative flex flex-1 items-center px-14 pt-24"
+            className="relative flex flex-1 items-center px-6 pt-28 sm:px-10 sm:pt-32 lg:px-14 lg:pt-24"
           >
           <div className="max-w-[46rem]">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-              className="font-sans text-[6.1rem] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white"
+              className="font-sans text-[3rem] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white sm:text-[4.5rem] lg:text-[6.1rem]"
             >
               GALAXY
               <br />
@@ -232,10 +227,10 @@ export default function Hero() {
         <SlideIndicators
           index={index}
           onSelect={setIndex}
-          className="flex absolute right-14 top-[42%] -translate-y-1/2 flex-col gap-3 px-0 pb-0"
+          className="flex shrink-0 items-center justify-center gap-1 px-6 pb-4 sm:gap-3 sm:px-10 sm:pb-6 lg:absolute lg:right-14 lg:top-[42%] lg:-translate-y-1/2 lg:flex-col lg:px-0 lg:pb-0"
         />
 
-        <div className="grid shrink-0 grid-cols-3 gap-4 px-14 pb-8">
+        <div className="grid shrink-0 grid-cols-1 gap-3 px-6 pb-6 sm:grid-cols-3 sm:gap-4 sm:px-10 sm:pb-8 lg:px-14">
           {FEATURE_CARDS.map((card) => {
             const Icon = card.icon;
             return (

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getSanitaryCategoryBySlug(slug);
   const product = getSanitaryProductById(id);
 
-  if (!category || !product) {
+  if (!category || !product || product.category !== slug) {
     return { title: "Product Not Found" };
   }
 
@@ -42,7 +42,7 @@ export default async function SanitaryProductPage({ params }: Props) {
   const category = getSanitaryCategoryBySlug(slug);
   const product = getSanitaryProductById(id);
 
-  if (!category || !product) {
+  if (!category || !product || product.category !== slug) {
     notFound();
   }
 

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { OUTLETS } from "@/components/outlet-data";
+import { contactHref } from "@/lib/contact";
 import {
   formatSanitaryBrandPriceBdt,
   type SanitaryBrandProduct,
@@ -85,10 +86,10 @@ export default function SanitaryBrandProductCard({
             Inquire / Order
           </Link>
           <Link
-            href="#contact"
+            href={contactHref(`${brandName} ${product.title}`)}
             className="inline-flex min-h-[44px] items-center justify-center border border-neutral-900 bg-transparent px-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-900 transition-colors duration-300 hover:bg-neutral-900 hover:text-white"
           >
-            Details
+            Request Details
           </Link>
         </div>
       </div>

@@ -2,17 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import Logo from "./Logo";
 
 const LINKS = [
   { href: "/", label: "HOME" },
   { href: "/about", label: "ABOUT" },
-  { href: "/#collection", label: "COLLECTION" },
+  { href: "/collection", label: "COLLECTION" },
   { href: "/sanitary", label: "SANITARY" },
   { href: "/projects", label: "PROJECTS" },
   { href: "/#contact", label: "CONTACT" },
 ];
+
+const subscribeToScroll = (onStoreChange: () => void) => {
+  window.addEventListener("scroll", onStoreChange, { passive: true });
+  return () => window.removeEventListener("scroll", onStoreChange);
+};
+
+const subscribeToNothing = () => () => {};
+const getScrolledSnapshot = () => window.scrollY > 72;
+const getUnscrolledSnapshot = () => false;
 
 function isActive(pathname: string, href: string) {
   if (href === "/about") {
@@ -24,7 +33,7 @@ function isActive(pathname: string, href: string) {
   if (href === "/sanitary") {
     return pathname.startsWith("/sanitary");
   }
-  if (href === "/#collection") {
+  if (href === "/collection") {
     return pathname.startsWith("/collection");
   }
   if (href === "/") {
@@ -40,22 +49,14 @@ type NavbarProps = {
 
 export default function Navbar({ overHero = false, dark = false }: NavbarProps) {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const onHome = overHero && pathname === "/";
+  const scrolled = useSyncExternalStore(
+    onHome ? subscribeToScroll : subscribeToNothing,
+    onHome ? getScrolledSnapshot : getUnscrolledSnapshot,
+    getUnscrolledSnapshot,
+  );
   const heroNav = dark ? true : onHome && !scrolled;
-
-  useEffect(() => {
-    if (!onHome) {
-      setScrolled(false);
-      return;
-    }
-
-    const onScroll = () => setScrolled(window.scrollY > 72);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [onHome]);
 
   useEffect(() => {
     if (!open) return;
@@ -108,7 +109,7 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
 
         <button
           type="button"
-          className={`absolute right-4 top-1/2 z-20 flex h-14 w-14 -translate-y-1/2 items-center justify-center max-md:flex sm:right-8 ${
+          className={`absolute right-4 top-1/2 z-20 flex h-14 w-14 -translate-y-1/2 items-center justify-center md:hidden sm:right-8 ${
             heroNav ? "text-white" : "text-zinc-900"
           }`}
           aria-label={open ? "Close menu" : "Open menu"}

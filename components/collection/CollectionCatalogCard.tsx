@@ -14,7 +14,7 @@ export default function CollectionCatalogCard({
   return (
     <Link
       href={`/collection/${product.id}`}
-      className="group block overflow-hidden bg-transparent transition-all duration-500 ease-out"
+      className="group block overflow-hidden bg-zinc-950 transition-all duration-500 ease-out"
     >
       <article>
         <div className="relative aspect-[4/5] overflow-hidden w-full h-full bg-transparent">

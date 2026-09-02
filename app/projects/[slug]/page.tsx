@@ -6,7 +6,6 @@ import {
   PROJECTS,
 } from "@/components/projects/projects-data";
 import { contactHref } from "@/lib/contact";
-import ImageWash, { imageLiftClass } from "@/components/ImageWash";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent, useEffect } from "react";
+import { useState, useSyncExternalStore, type FormEvent } from "react";
 import { buildWhatsAppUrl } from "@/lib/contact";
 import { OUTLETS } from "./outlet-data";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -30,19 +30,22 @@ const inputClass =
 const outlineButtonClass =
   "mt-8 inline-flex h-14 min-w-[44px] items-center justify-center border border-[#0F0F0F] bg-transparent px-8 text-[12px] font-medium uppercase tracking-[0.08em] text-[#0F0F0F] transition-colors duration-300 hover:bg-[#0F0F0F] hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 sm:w-auto";
 
+const subscribeToSearch = () => () => {};
+const getServerInterest = () => "";
+
+function getInterestFromSearch() {
+  return new URLSearchParams(window.location.search).get("interest")?.trim() ?? "";
+}
+
 export default function ContactSection() {
   const [whatsappUrl, setWhatsappUrl] = useState<string | null>(null);
   const [branchIndex, setBranchIndex] = useState(0);
-  const [interest, setInterest] = useState("");
+  const interest = useSyncExternalStore(
+    subscribeToSearch,
+    getInterestFromSearch,
+    getServerInterest,
+  );
   const selectedOutlet = OUTLETS[branchIndex] ?? OUTLETS[0];
-
-  // Initialize interest from URL search params on client
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      setInterest(params.get("interest")?.trim() ?? "");
-    }
-  }, []);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

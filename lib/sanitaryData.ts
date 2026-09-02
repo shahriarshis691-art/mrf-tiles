@@ -1,4 +1,4 @@
-import { SANITARY_CATEGORIES, SANITARY_LISTINGS, type SanitaryCategory, type SanitaryListingItem } from "@/components/sanitary/sanitary-data";
+import { SANITARY_CATEGORIES, SANITARY_LISTINGS, type SanitaryCategory } from "@/components/sanitary/sanitary-data";
 import { OUTLETS } from "@/components/outlet-data";
 
 export type SanitaryProduct = {
@@ -50,7 +50,7 @@ export function getSanitaryProductById(
 }
 
 export function formatPriceBdt(price: number): string {
-  return `à§³${price.toLocaleString("en-BD")}`;
+  return `৳${price.toLocaleString("en-BD")}`;
 }
 
 export function buildProductWhatsAppUrl(productTitle: string): string {

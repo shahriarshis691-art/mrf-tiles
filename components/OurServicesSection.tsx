@@ -54,7 +54,7 @@ export default function OurServicesSection() {
                 {/* CTA Link */}
                 <div className="mt-1 sm:mt-10">
                   <Link 
-                    href="#"
+                    href="/about#products-heading"
                     className="inline-flex min-h-[32px] sm:min-h-[44px] items-center text-[clamp(0.35rem,0.8vw,0.875rem)] sm:text-[clamp(0.4rem,1vw,0.875rem)] font-semibold text-[#0F0F0F] underline underline-offset-4 sm:underline-offset-8 hover:opacity-70 transition-all duration-300 hover:translate-x-1 focus-visible:ring-2 focus:visible:ring-neutral-900 focus-visible:ring-offset-1"
                   >
                     EXPLORE SERVICES

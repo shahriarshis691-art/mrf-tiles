@@ -1,7 +1,3 @@
-export function formatPriceBdt(price: number): string {
-  return `৳${price.toLocaleString("en-BD")}`;
-}
-
 export type SanitaryCategory = {
   id: string;
   label: string;

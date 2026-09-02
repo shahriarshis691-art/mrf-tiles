@@ -7,7 +7,6 @@ import {
 } from "@/components/collection/collection-data";
 import { contactHref } from "@/lib/contact";
 import { OUTLETS } from "@/components/outlet-data";
-import ImageWash, { imageLiftClass } from "@/components/ImageWash";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";

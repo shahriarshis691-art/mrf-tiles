@@ -4,7 +4,6 @@ import { contactHref } from "@/lib/contact";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Sanitary",

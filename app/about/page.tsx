@@ -517,7 +517,7 @@ export default function AboutPage() {
                   Contact Our Consultants
                 </Link>
                 <a
-                  href={`https://wa.me/${OUTLETS[0].whatsapp}`}
+                  href={OUTLETS[0].mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex h-14 min-h-[44px] items-center justify-center border border-white/30 bg-transparent px-12 text-[12px] font-medium uppercase tracking-[0.08em] text-white transition-colors duration-300 hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
