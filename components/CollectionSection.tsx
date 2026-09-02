@@ -8,19 +8,19 @@ export default function CollectionSection() {
     <section
       id="brands"
       aria-label="Featured Brands"
-      className="relative w-full bg-zinc-950 px-4 py-16 sm:px-10 sm:py-24 lg:px-14 lg:py-28"
+      className="relative w-full bg-[#F5F1E8] px-4 py-16 sm:px-10 sm:py-24 lg:px-14 lg:py-28"
     >
       <div className="mx-auto max-w-[1440px]">
         <ScrollReveal variant="fadeInUp">
           <header className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
-            <p className="text-[11px] font-medium uppercase tracking-[0.32em] text-stone-400">
+            <p className="text-[11px] font-medium uppercase tracking-[0.32em] text-neutral-500">
               Featured Brands
             </p>
-            <h2 className="mt-4 font-serif text-[1.85rem] font-semibold leading-[1.05] tracking-[0.06em] text-white sm:text-[2.4rem] lg:text-[2.75rem]">
+            <h2 className="mt-4 font-serif text-[1.85rem] font-semibold leading-[1.05] tracking-[0.06em] text-[#0F0F0F] sm:text-[2.4rem] lg:text-[2.75rem]">
               Our House of Brands
             </h2>
             <span className="mx-auto mt-5 block h-px w-12 bg-gold" />
-            <p className="mt-6 text-[13px] leading-relaxed tracking-[0.04em] text-stone-300 sm:text-sm">
+            <p className="mt-6 text-[13px] leading-relaxed tracking-[0.04em] text-neutral-600 sm:text-sm">
               Explore the curated tile, sanitary and brassware brands that define
               MRF Galaxy&apos;s signature interiors.
             </p>
@@ -34,10 +34,10 @@ export default function CollectionSection() {
                 key={brand.slug}
                 href={brand.href}
                 aria-label={`Explore ${brand.name} brand products`}
-                className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+                className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F1E8]"
               >
                 <article className="flex h-full flex-col">
-                  <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-900">
+                  <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-100">
                     <Image
                       src={brand.cardImage}
                       alt={brand.cardAlt}
@@ -53,14 +53,14 @@ export default function CollectionSection() {
                   </div>
 
                   <div className="px-5 py-6 text-center sm:px-6 sm:py-7">
-                    <h3 className="font-serif text-[1.15rem] font-bold uppercase leading-[1.05] tracking-[0.18em] text-white sm:text-[1.35rem]">
+                    <h3 className="font-serif text-[1.15rem] font-bold uppercase leading-[1.05] tracking-[0.18em] text-[#0F0F0F] sm:text-[1.35rem]">
                       {brand.name}
                     </h3>
                     <span className="mx-auto mt-4 block h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" />
-                    <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.32em] text-stone-400 sm:text-[11px]">
+                    <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.32em] text-neutral-500 sm:text-[11px]">
                       {brand.tagline}
                     </p>
-                    <span className="mt-5 inline-flex items-center text-[10px] font-medium uppercase tracking-[0.32em] text-stone-300 transition-colors duration-300 group-hover:text-gold">
+                    <span className="mt-5 inline-flex items-center text-[10px] font-medium uppercase tracking-[0.32em] text-neutral-700 transition-colors duration-300 group-hover:text-gold">
                       View Products
                       <span
                         aria-hidden="true"
