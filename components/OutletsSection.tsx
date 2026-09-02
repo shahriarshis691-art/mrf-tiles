@@ -54,7 +54,10 @@ export default function OutletsSection() {
       className="relative overflow-hidden bg-[#282828] px-6 py-24 sm:px-10 sm:py-32 lg:px-14 lg:py-32"
     >
       <div className="mx-auto max-w-[1440px]">
-        <ScrollReveal variant="slideInLeft">
+        <ScrollReveal
+          variant="slideInLeft"
+          className="flex min-h-[clamp(18rem,30vw,28rem)] items-center"
+        >
           <header className="max-w-md">
             <p className="text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
               01 / Outlets
