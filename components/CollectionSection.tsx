@@ -28,13 +28,13 @@ export default function CollectionSection() {
         </ScrollReveal>
 
         <ScrollReveal variant="fadeInUp" delay={0.1}>
-          <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 md:gap-6 lg:grid-cols-4 lg:gap-6">
+          <div className="flex gap-5 overflow-x-auto sm:gap-6 lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible">
             {BRANDS.map((brand: Brand) => (
               <Link
                 key={brand.slug}
                 href={brand.href}
                 aria-label={`Explore ${brand.name} brand products`}
-                className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F1E8]"
+                className="group block w-[78vw] shrink-0 sm:w-64 lg:w-auto lg:min-w-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F1E8]"
               >
                 <article className="flex h-full flex-col">
                   <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-100">
@@ -43,7 +43,7 @@ export default function CollectionSection() {
                       alt={brand.cardAlt}
                       fill
                       quality={90}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      sizes="(max-width: 639px) 78vw, (max-width: 1023px) 16rem, 25vw"
                       className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                     <span
