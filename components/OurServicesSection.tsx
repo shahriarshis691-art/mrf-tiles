@@ -9,7 +9,7 @@ export default function OurServicesSection() {
         <div className="flex min-h-[17rem] w-full flex-row items-stretch gap-3 md:items-center md:justify-between md:gap-8">
           {/* Left Card (Text) */}
           <ScrollReveal variant="slideInLeft" className="flex min-w-0 w-1/2 flex-col">
-            <div className="h-full border border-neutral-200/60 bg-[#F9F9FB] p-4 shadow-sm shadow-neutral-900/[0.03] transition-shadow duration-500 hover:shadow-md hover:shadow-neutral-900/[0.06] md:p-16 lg:p-20">
+            <div className="h-full bg-[#F9F9FB] p-4 md:p-16 lg:p-20">
               <div className="flex h-full flex-col justify-center">
                 {/* Animated Marquee */}
                 <div className="mb-5 overflow-hidden sm:mb-8">
@@ -55,7 +55,7 @@ export default function OurServicesSection() {
                 <div className="mt-auto pt-4 md:mt-10 md:pt-0">
                   <Link 
                     href="/about#products-heading"
-                    className="inline-flex min-h-[44px] items-center text-[11px] font-semibold text-[#0F0F0F] underline underline-offset-4 transition-all duration-300 hover:translate-x-1 hover:opacity-70 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 sm:text-[clamp(0.65rem,1vw,0.875rem)] sm:underline-offset-8"
+                    className="inline-flex min-h-[44px] items-center text-[11px] font-semibold text-[#0F0F0F] no-underline transition-all duration-300 hover:translate-x-1 hover:opacity-70 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 sm:text-[clamp(0.65rem,1vw,0.875rem)]"
                   >
                     EXPLORE SERVICES
                   </Link>
@@ -66,7 +66,7 @@ export default function OurServicesSection() {
           
           {/* Right Card (Image) */}
           <ScrollReveal variant="slideInRight" delay={0.15} className="flex min-w-0 w-1/2 items-stretch">
-            <div className="relative h-full w-full overflow-hidden border border-neutral-200/60 transition-transform duration-500 ease-out hover:scale-[1.02] md:aspect-auto md:min-h-full">
+            <div className="relative h-full w-full overflow-hidden transition-transform duration-500 ease-out hover:scale-[1.02] md:aspect-auto md:min-h-full">
               <Image
                 src="/service-image/service.jpg"
                 alt="Service Showcase"
