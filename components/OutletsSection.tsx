@@ -10,7 +10,7 @@ function BranchRow({
   index: number;
 }) {
   return (
-    <article className="grid grid-cols-1 gap-5 border-t border-white/15 py-8 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:items-center md:gap-8 md:py-10 lg:gap-12 lg:py-12">
+    <article className="grid min-h-[16rem] grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] items-stretch gap-3 border-t border-white/15 py-6 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:items-center md:gap-8 md:py-10 lg:gap-12 lg:py-12">
       <div className="min-w-0 border-l border-white/25 pl-3 sm:pl-5">
         <p className="text-[9px] font-medium tracking-[0.16em] text-neutral-400 uppercase sm:text-[10px] sm:tracking-[0.2em]">
           Branch {index + 1}
@@ -32,7 +32,7 @@ function BranchRow({
         </p>
       </div>
 
-      <figure className="relative aspect-[5/4] w-full overflow-hidden bg-neutral-100">
+      <figure className="relative h-full w-full overflow-hidden bg-neutral-100 md:aspect-[5/4] md:h-auto">
         <Image
           src={outlet.image}
           alt={outlet.alt}
