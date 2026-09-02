@@ -87,7 +87,13 @@ export default function SanitaryPage() {
           </section>
 
           {/* Consultation CTA */}
-          <div className="mt-14 text-center sm:mt-16">
+          <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:mt-16 sm:flex-row sm:gap-5">
+            <Link
+              href="/sanitary/brands"
+              className="inline-flex min-h-[44px] items-center justify-center border border-neutral-200 bg-transparent px-10 text-[12px] font-medium uppercase tracking-[0.08em] text-neutral-700 transition-colors duration-300 hover:border-neutral-900 hover:text-neutral-900 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1"
+            >
+              Explore Sanitary Brands
+            </Link>
             <Link
               href={contactHref("Sanitary consultation")}
               className="inline-flex min-h-[44px] items-center justify-center border border-neutral-900 bg-transparent px-10 text-[12px] font-medium uppercase tracking-[0.08em] text-neutral-900 transition-colors duration-300 hover:bg-neutral-900 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1"

@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   PROJECTS,
   PROJECT_CATEGORIES,
@@ -8,9 +9,31 @@ import {
 } from "./projects-data";
 import ProjectMasonryItem from "./ProjectMasonryItem";
 
+function getActiveCategory(searchParams: URLSearchParams): ProjectCategoryFilter {
+  const category = searchParams.get("category");
+  return PROJECT_CATEGORIES.find((item) => item.id === category)?.id ?? "all";
+}
+
 export default function ProjectsGallery() {
-  const [activeCategory, setActiveCategory] =
-    useState<ProjectCategoryFilter>("all");
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const activeCategory = useMemo(
+    () => getActiveCategory(searchParams),
+    [searchParams],
+  );
+
+  const handleCategoryChange = (category: ProjectCategoryFilter) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (category === "all") {
+      params.delete("category");
+    } else {
+      params.set("category", category);
+    }
+
+    const query = params.toString();
+    router.push(query ? `${pathname}?${query}` : pathname, { scroll: false });
+  };
 
   const filteredProjects = useMemo(() => {
     if (activeCategory === "all") return PROJECTS;
@@ -29,7 +52,7 @@ export default function ProjectsGallery() {
             <button
               key={category.id}
               type="button"
-              onClick={() => setActiveCategory(category.id)}
+              onClick={() => handleCategoryChange(category.id)}
               aria-pressed={active}
               className={`relative min-h-[44px] min-w-[44px] pb-2 text-[10px] font-medium tracking-[0.24em] transition-colors sm:text-[11px] focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 ${
                 active ? "text-neutral-900" : "text-neutral-700 hover:text-neutral-900"

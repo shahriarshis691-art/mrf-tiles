@@ -5,7 +5,7 @@ import { OUTLETS } from "./outlet-data";
 const FOOTER_LINKS = [
   { href: "/about", label: "ABOUT" },
   { href: "/collection", label: "COLLECTION" },
-  { href: "/collection", label: "CATALOG" },
+  { href: "/brands", label: "BRANDS" },
   { href: "/sanitary", label: "SANITARY" },
   { href: "/projects", label: "PROJECTS" },
   { href: "/#contact", label: "CONTACT" },

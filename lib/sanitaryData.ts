@@ -1,4 +1,8 @@
-import { SANITARY_CATEGORIES, SANITARY_LISTINGS, type SanitaryCategory } from "@/components/sanitary/sanitary-data";
+import {
+  getSanitaryCategoryBySlug,
+  SANITARY_CATEGORIES,
+  SANITARY_LISTINGS,
+} from "@/components/sanitary/sanitary-data";
 import { OUTLETS } from "@/components/outlet-data";
 
 export type SanitaryProduct = {
@@ -30,12 +34,7 @@ export const SANITARY_PRODUCTS: SanitaryProduct[] = SANITARY_LISTINGS.map((item)
 }));
 
 export { SANITARY_CATEGORIES };
-
-export function getSanitaryCategoryBySlug(
-  slug: string,
-): SanitaryCategory | undefined {
-  return SANITARY_CATEGORIES.find((category) => category.id === slug);
-}
+export { getSanitaryCategoryBySlug };
 
 export function getSanitaryListingsByCategory(
   categoryId: string,

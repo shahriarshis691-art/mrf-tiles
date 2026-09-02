@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllBrandSlugs, getBrandBySlug } from "@/lib/brands";
+import { contactHref } from "@/lib/contact";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -72,7 +73,7 @@ export default async function BrandPage({ params }: Props) {
                   </li>
                   <li aria-hidden="true">/</li>
                   <li>
-                    <Link href="/#brands" className="hover:text-white">
+                    <Link href="/brands" className="hover:text-white">
                       Brands
                     </Link>
                   </li>
@@ -132,13 +133,13 @@ export default async function BrandPage({ params }: Props) {
 
             <div className="mt-14 flex flex-wrap items-center justify-center gap-4 sm:mt-16">
               <Link
-                href="/#brands"
+                href="/brands"
                 className="inline-flex min-h-[44px] items-center justify-center border border-neutral-900 bg-transparent px-10 text-[12px] font-medium uppercase tracking-[0.16em] text-neutral-900 transition-colors duration-300 hover:bg-neutral-900 hover:text-white"
               >
                 Back to All Brands
               </Link>
               <Link
-                href="/#contact"
+                href={contactHref(`${brand.name} consultation`)}
                 className="inline-flex min-h-[44px] items-center justify-center border border-neutral-900 bg-neutral-900 px-10 text-[12px] font-medium uppercase tracking-[0.16em] text-white transition-colors duration-300 hover:bg-neutral-800"
               >
                 Request Brand Consultation

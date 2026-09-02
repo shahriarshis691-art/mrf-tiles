@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import CollectionFilter, {
   type SelectedValues,
@@ -14,17 +14,21 @@ const FILTER_PARAM_MAP: Record<string, FilterId> = {
   material: "material",
 };
 
-function getInitialValues(searchParams: URLSearchParams): Partial<SelectedValues> {
-  const initial: Partial<SelectedValues> = {};
+function getSelectedValues(searchParams: URLSearchParams): SelectedValues {
+  const selectedValues: SelectedValues = {
+    look: null,
+    formats: null,
+    material: null,
+  };
 
   for (const [param, filterId] of Object.entries(FILTER_PARAM_MAP)) {
     const value = searchParams.get(param);
     if (value) {
-      initial[filterId] = value;
+      selectedValues[filterId] = value;
     }
   }
 
-  return initial;
+  return selectedValues;
 }
 
 function matchesFilters(
@@ -49,23 +53,16 @@ export default function CollectionCatalog() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const initialValues = useMemo(
-    () => getInitialValues(searchParams),
+  const activeFilters = useMemo(
+    () => getSelectedValues(searchParams),
     [searchParams],
   );
 
-  const [activeFilters, setActiveFilters] = useState<SelectedValues>({
-    look: initialValues.look ?? null,
-    formats: initialValues.formats ?? null,
-    material: initialValues.material ?? null,
-  });
-
   const handleFilterChange = useCallback(
     (values: SelectedValues) => {
-      setActiveFilters(values);
       const qs = toQuery(values);
       if (qs === searchParams.toString()) return;
-      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+      router.push(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
     },
     [pathname, router, searchParams],
   );
@@ -80,7 +77,7 @@ export default function CollectionCatalog() {
   return (
     <>
       <CollectionFilter
-        initialValues={initialValues}
+        selectedValues={activeFilters}
         onFilterChange={handleFilterChange}
       />
 

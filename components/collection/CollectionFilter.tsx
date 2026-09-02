@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import {
   COLLECTION_FILTERS,
   type FilterId,
@@ -16,23 +16,15 @@ const INITIAL_VALUES: SelectedValues = {
 };
 
 type CollectionFilterProps = {
-  initialValues?: Partial<SelectedValues>;
-  onFilterChange?: (values: SelectedValues) => void;
+  selectedValues: SelectedValues;
+  onFilterChange: (values: SelectedValues) => void;
 };
 
 export default function CollectionFilter({
-  initialValues,
+  selectedValues,
   onFilterChange,
-}: CollectionFilterProps = {}) {
+}: CollectionFilterProps) {
   const [openFilterId, setOpenFilterId] = useState<FilterId | null>(null);
-  const [selectedValues, setSelectedValues] = useState<SelectedValues>({
-    ...INITIAL_VALUES,
-    ...initialValues,
-  });
-
-  useEffect(() => {
-    onFilterChange?.(selectedValues);
-  }, [selectedValues, onFilterChange]);
 
   const handleToggle = useCallback((filterId: FilterId) => {
     setOpenFilterId((current) => (current === filterId ? null : filterId));
@@ -43,14 +35,14 @@ export default function CollectionFilter({
   }, []);
 
   const handleSelect = useCallback((filterId: FilterId, value: string) => {
-    setSelectedValues((current) => ({ ...current, [filterId]: value }));
+    onFilterChange({ ...selectedValues, [filterId]: value });
     setOpenFilterId(null);
-  }, []);
+  }, [onFilterChange, selectedValues]);
 
   const handleClear = useCallback(() => {
-    setSelectedValues(INITIAL_VALUES);
+    onFilterChange(INITIAL_VALUES);
     setOpenFilterId(null);
-  }, []);
+  }, [onFilterChange]);
 
   const hasActiveFilters = Object.values(selectedValues).some(Boolean);
 

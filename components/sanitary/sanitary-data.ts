@@ -714,15 +714,3 @@ export function getSanitaryCategoryBySlug(
 ): SanitaryCategory | undefined {
   return SANITARY_CATEGORIES.find((category) => category.id === slug);
 }
-
-export function getSanitaryListingsByCategory(
-  categoryId: string,
-): SanitaryListingItem[] {
-  return SANITARY_LISTINGS.filter((item) => item.categoryId === categoryId);
-}
-
-export function getSanitaryProductById(
-  id: string,
-): SanitaryListingItem | undefined {
-  return SANITARY_LISTINGS.find((item) => item.id === id);
-}

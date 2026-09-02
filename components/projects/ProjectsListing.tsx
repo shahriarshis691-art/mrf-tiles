@@ -1,4 +1,9 @@
+import { Suspense } from "react";
 import ProjectsGallery from "./ProjectsGallery";
+
+function ProjectsGalleryFallback() {
+  return <div className="mt-12 h-72 animate-pulse border border-neutral-200 bg-white sm:mt-14" />;
+}
 
 export default function ProjectsListing() {
   return (
@@ -16,7 +21,9 @@ export default function ProjectsListing() {
           </p>
         </header>
 
-        <ProjectsGallery />
+        <Suspense fallback={<ProjectsGalleryFallback />}>
+          <ProjectsGallery />
+        </Suspense>
       </div>
     </section>
   );
