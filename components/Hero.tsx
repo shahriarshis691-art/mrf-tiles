@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section
       aria-label="MRF Galaxy highlights"
-      className="relative isolate flex min-h-[40rem] w-full flex-col overflow-hidden bg-zinc-950 md:min-h-[44rem] lg:min-h-[48rem]"
+      className="relative isolate flex min-h-[40rem] w-full flex-col overflow-hidden md:min-h-[44rem] lg:min-h-[48rem]"
     >
       <Image
         src={HERO_IMAGE.src}
@@ -26,15 +26,6 @@ export default function Hero() {
         quality={90}
         sizes="100vw"
         className={`object-cover ${HERO_IMAGE.objectPosition}`}
-      />
-
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/25"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/35"
       />
 
       <div className="relative z-10 flex w-full flex-1 items-center justify-center px-6 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-32">
@@ -56,7 +47,7 @@ export default function Hero() {
                 ? { duration: 0 }
                 : { duration: 0.8, ease: "easeOut", delay: 0.4 }
             }
-            className="font-sans text-[clamp(2rem,10vw,3rem)] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white md:text-[4.5rem] lg:text-[6.1rem]"
+            className="font-sans text-[clamp(2rem,10vw,3rem)] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.45)] md:text-[4.5rem] lg:text-[6.1rem]"
           >
             GALAXY
             <br />
@@ -74,7 +65,7 @@ export default function Hero() {
           >
             <Link
               href="/#contact"
-              className="mt-9 inline-flex min-h-[44px] items-center justify-center border border-gold px-9 py-4 text-[12px] font-semibold tracking-[0.22em] text-white transition-colors duration-300 hover:bg-gold hover:text-zinc-950 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1"
+              className="mt-9 inline-flex min-h-[44px] items-center justify-center border border-gold px-9 py-4 text-[12px] font-semibold tracking-[0.22em] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.45)] transition-colors duration-300 hover:bg-gold hover:text-zinc-950 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1"
             >
               VISIT SHOWROOM
             </Link>

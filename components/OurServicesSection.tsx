@@ -5,8 +5,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 export default function OurServicesSection() {
   return (
     <section className="relative w-full bg-[#F9F9FB] overflow-hidden">
-      <div className="mx-auto flex max-w-[1440px] w-full items-center justify-between overflow-hidden px-6 sm:px-10 lg:px-14">
-        <div className="flex min-h-[17rem] w-full flex-row items-stretch gap-3 md:items-center md:justify-between md:gap-8">
+      <div className="mx-auto flex max-w-[1440px] w-full items-center justify-between overflow-hidden px-6 pr-0 sm:px-10 sm:pr-10 lg:px-14 lg:pr-14">
+        <div className="flex min-h-[17rem] w-full flex-row items-stretch gap-3 md:items-center md:justify-between md:gap-8 pr-0">
           {/* Left Card (Text) */}
           <ScrollReveal variant="slideInLeft" className="flex min-w-0 w-1/2 flex-col">
             <div className="h-full bg-[#F9F9FB] p-4 md:p-16 lg:p-20">
@@ -65,7 +65,7 @@ export default function OurServicesSection() {
           </ScrollReveal>
           
           {/* Right Card (Image) */}
-          <ScrollReveal variant="slideInRight" delay={0.15} className="flex min-w-0 w-1/2 items-stretch">
+          <ScrollReveal variant="slideInRight" delay={0.15} className="flex min-w-0 w-1/2 items-stretch pr-0">
             <div className="relative h-full w-full overflow-hidden transition-transform duration-500 ease-out hover:scale-[1.02] md:aspect-auto md:min-h-full">
               <Image
                 src="/service-image/service.jpg"
