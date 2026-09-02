@@ -47,11 +47,9 @@ export default function Hero() {
                 ? { duration: 0 }
                 : { duration: 0.8, ease: "easeOut", delay: 0.4 }
             }
-            className="font-sans text-[clamp(2rem,10vw,3rem)] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.45)] md:text-[4.5rem] lg:text-[6.1rem]"
+            className="font-sans font-bold uppercase leading-[1.15] tracking-[0.03em] text-white text-balance text-[clamp(1.6rem,8vw,2.8rem)] md:text-[3.25rem] lg:text-[4rem] [text-shadow:0_2px_18px_rgba(0,0,0,0.45)]"
           >
-            GALAXY
-            <br />
-            TILES
+            GALAXY TILES &amp; CERAMIC, RANGPUR
           </motion.h1>
 
           <motion.div
