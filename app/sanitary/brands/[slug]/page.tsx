@@ -53,8 +53,8 @@ export default async function SanitaryBrandPage({ params }: Props) {
             src={brand.banner}
             alt={brand.bannerAlt}
             fill
-            priority
-            quality={95}
+            preload
+            quality={90}
             sizes="100vw"
             className="object-cover object-center"
           />

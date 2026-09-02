@@ -142,7 +142,7 @@ export default function OutletsSection() {
                      src={image.src}
                      alt={image.alt}
                      fill
-                     quality={95}
+                     quality={90}
                      sizes="(max-width: 768px) 45vw, 28vw"
                      className="object-cover object-center"
                    />

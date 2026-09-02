@@ -175,8 +175,9 @@ export default function Hero() {
             src={slide.src}
             alt={i === index ? slide.alt : ""}
             fill
-            priority={i === 0}
-            quality={i === 0 ? 100 : 90}
+            preload={i === 0}
+            loading={i === 0 ? undefined : i === index ? "eager" : "lazy"}
+            quality={90}
             sizes="100vw"
             aria-hidden={i !== index}
             className={`object-cover transition-opacity duration-700 ${slide.objectPosition} ${

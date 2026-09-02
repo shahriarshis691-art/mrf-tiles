@@ -105,8 +105,8 @@ export default function AboutPage() {
             src="/images/hero-display-centre.jpg"
             alt=""
             fill
-            priority
-            quality={100}
+            preload
+            quality={90}
             sizes="100vw"
             className="object-cover object-center opacity-12"
             aria-hidden="true"
@@ -206,7 +206,7 @@ export default function AboutPage() {
             src="/images/projects/architectural-tile-experience.jpg"
             alt=""
             fill
-            quality={95}
+            quality={90}
             sizes="100vw"
             className="object-cover object-[center_40%] opacity-8"
             aria-hidden="true"
@@ -311,7 +311,7 @@ export default function AboutPage() {
                         src={product.image}
                         alt={product.alt}
                         fill
-                        quality={95}
+                        quality={90}
                         sizes="(max-width: 1024px) 50vw, 33vw"
                         className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                       />
@@ -341,7 +341,7 @@ export default function AboutPage() {
             src="/images/projects/mrf-experience-showroom.jpg"
             alt=""
             fill
-            quality={95}
+            quality={90}
             sizes="100vw"
             className="object-cover object-center opacity-10"
             aria-hidden="true"
@@ -487,7 +487,7 @@ export default function AboutPage() {
             src="/images/projects/modern-sanitary-space.jpg"
             alt=""
             fill
-            quality={95}
+            quality={90}
             sizes="100vw"
             className="object-cover object-center opacity-15"
             aria-hidden="true"

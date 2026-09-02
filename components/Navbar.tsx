@@ -123,7 +123,7 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
       }`}
     >
       <div className="relative mx-auto flex h-[4.85rem] max-w-[1440px] items-center justify-between px-6 pr-16 sm:h-[5.25rem] sm:px-10 md:pr-10 lg:px-14">
-        <Logo priority light={heroNav} />
+        <Logo light={heroNav} />
 
         <nav
           className="hidden items-center md:flex md:gap-6 lg:gap-10 xl:gap-12"

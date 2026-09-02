@@ -2,11 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 type LogoProps = {
-  priority?: boolean;
   light?: boolean;
 };
 
-export default function Logo({ priority = false, light = false }: LogoProps) {
+export default function Logo({ light = false }: LogoProps) {
   return (
     <Link
       href="/"
@@ -21,8 +20,7 @@ export default function Logo({ priority = false, light = false }: LogoProps) {
         alt="MRF Galaxy Tiles & Sanitary"
         width={1122}
         height={1402}
-        priority={priority}
-        quality={95}
+        quality={90}
         sizes="80px"
         className="h-12 w-auto max-h-12 object-contain sm:h-[3.35rem] sm:max-h-[3.35rem]"
       />

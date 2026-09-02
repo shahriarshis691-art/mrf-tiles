@@ -48,7 +48,7 @@ export default function RelatedCollections({ products }: RelatedCollectionsProps
                 src={product.image}
                 alt={product.alt}
                 fill
-                quality={95}
+                quality={90}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className={`h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 ${product.imagePosition ?? ""}`}
               />

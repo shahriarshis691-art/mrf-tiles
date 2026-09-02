@@ -61,8 +61,8 @@ export default function SanitaryPage() {
                         src={category.image}
                         alt={category.alt}
                         fill
-                        quality={100}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={90}
+                        sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw"
                         className={`object-cover object-center transition-transform duration-700 group-hover:scale-105 ${category.imagePosition ?? ""}`}
                       />
                     </div>

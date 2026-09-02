@@ -56,11 +56,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-img {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-}
-
 :focus-visible {
   outline: 2px solid #0F0F0F;
   outline-offset: 2px;

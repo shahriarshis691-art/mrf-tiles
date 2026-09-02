@@ -46,13 +46,12 @@ export default function FounderSection() {
             <div className="relative h-full w-full overflow-hidden border border-neutral-200/60 bg-neutral-100 transition-transform duration-500 ease-out hover:scale-[1.02]">
               <div className="relative h-full min-h-[20rem] w-full bg-neutral-100 sm:min-h-[18rem] md:aspect-[3/4] md:h-[36rem] md:min-h-0">
                 <Image
-                  src="/founder-image/founder.png"
+                  src="/founder-image/founder.jpg"
                   alt="Founder and Managing Director of MRF Galaxy Tiles & Sanitary"
                   fill
-                  quality={95}
+                  quality={90}
                   sizes="(max-width: 1024px) 50vw, 50vw"
                   className="object-cover object-center"
-                  priority
                 />
               </div>
             </div>

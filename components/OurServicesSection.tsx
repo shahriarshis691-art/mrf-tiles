@@ -68,13 +68,13 @@ export default function OurServicesSection() {
           <ScrollReveal variant="slideInRight" delay={0.15} className="flex min-w-0 w-full items-stretch md:w-1/2">
             <div className="relative aspect-[4/3] w-full overflow-hidden border border-neutral-200/60 transition-transform duration-500 ease-out hover:scale-[1.02] md:aspect-auto md:min-h-full">
               <Image
-                src="/service-image/service.png"
+                src="/service-image/service.jpg"
                 alt="Service Showcase"
                 width={800}
                 height={600}
-                quality={95}
+                quality={90}
+                sizes="(max-width: 767px) 100vw, 50vw"
                 className="object-cover object-center w-full h-full"
-                priority
               />
             </div>
           </ScrollReveal>

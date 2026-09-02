@@ -32,7 +32,7 @@ export default function BrandsPage() {
 
           <ScrollReveal variant="fadeInUp" delay={0.1}>
             <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 md:gap-6 lg:grid-cols-4 lg:gap-6">
-              {BRANDS.map((brand: Brand, index) => (
+              {BRANDS.map((brand: Brand) => (
                 <Link
                   key={brand.slug}
                   href={brand.href}
@@ -45,8 +45,7 @@ export default function BrandsPage() {
                         src={brand.cardImage}
                         alt={brand.cardAlt}
                         fill
-                        priority={index < 2}
-                        quality={95}
+                        quality={90}
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                       />

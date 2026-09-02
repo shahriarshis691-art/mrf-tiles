@@ -4,12 +4,10 @@ import type { CatalogProduct } from "./collection-data";
 
 type CollectionCatalogCardProps = {
   product: CatalogProduct;
-  priority?: boolean;
 };
 
 export default function CollectionCatalogCard({
   product,
-  priority = false,
 }: CollectionCatalogCardProps) {
   return (
     <Link
@@ -22,8 +20,7 @@ export default function CollectionCatalogCard({
             src={product.image}
             alt={product.alt}
             fill
-            priority={priority}
-            quality={95}
+            quality={90}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className={`h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 ${product.imagePosition ?? ""}`}
           />

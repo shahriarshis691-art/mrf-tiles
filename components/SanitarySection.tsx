@@ -38,11 +38,10 @@ export default function SanitarySection() {
 
         <ScrollReveal variant="fadeInUp" delay={0.15}>
           <div className="mt-14 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-6">
-            {SANITARY_BRANDS.map((brand, index) => (
+            {SANITARY_BRANDS.map((brand) => (
               <SanitaryBrandCard
                 key={brand.slug}
                 brand={brand}
-                priority={index < 2}
               />
             ))}
           </div>

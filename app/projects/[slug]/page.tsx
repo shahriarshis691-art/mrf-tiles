@@ -85,8 +85,8 @@ export default async function ProjectDetailPage({
                 src={project.image}
                 alt={project.title}
                 fill
-                priority
-                quality={95}
+                preload
+                quality={90}
                 sizes="(max-width: 1440px) 100vw, 1440px"
                 className="object-cover object-center"
               />
@@ -147,7 +147,7 @@ export default async function ProjectDetailPage({
                          src={image.src}
                          alt={image.alt}
                          fill
-                         quality={95}
+                         quality={90}
                          sizes="(max-width: 768px) 50vw, 50vw"
                          className="h-full w-full object-cover object-center"
                        />

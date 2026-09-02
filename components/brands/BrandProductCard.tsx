@@ -26,7 +26,7 @@ export default function BrandProductCard({
           src={product.image}
           alt={product.alt}
           fill
-          quality={95}
+          quality={90}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
         />

@@ -21,8 +21,8 @@ export default function AboutSection() {
               src="/images/hero-display-centre.jpg"
               alt="MRF Galaxy experience showroom with premium tile displays"
               fill
-              quality={95}
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={90}
+              sizes="(max-width: 639px) 34vw, (max-width: 1023px) 50vw, 50vw"
               className="object-cover object-center"
             />
           </div>

@@ -4,12 +4,10 @@ import type { SanitaryBrand } from "@/lib/sanitaryBrands";
 
 type SanitaryBrandCardProps = {
   brand: SanitaryBrand;
-  priority?: boolean;
 };
 
 export default function SanitaryBrandCard({
   brand,
-  priority = false,
 }: SanitaryBrandCardProps) {
   return (
     <Link
@@ -23,8 +21,7 @@ export default function SanitaryBrandCard({
             src={brand.cardImage}
             alt={brand.cardAlt}
             fill
-            priority={priority}
-            quality={95}
+            quality={90}
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
           />

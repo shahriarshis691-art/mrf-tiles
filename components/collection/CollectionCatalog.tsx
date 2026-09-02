@@ -91,11 +91,10 @@ export default function CollectionCatalog() {
 
       {filteredProducts.length > 0 ? (
         <div className="mt-8 grid grid-cols-1 gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-5">
-          {filteredProducts.map((product, index) => (
+          {filteredProducts.map((product) => (
             <CollectionCatalogCard
               key={product.id}
               product={product}
-              priority={index < 3}
             />
           ))}
         </div>

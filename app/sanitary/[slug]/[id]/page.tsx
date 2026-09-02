@@ -85,8 +85,8 @@ export default async function SanitaryProductPage({ params }: Props) {
                 src={product.image}
                 alt={product.title}
                 fill
-                quality={95}
-                priority
+                quality={90}
+                preload
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
               />
