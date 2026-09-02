@@ -12,11 +12,11 @@ export default function AboutSection() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="bg-white px-6 py-24 sm:px-10 sm:py-32 lg:px-14 lg:py-32"
+      className="bg-[#F5F1E8] px-6 py-24 sm:px-10 sm:py-32 lg:px-14 lg:py-32"
     >
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
-        <ScrollReveal variant="slideInLeft">
-          <div className="relative aspect-[4/5] overflow-hidden w-full h-full bg-neutral-100 border border-neutral-200/60 sm:aspect-[5/6] lg:aspect-auto lg:min-h-[36rem]">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-[minmax(0,0.34fr)_minmax(0,0.66fr)] items-stretch gap-3 sm:grid-cols-[minmax(0,0.4fr)_minmax(0,0.6fr)] sm:gap-6 md:grid-cols-2 md:items-center md:gap-10 lg:gap-16 xl:gap-24">
+        <ScrollReveal variant="slideInLeft" className="h-full">
+          <div className="relative h-full min-h-[24rem] w-full overflow-hidden border border-neutral-200/60 bg-neutral-100 md:min-h-[30rem] lg:min-h-[36rem]">
             <Image
               src="/images/hero-display-centre.jpg"
               alt="MRF Galaxy experience showroom with premium tile displays"
@@ -64,7 +64,7 @@ export default function AboutSection() {
                   <dt className="font-sans text-[1.75rem] font-semibold tracking-wide text-[#0F0F0F] sm:text-[2rem]">
                     {stat.value}
                   </dt>
-                  <dd className="mt-2 text-[9px] font-medium tracking-[0.2em] text-neutral-600 sm:text-[10px]">
+                  <dd className="mt-2 break-words text-[9px] font-medium tracking-[0.2em] text-neutral-600 sm:text-[10px]">
                     {stat.label}
                   </dd>
                 </div>
