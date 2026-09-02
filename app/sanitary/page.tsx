@@ -24,7 +24,7 @@ export default function SanitaryPage() {
           {/* Light-beige top header with 3 vertical service columns */}
           <header className="bg-[#FAF8F5] py-12 sm:py-16 lg:py-20">
             <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
-              <h1 className="text-[2rem] font-semibold uppercase tracking-[0.34em] text-neutral-900 text-center sm:text-left sm:text-[2.35rem] lg:text-[2.6rem]">
+              <h1 className="text-center text-[1.5rem] font-semibold uppercase tracking-[0.14em] text-neutral-900 sm:text-left sm:text-[2.35rem] sm:tracking-[0.34em] lg:text-[2.6rem]">
                 SANITARY SOLUTIONS
               </h1>
               <span className="mx-auto sm:mx-0 mt-5 block h-px w-12 bg-neutral-300" />

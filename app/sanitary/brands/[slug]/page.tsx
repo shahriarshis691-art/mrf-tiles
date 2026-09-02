@@ -46,7 +46,7 @@ export default async function SanitaryBrandPage({ params }: Props) {
       <main id="main">
         <section
           aria-label={`${brand.name} banner`}
-          className="relative h-[42vh] w-full overflow-hidden bg-zinc-950 sm:h-[52vh] lg:h-[58vh]"
+          className="relative h-[42vh] min-h-[26rem] w-full overflow-hidden bg-zinc-950 sm:h-[52vh] sm:min-h-0 lg:h-[58vh]"
         >
           <Image
             src={brand.banner}
