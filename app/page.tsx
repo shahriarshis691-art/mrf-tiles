@@ -4,7 +4,7 @@ import FounderSection from "@/components/FounderSection";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import SanitarySection from "@/components/SanitarySection";
-import CollectionSection from "@/components/collection/CollectionSection";
+import CollectionSection from "@/components/CollectionSection";
 import OutletsSection from "@/components/OutletsSection";
 import OurServicesSection from "@/components/OurServicesSection";
 
