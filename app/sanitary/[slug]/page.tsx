@@ -69,7 +69,7 @@ export default async function SanitaryCategoryPage({ params }: Props) {
             </p>
           </header>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-6 overflow-x-auto sm:auto-cols-[16rem] lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-3 lg:overflow-visible xl:grid-cols-4">
             {products.map((product) => (
               <article
                 key={product.id}

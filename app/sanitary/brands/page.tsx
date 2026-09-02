@@ -37,7 +37,7 @@ export default function SanitaryBrandsPage() {
             </p>
           </header>
 
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-6">
+          <div className="mt-12 grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-5 overflow-x-auto sm:mt-14 sm:auto-cols-[16rem] sm:gap-6 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-4 lg:overflow-visible lg:gap-6">
             {SANITARY_BRANDS.map((brand) => (
               <SanitaryBrandCard
                 key={brand.slug}

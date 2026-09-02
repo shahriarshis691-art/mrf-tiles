@@ -41,7 +41,7 @@ export default function BrandsPage() {
           </ScrollReveal>
 
           <ScrollReveal variant="fadeInUp" delay={0.1}>
-            <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 md:gap-6 lg:grid-cols-4 lg:gap-6">
+            <div className="grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-5 overflow-x-auto sm:auto-cols-[16rem] sm:gap-6 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-4 lg:overflow-visible lg:gap-6">
               {BRANDS.map((brand: Brand) => (
                 <Link
                   key={brand.slug}

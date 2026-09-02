@@ -6,10 +6,10 @@ export default function OurServicesSection() {
   return (
     <section className="relative w-full bg-[#F9F9FB] overflow-hidden">
       <div className="mx-auto flex max-w-[1440px] w-full items-center justify-between overflow-hidden px-6 sm:px-10 lg:px-14">
-        <div className="flex w-full flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
+        <div className="flex w-full flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8">
           {/* Left Card (Text) */}
-          <ScrollReveal variant="slideInLeft" className="flex min-w-0 w-full flex-col md:w-1/2">
-            <div className="h-full border border-neutral-200/60 bg-[#F9F9FB] p-6 shadow-sm shadow-neutral-900/[0.03] transition-shadow duration-500 hover:shadow-md hover:shadow-neutral-900/[0.06] sm:p-8 md:p-16 lg:p-20">
+          <ScrollReveal variant="slideInLeft" className="flex min-w-0 w-1/2 flex-col">
+            <div className="h-full border border-neutral-200/60 bg-[#F9F9FB] p-4 shadow-sm shadow-neutral-900/[0.03] transition-shadow duration-500 hover:shadow-md hover:shadow-neutral-900/[0.06] sm:p-8 md:p-16 lg:p-20">
               <div className="flex h-full flex-col justify-center">
                 {/* Animated Marquee */}
                 <div className="mb-5 overflow-hidden sm:mb-8">
@@ -65,7 +65,7 @@ export default function OurServicesSection() {
           </ScrollReveal>
           
           {/* Right Card (Image) */}
-          <ScrollReveal variant="slideInRight" delay={0.15} className="flex min-w-0 w-full items-stretch md:w-1/2">
+          <ScrollReveal variant="slideInRight" delay={0.15} className="flex min-w-0 w-1/2 items-stretch">
             <div className="relative aspect-[4/3] w-full overflow-hidden border border-neutral-200/60 transition-transform duration-500 ease-out hover:scale-[1.02] md:aspect-auto md:min-h-full">
               <Image
                 src="/service-image/service.jpg"
@@ -73,7 +73,7 @@ export default function OurServicesSection() {
                 width={800}
                 height={600}
                 quality={90}
-                sizes="(max-width: 767px) 100vw, 50vw"
+                sizes="50vw"
                 className="object-cover object-center w-full h-full"
               />
             </div>

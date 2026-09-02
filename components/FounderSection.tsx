@@ -8,10 +8,10 @@ export default function FounderSection() {
       className="bg-[#F8F8F8] px-6 py-24 sm:px-10 sm:py-32 lg:px-14 lg:py-32"
     >
       <div className="mx-auto max-w-[1440px]">
-        <div className="flex flex-col gap-10 sm:flex-row sm:items-stretch sm:gap-8 lg:gap-16 xl:gap-24">
+        <div className="flex flex-row items-stretch gap-4 sm:gap-8 lg:gap-16 xl:gap-24">
           {/* Left: Typography */}
-          <ScrollReveal variant="slideInLeft" className="w-full sm:w-1/2">
-            <div className="flex h-full w-full flex-col p-3 sm:p-4 lg:max-w-lg lg:p-0">
+          <ScrollReveal variant="slideInLeft" className="w-1/2">
+            <div className="flex h-full w-full flex-col p-0 sm:p-4 lg:max-w-lg lg:p-0">
               <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-neutral-500 sm:text-[9px] sm:tracking-widest md:text-[11px] md:tracking-[0.2em]">
                 Leadership &amp; Vision
               </p>
@@ -42,9 +42,9 @@ export default function FounderSection() {
           </ScrollReveal>
 
           {/* Right: Image Card */}
-          <ScrollReveal variant="slideInRight" delay={0.15} className="w-full sm:w-1/2">
+          <ScrollReveal variant="slideInRight" delay={0.15} className="w-1/2">
             <div className="relative h-full w-full overflow-hidden border border-neutral-200/60 bg-neutral-100 transition-transform duration-500 ease-out hover:scale-[1.02]">
-              <div className="relative h-full min-h-[20rem] w-full bg-neutral-100 sm:min-h-[18rem] md:aspect-[3/4] md:h-[36rem] md:min-h-0">
+              <div className="relative aspect-[3/4] h-auto min-h-0 w-full bg-neutral-100 md:h-[36rem]">
                 <Image
                   src="/founder-image/founder.jpg"
                   alt="Founder and Managing Director of MRF Galaxy Tiles & Sanitary"

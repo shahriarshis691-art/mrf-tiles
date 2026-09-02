@@ -219,7 +219,7 @@ export default function AboutPage() {
             className="absolute inset-0 bg-neutral-900/75"
           />
           <div className="mx-auto max-w-[1440px] relative z-10">
-            <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-20 xl:gap-28">
+            <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-4 sm:gap-8 lg:grid-cols-2 lg:gap-20 xl:gap-28">
               <ScrollReveal variant="slideInLeft">
                 <div>
                   <p className="text-[10px] font-medium tracking-[0.25em] text-gold uppercase">
@@ -303,7 +303,7 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal variant="fadeInUp" delay={0.15}>
-              <div className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+              <div className="mt-16 grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-8 overflow-x-auto sm:mt-20 sm:auto-cols-[16rem] lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-3 lg:overflow-visible lg:gap-8">
                 {PRODUCTS.map((product) => (
                   <article
                     key={product.title}
@@ -355,7 +355,7 @@ export default function AboutPage() {
           />
 
           <div className="mx-auto max-w-[1440px] relative z-10">
-            <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-20 xl:gap-28">
+            <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-4 sm:gap-8 lg:grid-cols-2 lg:gap-20 xl:gap-28">
               <ScrollReveal variant="slideInLeft">
                 <div>
                   <p className="text-[10px] font-medium tracking-[0.25em] text-gold uppercase">
@@ -461,7 +461,7 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal variant="fadeInUp" delay={0.15}>
-              <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+              <div className="mx-auto mt-16 grid max-w-5xl grid-flow-col auto-cols-[78vw] grid-rows-1 gap-8 overflow-x-auto sm:mt-20 sm:auto-cols-[16rem] lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-4 lg:overflow-visible lg:gap-8">
                 {VALUES.map((value) => (
                   <div
                     key={value.label}

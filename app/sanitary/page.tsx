@@ -38,7 +38,7 @@ export default function SanitaryPage() {
               </p>
               
               {/* 3 vertical service columns in light-beige header */}
-              <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-12 grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-8 overflow-x-auto sm:auto-cols-[16rem] lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-3 lg:overflow-visible">
                 {SANITARY_CATEGORIES.map((category) => (
                   <div key={category.id} className="text-center lg:text-left">
                     <h3 className="text-[12px] font-semibold tracking-[0.26em] text-neutral-900 uppercase">
@@ -56,7 +56,7 @@ export default function SanitaryPage() {
           {/* Sanitary Categories Showcase */}
           <section className="bg-white py-16 sm:py-20 lg:py-24">
             <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
+              <div className="grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-4 overflow-x-auto sm:auto-cols-[16rem] md:gap-6 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-3 lg:overflow-visible">
                 {SANITARY_CATEGORIES.map((category) => (
                   <div key={category.id} className="group bg-white border border-neutral-200/60">
                     <div className="aspect-[4/5] bg-neutral-100 relative overflow-hidden w-full h-full">
@@ -90,7 +90,7 @@ export default function SanitaryPage() {
           </section>
 
           {/* Consultation CTA */}
-          <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:mt-16 sm:flex-row sm:gap-5">
+          <div className="mt-14 flex flex-row items-center justify-center gap-4 sm:mt-16 sm:gap-5">
             <Link
               href="/sanitary/brands"
               className="inline-flex min-h-[44px] items-center justify-center border border-neutral-200 bg-transparent px-10 text-[12px] font-medium uppercase tracking-[0.08em] text-neutral-700 transition-colors duration-300 hover:border-neutral-900 hover:text-neutral-900 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1"

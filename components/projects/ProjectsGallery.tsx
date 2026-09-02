@@ -106,7 +106,7 @@ export default function ProjectsGallery() {
         Showing {filteredProjects.length} {activeCategory === "all" ? "projects" : `projects in ${activeCategoryLabel}`}.
       </p>
 
-      <div id="projects-gallery" className="mt-12 grid grid-cols-1 gap-6 sm:mt-14 md:mt-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+      <div id="projects-gallery" className="mt-12 grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-6 overflow-x-auto sm:mt-14 sm:auto-cols-[16rem] md:mt-16 md:gap-8 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-3 lg:overflow-visible">
         {filteredProjects.map((project) => (
           <ProjectMasonryItem key={project.slug} project={project} />
         ))}

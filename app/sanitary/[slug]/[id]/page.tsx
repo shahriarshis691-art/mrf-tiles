@@ -83,7 +83,7 @@ export default async function SanitaryProductPage({ params }: Props) {
             </ol>
           </nav>
 
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-4 sm:gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-100">
               <Image
                 src={product.image}

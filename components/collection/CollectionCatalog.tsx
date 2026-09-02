@@ -90,7 +90,7 @@ export default function CollectionCatalog() {
       </div>
 
       {filteredProducts.length > 0 ? (
-        <div className="mt-8 grid grid-cols-1 gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-5">
+        <div className="mt-8 grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-5 overflow-x-auto sm:mt-10 sm:auto-cols-[16rem] sm:gap-6 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-3 lg:overflow-visible lg:gap-5">
           {filteredProducts.map((product) => (
             <CollectionCatalogCard
               key={product.id}

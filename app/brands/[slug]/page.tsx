@@ -120,7 +120,7 @@ export default async function BrandPage({ params }: Props) {
             </header>
 
             {brand.products.length > 0 ? (
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-7 xl:grid-cols-4">
+              <div className="grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-6 overflow-x-auto sm:auto-cols-[16rem] sm:gap-6 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-3 lg:overflow-visible lg:gap-7 xl:grid-cols-4">
                 {brand.products.map((product) => (
                   <BrandProductCard
                     key={product.id}

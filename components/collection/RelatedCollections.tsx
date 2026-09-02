@@ -24,7 +24,7 @@ export default function RelatedCollections({ products }: RelatedCollectionsProps
         <span className="mx-auto mt-5 block h-px w-12 bg-neutral-300" />
       </header>
 
-      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
+      <div className="mt-12 grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-4 overflow-x-auto sm:auto-cols-[16rem] md:gap-6 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-3 lg:overflow-visible">
         {products.map((product) => (
           <Link
             key={product.id}

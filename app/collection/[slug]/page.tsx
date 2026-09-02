@@ -102,7 +102,7 @@ export default async function CollectionDetailPage({
             />
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-10 border-y border-neutral-200 py-12 sm:mt-14 lg:grid-cols-[1fr_20rem] lg:gap-16">
+          <div className="mt-12 grid grid-cols-[minmax(0,1fr)_minmax(0,0.7fr)] gap-4 border-y border-neutral-200 py-12 sm:mt-14 sm:gap-8 lg:grid-cols-[1fr_20rem] lg:gap-16">
             <div>
               <p className="text-[11px] font-medium tracking-[0.22em] text-neutral-500 uppercase">
                 Specifications
@@ -143,7 +143,7 @@ export default async function CollectionDetailPage({
               <p className="text-[11px] font-medium tracking-[0.22em] text-neutral-500 uppercase">
                 In Context
               </p>
-              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
+              <div className="mt-8 grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-4 overflow-x-auto sm:auto-cols-[16rem] md:gap-6 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-2 lg:overflow-visible">
                 {product.gallery.map((image) => (
                   <figure
                     key={image.src}

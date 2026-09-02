@@ -79,7 +79,7 @@ export default function ContactSection() {
       className="bg-white px-6 py-24 sm:px-10 sm:py-32 lg:px-14 lg:py-32"
     >
       <div className="mx-auto max-w-[1440px]">
-        <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-20 xl:gap-28">
+        <div className="grid grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-4 sm:gap-8 lg:grid-cols-2 lg:gap-20 xl:gap-28">
           <ScrollReveal variant="slideInLeft">
             <div>
               <p className="text-[11px] font-medium tracking-[0.2em] text-neutral-500 uppercase">

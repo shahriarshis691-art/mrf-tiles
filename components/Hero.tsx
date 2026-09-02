@@ -251,13 +251,13 @@ export default function Hero() {
           Showing slide {index + 1} of {SLIDES.length}: {SLIDES[index].alt}
         </p>
 
-        <div className="grid shrink-0 grid-cols-1 gap-3 px-6 pb-6 sm:grid-cols-3 sm:gap-4 sm:px-10 sm:pb-8 lg:px-14">
+        <div className="flex shrink-0 gap-3 overflow-x-auto px-6 pb-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:px-10 sm:pb-8 lg:px-14">
           {FEATURE_CARDS.map((card) => {
             const Icon = card.icon;
             return (
               <article
                 key={card.title}
-                className="flex flex-col border border-white/20 bg-white/10 px-6 py-5 backdrop-blur-md"
+                className="flex w-[78vw] shrink-0 flex-col border border-white/20 bg-white/10 px-6 py-5 backdrop-blur-md sm:w-auto"
               >
                 <span className="text-gold">
                   <Icon />
