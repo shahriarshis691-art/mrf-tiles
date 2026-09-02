@@ -151,7 +151,12 @@ export default function ContactSection() {
           <ScrollReveal variant="slideInRight" delay={0.15}>
             <div>
               {whatsappUrl ? (
-                <div className="flex h-full min-h-[20rem] flex-col items-center justify-center border border-neutral-200 bg-white px-8 py-16 text-center">
+                <div
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                  className="flex h-full min-h-[20rem] flex-col items-center justify-center border border-neutral-200 bg-white px-8 py-16 text-center"
+                >
                   <p className="text-[11px] font-semibold tracking-[0.2em] text-neutral-500 uppercase">
                     Continue In WhatsApp
                   </p>

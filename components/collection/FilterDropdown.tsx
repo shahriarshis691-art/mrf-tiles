@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useId, useRef } from "react";
+import {
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  type KeyboardEvent as ReactKeyboardEvent,
+} from "react";
 
 type FilterDropdownProps = {
   placeholder: string;
@@ -43,9 +49,17 @@ export default function FilterDropdown({
   onClose,
 }: FilterDropdownProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const optionRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const returnFocusOnCloseRef = useRef(false);
   const listboxId = useId();
+  const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
   const displayText = value ?? placeholder;
   const hasSelection = value !== null;
+  const selectedIndex = Math.max(
+    options.findIndex((option) => option === value),
+    0,
+  );
 
   useEffect(() => {
     if (!isOpen) return;
@@ -61,6 +75,7 @@ export default function FilterDropdown({
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        returnFocusOnCloseRef.current = true;
         onClose();
       }
     };
@@ -74,14 +89,69 @@ export default function FilterDropdown({
     };
   }, [isOpen, onClose]);
 
+  useEffect(() => {
+    if (isOpen && focusedIndex !== null) {
+      const frame = window.requestAnimationFrame(() => {
+        optionRefs.current[focusedIndex]?.focus();
+      });
+      return () => window.cancelAnimationFrame(frame);
+    }
+
+    if (!isOpen && returnFocusOnCloseRef.current) {
+      returnFocusOnCloseRef.current = false;
+      triggerRef.current?.focus();
+    }
+  }, [focusedIndex, isOpen]);
+
+  const openWithKeyboard = (index: number) => {
+    if (!isOpen) onToggle();
+    setFocusedIndex(index);
+  };
+
+  const handleTriggerKeyDown = (event: ReactKeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      openWithKeyboard(value ? selectedIndex : 0);
+    }
+
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      openWithKeyboard(value ? selectedIndex : options.length - 1);
+    }
+  };
+
+  const handleOptionKeyDown = (
+    event: ReactKeyboardEvent<HTMLButtonElement>,
+    index: number,
+  ) => {
+    let nextIndex: number | null = null;
+
+    if (event.key === "ArrowDown") {
+      nextIndex = (index + 1) % options.length;
+    } else if (event.key === "ArrowUp") {
+      nextIndex = (index - 1 + options.length) % options.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = options.length - 1;
+    }
+
+    if (nextIndex !== null) {
+      event.preventDefault();
+      setFocusedIndex(nextIndex);
+    }
+  };
+
   return (
     <div ref={containerRef} className="relative">
       <button
+        ref={triggerRef}
         type="button"
         aria-expanded={isOpen}
-        aria-haspopup="listbox"
+        aria-haspopup="true"
         aria-controls={listboxId}
         onClick={onToggle}
+        onKeyDown={handleTriggerKeyDown}
         className={`group flex h-14 min-w-[44px] items-center justify-between border px-5 text-left transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 ${
           isOpen
             ? "border-neutral-900 bg-white"
@@ -103,20 +173,25 @@ export default function FilterDropdown({
       {isOpen ? (
         <ul
           id={listboxId}
-          role="listbox"
-          aria-label={placeholder}
+          aria-label={`${placeholder} options`}
           className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-56 overflow-y-auto border border-zinc-200 bg-white"
         >
-          {options.map((option) => {
+          {options.map((option, index) => {
             const selected = value === option;
             return (
-              <li key={option} role="none">
-                 <button
+              <li key={option}>
+                <button
+                  ref={(element) => {
+                    optionRefs.current[index] = element;
+                  }}
                   type="button"
-                  role="option"
-                  aria-selected={selected}
-                  onClick={() => onSelect(option)}
-                  className={`flex min-h-[44px] w-full items-center px-4 py-3 text-left text-[12px] tracking-[0.04em] transition-colors duration-150 outline-none focus-visible:bg-neutral-100 sm:text-[13px] ${
+                  aria-pressed={selected}
+                  onClick={() => {
+                    returnFocusOnCloseRef.current = true;
+                    onSelect(option);
+                  }}
+                  onKeyDown={(event) => handleOptionKeyDown(event, index)}
+                  className={`flex min-h-[44px] w-full items-center px-4 py-3 text-left text-[12px] tracking-[0.04em] transition-colors duration-150 outline-none focus-visible:bg-neutral-100 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-neutral-900 sm:text-[13px] ${
                     selected
                       ? "bg-neutral-100 text-neutral-900"
                       : "text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900"

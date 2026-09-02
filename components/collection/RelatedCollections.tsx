@@ -29,7 +29,7 @@ export default function RelatedCollections({ products }: RelatedCollectionsProps
           <Link
             key={product.id}
             href={`/collection/${product.id}`}
-            className="group flex aspect-[1/1.7] w-full flex-col overflow-hidden bg-zinc-950 transition-all duration-500 ease-out"
+            className="group flex aspect-[1/1.7] w-full flex-col overflow-hidden bg-zinc-950 transition-all duration-500 ease-out focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
             <div className="flex flex-[0.38] flex-col justify-center px-5 py-6 sm:px-6 sm:py-7 bg-transparent">
               <p className="text-[8px] font-medium uppercase tracking-[0.2em] text-stone-400 sm:text-[9px]">

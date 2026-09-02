@@ -9,17 +9,41 @@ export default function LenisProvider({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      syncTouch: false,
-      touchMultiplier: 2,
-      autoRaf: true,
-    });
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let lenis: Lenis | null = null;
+
+    const startLenis = () => {
+      if (mediaQuery.matches || lenis) return;
+
+      lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        syncTouch: false,
+        touchMultiplier: 2,
+        autoRaf: true,
+      });
+    };
+
+    const stopLenis = () => {
+      lenis?.destroy();
+      lenis = null;
+    };
+
+    const handlePreferenceChange = () => {
+      if (mediaQuery.matches) {
+        stopLenis();
+      } else {
+        startLenis();
+      }
+    };
+
+    startLenis();
+    mediaQuery.addEventListener("change", handlePreferenceChange);
 
     return () => {
-      lenis.destroy();
+      mediaQuery.removeEventListener("change", handlePreferenceChange);
+      stopLenis();
     };
   }, []);
 

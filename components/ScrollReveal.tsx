@@ -1,6 +1,12 @@
 "use client";
 
-import { motion, useInView, type Transition, type Variants } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useReducedMotion,
+  type Transition,
+  type Variants,
+} from "framer-motion";
 import { useRef } from "react";
 
 type AnimationVariant =
@@ -60,14 +66,19 @@ export default function ScrollReveal({
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once, amount });
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      initial={shouldReduceMotion ? false : "hidden"}
+      animate={shouldReduceMotion || isInView ? "visible" : "hidden"}
       variants={variants[variant]}
-      transition={{ ...transitions[variant], delay }}
+      transition={
+        shouldReduceMotion
+          ? { duration: 0 }
+          : { ...transitions[variant], delay }
+      }
       className={className}
     >
       {children}

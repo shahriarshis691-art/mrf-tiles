@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { contactHref } from "@/lib/contact";
 
 const SLIDES = [
@@ -160,9 +160,14 @@ function SlideIndicators({
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative isolate flex min-h-[34rem] w-full flex-col overflow-hidden bg-zinc-950">
+    <section
+      aria-label="MRF Galaxy highlights"
+      aria-roledescription="carousel"
+      className="relative isolate flex min-h-[34rem] w-full flex-col overflow-hidden bg-zinc-950"
+    >
       <div className="absolute inset-0 overflow-hidden">
         {SLIDES.map((slide, i) => (
           <Image
@@ -192,16 +197,24 @@ export default function Hero() {
 
       <div className="relative z-10 flex w-full flex-1 flex-col">
 <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+            transition={
+              shouldReduceMotion
+                ? { duration: 0 }
+                : { duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }
+            }
             className="relative flex flex-1 items-center px-6 pt-28 sm:px-10 sm:pt-32 lg:px-14 lg:pt-24"
           >
           <div className="max-w-[46rem]">
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0 }
+                  : { duration: 0.8, ease: "easeOut", delay: 0.4 }
+              }
               className="font-sans text-[3rem] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white sm:text-[4.5rem] lg:text-[6.1rem]"
             >
               GALAXY
@@ -210,9 +223,13 @@ export default function Hero() {
             </motion.h1>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0 }
+                  : { duration: 0.8, ease: "easeOut", delay: 0.6 }
+              }
             >
               <Link
                 href="/#contact"
@@ -229,6 +246,9 @@ export default function Hero() {
           onSelect={setIndex}
           className="flex shrink-0 items-center justify-center gap-1 px-6 pb-4 sm:gap-3 sm:px-10 sm:pb-6 lg:absolute lg:right-14 lg:top-[42%] lg:-translate-y-1/2 lg:flex-col lg:px-0 lg:pb-0"
         />
+        <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+          Showing slide {index + 1} of {SLIDES.length}: {SLIDES[index].alt}
+        </p>
 
         <div className="grid shrink-0 grid-cols-1 gap-3 px-6 pb-6 sm:grid-cols-3 sm:gap-4 sm:px-10 sm:pb-8 lg:px-14">
           {FEATURE_CARDS.map((card) => {
@@ -249,7 +269,7 @@ export default function Hero() {
                 </p>
                 <Link
                   href={card.href}
-                  className="mt-4 inline-flex text-[11px] font-semibold tracking-[0.18em] text-gold transition-colors hover:text-white"
+                  className="mt-4 inline-flex text-[11px] font-semibold tracking-[0.18em] text-gold transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
                 >
                   Learn more about {card.title}
                 </Link>

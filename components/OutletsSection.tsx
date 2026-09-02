@@ -19,7 +19,8 @@ function NavArrow({
       type="button"
       onClick={onClick}
       aria-label={label}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-white text-[#0F0F0F] transition-colors hover:border-neutral-900 hover:bg-neutral-900 hover:text-white"
+      aria-controls="showroom-gallery"
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300 bg-white text-[#0F0F0F] transition-colors hover:border-neutral-900 hover:bg-neutral-900 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
     >
       <span className="text-lg leading-none" aria-hidden="true">
         {direction === "prev" ? "‹" : "›"}
@@ -122,7 +123,16 @@ export default function OutletsSection() {
               ))}
             </div>
 
-             <div className="mt-10 grid grid-cols-2 gap-4 md:gap-6 sm:mt-12">
+             <div
+               id="showroom-gallery"
+               role="region"
+               aria-label="Showroom gallery"
+               aria-roledescription="carousel"
+               className="mt-10 grid grid-cols-2 gap-4 md:gap-6 sm:mt-12"
+             >
+               <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+                 Showing showroom image set {slideIndex + 1} of {totalSlides}.
+               </p>
                {currentPair.map((image) => (
                  <figure
                    key={image.src}

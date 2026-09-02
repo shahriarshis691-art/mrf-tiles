@@ -55,7 +55,7 @@ export default function OurServicesSection() {
                 <div className="mt-6 sm:mt-10">
                   <Link 
                     href="/about#products-heading"
-                    className="inline-flex min-h-[44px] items-center text-[11px] font-semibold text-[#0F0F0F] underline underline-offset-4 transition-all duration-300 hover:translate-x-1 hover:opacity-70 focus-visible:ring-2 focus:visible:ring-neutral-900 focus-visible:ring-offset-1 sm:text-[clamp(0.65rem,1vw,0.875rem)] sm:underline-offset-8"
+                    className="inline-flex min-h-[44px] items-center text-[11px] font-semibold text-[#0F0F0F] underline underline-offset-4 transition-all duration-300 hover:translate-x-1 hover:opacity-70 focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 sm:text-[clamp(0.65rem,1vw,0.875rem)] sm:underline-offset-8"
                   >
                     EXPLORE SERVICES
                   </Link>

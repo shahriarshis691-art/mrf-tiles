@@ -34,7 +34,7 @@ export default function CollectionSection() {
                 key={brand.slug}
                 href={brand.href}
                 aria-label={`Explore ${brand.name} brand products`}
-                className="group block focus-visible:outline-none"
+                className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
               >
                 <article className="flex h-full flex-col">
                   <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-900">
