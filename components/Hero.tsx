@@ -8,8 +8,8 @@ import { contactHref } from "@/lib/contact";
 
 const SLIDES = [
   {
-    src: "/images/hero-display-centre.jpg",
-    alt: "Luxury tiles display centre with large-format porcelain slabs",
+    src: "/images/hero-tile-showroom.jpg",
+    alt: "Luxury porcelain slab display showroom with architectural lighting",
     objectPosition: "object-center",
   },
   {
@@ -251,26 +251,26 @@ export default function Hero() {
           Showing slide {index + 1} of {SLIDES.length}: {SLIDES[index].alt}
         </p>
 
-        <div className="flex shrink-0 gap-3 overflow-x-auto px-6 pb-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:px-10 sm:pb-8 lg:px-14">
+        <div className="mx-auto flex w-full max-w-[62rem] shrink-0 gap-2 overflow-x-auto px-6 pb-3 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-10 sm:pb-5 lg:px-14">
           {FEATURE_CARDS.map((card) => {
             const Icon = card.icon;
             return (
               <article
                 key={card.title}
-                className="flex w-[78vw] shrink-0 flex-col border border-white/20 bg-white/10 px-6 py-5 backdrop-blur-md sm:w-auto"
+                className="flex w-[9.5rem] shrink-0 flex-col border border-white/20 bg-white/10 px-3 py-3 backdrop-blur-md sm:w-auto sm:px-4 sm:py-3"
               >
-                <span className="text-gold">
+                <span className="text-gold [&>svg]:h-4 [&>svg]:w-4">
                   <Icon />
                 </span>
-                <h2 className="mt-3 text-[15px] font-semibold tracking-[0.08em] text-white">
+                <h2 className="mt-2 text-[11px] font-semibold tracking-[0.06em] text-white sm:text-[13px]">
                   {card.title}
                 </h2>
-                <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-white/90">
+                <p className="mt-1 line-clamp-2 text-[10px] leading-snug text-white/90 sm:text-[11px]">
                   {card.description}
                 </p>
                 <Link
                   href={card.href}
-                  className="mt-4 inline-flex text-[11px] font-semibold tracking-[0.18em] text-gold transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+                  className="mt-2 inline-flex text-[9px] font-semibold tracking-[0.12em] text-gold transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 sm:text-[10px]"
                 >
                   Learn more about {card.title}
                 </Link>
