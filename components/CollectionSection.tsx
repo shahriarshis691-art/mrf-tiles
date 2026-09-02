@@ -1,7 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
-import { BRANDS, type Brand } from "@/lib/brands";
+import FeaturedBrandCarousel from "@/components/FeaturedBrandCarousel";
+import { BRANDS } from "@/lib/brands";
 
 export default function CollectionSection() {
   return (
@@ -28,52 +27,7 @@ export default function CollectionSection() {
         </ScrollReveal>
 
         <ScrollReveal variant="fadeInUp" delay={0.1}>
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
-            {BRANDS.map((brand: Brand) => (
-              <Link
-                key={brand.slug}
-                href={brand.href}
-                aria-label={`Explore ${brand.name} brand products`}
-                className="group block w-auto min-w-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F1E8]"
-              >
-                <article className="flex h-full flex-col">
-                  <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-100">
-                    <Image
-                      src={brand.cardImage}
-                      alt={brand.cardAlt}
-                      fill
-                      quality={90}
-                      sizes="(max-width: 767px) 50vw, (max-width: 1023px) 50vw, 25vw"
-                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    />
-                  </div>
-
-                  <div className="px-3 py-4 text-center sm:px-4 sm:py-5 md:px-6 md:py-7">
-                    <h3 className="font-serif text-[0.95rem] font-bold uppercase leading-[1.05] tracking-[0.12em] text-[#0F0F0F] sm:text-[1.05rem] md:text-[1.35rem] md:tracking-[0.18em]">
-                      {brand.name}
-                    </h3>
-                    <span className="mx-auto mt-3 block h-px w-8 bg-gold transition-all duration-500 group-hover:w-14 md:mt-4" />
-                    <p className="mt-3 text-[9px] font-medium uppercase tracking-[0.16em] text-neutral-500 sm:text-[10px] md:mt-4 md:text-[11px] md:tracking-[0.32em]">
-                      {brand.tagline}
-                    </p>
-                    <span className="mt-4 inline-flex items-center text-[9px] font-medium uppercase tracking-[0.16em] text-neutral-700 transition-colors duration-300 group-hover:text-gold sm:text-[10px] md:mt-5 md:tracking-[0.32em]">
-                      View Products
-                      <span
-                        aria-hidden="true"
-                        className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1"
-                      >
-                        →
-                      </span>
-                    </span>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
+          <FeaturedBrandCarousel brands={BRANDS} />
         </ScrollReveal>
       </div>
     </section>
