@@ -1,6 +1,6 @@
 import Link from "next/link";
-import SanitaryCard from "./sanitary/SanitaryCard";
-import { SANITARY_CATEGORIES } from "./sanitary/sanitary-data";
+import SanitaryBrandCard from "./sanitary/SanitaryBrandCard";
+import { SANITARY_BRANDS } from "@/lib/sanitaryBrands";
 import { contactHref } from "@/lib/contact";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -14,30 +14,34 @@ export default function SanitarySection() {
       <div className="mx-auto max-w-[1440px]">
         <ScrollReveal variant="fadeInUp">
           <header className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-medium tracking-[0.2em] text-neutral-500 uppercase">
-              Sanitary Solutions
+            <p className="text-[11px] font-medium uppercase tracking-[0.32em] text-neutral-500">
+              CURATED WORLD-CLASS PARTNERSHIPS
             </p>
             <h2
               id="sanitary-heading"
-              className="mt-5 font-sans text-[2rem] font-semibold uppercase leading-[1.05] tracking-[0.06em] text-[#0F0F0F] sm:text-[2.35rem]"
+              className="mt-6 font-serif text-[2rem] font-bold uppercase leading-[1.05] tracking-[0.08em] text-[#0F0F0F] sm:text-[2.5rem] lg:text-[3rem]"
             >
-              Premium Fixtures
+              <span className="text-[#0F0F0F]">MRF GALAXY TILES &amp; SANITARY</span>
+              <span className="mt-3 block font-sans text-[12px] font-medium uppercase tracking-[0.32em] text-neutral-700 sm:text-[13px]">
+                GALAXY TILES &amp; SANITARY SOLUTIONS PROVIDES WORLD-CLASS LUXURY
+              </span>
             </h2>
-            <span className="mx-auto mt-5 block h-px w-12 bg-neutral-300" />
-            <p className="mt-6 text-[13px] leading-relaxed text-neutral-600 sm:text-sm">
-              From designer basins to spa-inspired bathing, MRF Galaxy offers
-              sanitary selections that complement our tile collections with
-              enduring quality and refined aesthetics.
+            <span className="mx-auto mt-6 block h-px w-14 bg-gold" />
+            <p className="mt-7 text-[13px] leading-relaxed tracking-[0.04em] text-neutral-600 sm:text-sm">
+              MRF Galaxy partners with the world&apos;s premier sanitary brands to
+              deliver bespoke bath and architectural fittings — combining
+              meticulous engineering, refined aesthetics, and enduring quality
+              for luxury residences across Bangladesh.
             </p>
           </header>
         </ScrollReveal>
 
         <ScrollReveal variant="fadeInUp" delay={0.15}>
-          <div className="mt-14 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-5">
-            {SANITARY_CATEGORIES.map((category, index) => (
-              <SanitaryCard
-                key={category.id}
-                category={category}
+          <div className="mt-14 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-6">
+            {SANITARY_BRANDS.map((brand, index) => (
+              <SanitaryBrandCard
+                key={brand.slug}
+                brand={brand}
                 priority={index < 2}
               />
             ))}
@@ -48,7 +52,7 @@ export default function SanitarySection() {
           <div className="mt-14 text-center sm:mt-16">
             <Link
               href={contactHref("Sanitary consultation")}
-              className="inline-flex h-14 items-center justify-center border border-[#0F0F0F] bg-transparent px-10 text-[12px] font-medium uppercase tracking-[0.08em] text-[#0F0F0F] transition-colors duration-300 hover:bg-[#0F0F0F] hover:text-white"
+              className="inline-flex h-14 items-center justify-center border border-[#0F0F0F] bg-transparent px-10 text-[12px] font-medium uppercase tracking-[0.16em] text-[#0F0F0F] transition-colors duration-300 hover:bg-[#0F0F0F] hover:text-white"
             >
               Request Sanitary Consultation
             </Link>
