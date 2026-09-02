@@ -216,7 +216,7 @@ export default function Hero() {
                   ? { duration: 0 }
                   : { duration: 0.8, ease: "easeOut", delay: 0.4 }
               }
-              className="font-sans text-[3rem] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white sm:text-[4.5rem] lg:text-[6.1rem]"
+              className="font-sans text-[clamp(2rem,10vw,3rem)] font-bold uppercase leading-[0.88] tracking-[0.04em] text-white md:text-[4.5rem] lg:text-[6.1rem]"
             >
               GALAXY
               <br />
@@ -251,13 +251,13 @@ export default function Hero() {
           Showing slide {index + 1} of {SLIDES.length}: {SLIDES[index].alt}
         </p>
 
-        <div className="mx-auto flex w-full max-w-[62rem] shrink-0 gap-2 overflow-x-auto px-6 pb-3 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-10 sm:pb-5 lg:px-14">
+        <div className="mx-auto flex w-full max-w-[62rem] shrink-0 gap-2 overflow-x-auto px-6 pb-3 md:grid md:grid-cols-3 md:gap-3 md:overflow-visible md:px-10 md:pb-5 lg:px-14">
           {FEATURE_CARDS.map((card) => {
             const Icon = card.icon;
             return (
               <article
                 key={card.title}
-                className="flex w-[9.5rem] shrink-0 flex-col border border-white/20 bg-white/10 px-3 py-3 backdrop-blur-md sm:w-auto sm:px-4 sm:py-3"
+                className="flex w-[9.5rem] shrink-0 flex-col border border-white/20 bg-white/10 px-3 py-3 backdrop-blur-md md:w-auto md:px-4 md:py-3"
               >
                 <span className="text-gold [&>svg]:h-4 [&>svg]:w-4">
                   <Icon />

@@ -10,7 +10,7 @@ function BranchRow({
   index: number;
 }) {
   return (
-    <article className="grid grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-4 border-t border-white/15 py-8 sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] sm:gap-8 sm:py-10 lg:gap-12 lg:py-12">
+    <article className="grid grid-cols-1 gap-5 border-t border-white/15 py-8 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:items-center md:gap-8 md:py-10 lg:gap-12 lg:py-12">
       <div className="min-w-0 border-l border-white/25 pl-3 sm:pl-5">
         <p className="text-[9px] font-medium tracking-[0.16em] text-neutral-400 uppercase sm:text-[10px] sm:tracking-[0.2em]">
           Branch {index + 1}
@@ -38,7 +38,7 @@ function BranchRow({
           alt={outlet.alt}
           fill
           quality={90}
-          sizes="(max-width: 639px) 50vw, (max-width: 1023px) 55vw, (max-width: 1535px) 60vw, 864px"
+          sizes="(max-width: 767px) 100vw, (max-width: 1023px) 55vw, (max-width: 1535px) 60vw, 864px"
           className="object-cover object-center"
         />
       </figure>
@@ -56,7 +56,7 @@ export default function OutletsSection() {
       <div className="mx-auto max-w-[1440px]">
         <ScrollReveal
           variant="slideInLeft"
-          className="flex min-h-[clamp(18rem,30vw,28rem)] items-center"
+          className="flex items-center md:min-h-[clamp(18rem,30vw,28rem)]"
         >
           <header className="max-w-md">
             <p className="text-[11px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
