@@ -9,6 +9,7 @@ import {
   buildProductWhatsAppUrl,
   SANITARY_PRODUCTS,
 } from "@/lib/sanitaryData";
+import { createPageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 
 type Props = {
@@ -31,10 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Product Not Found" };
   }
 
-  return {
+  return createPageMetadata({
     title: `${product.title} | ${category.label}`,
     description: product.description,
-  };
+    path: `/sanitary/${category.id}/${product.id}`,
+    image: product.image,
+    imageAlt: product.title,
+  });
 }
 
 export default async function SanitaryProductPage({ params }: Props) {

@@ -1,13 +1,16 @@
 import Navbar from "@/components/Navbar";
 import CollectionCatalog from "@/components/collection/CollectionCatalog";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 import { Suspense } from "react";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Collection Catalog",
   description:
     "Browse premium porcelain collections by look, format, and material. Find the perfect surfaces for your project.",
-};
+  path: "/collection",
+  image: "/images/collection/modern-dark.jpg",
+  imageAlt: "Dark large-format porcelain slab flooring installation",
+});
 
 function CatalogFallback() {
   return (

@@ -90,7 +90,7 @@ export default function OutletsSection() {
                   01 / Outlets
                 </p>
                 <p className="mt-2 text-[10px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
-                  Galaxy Tiles &amp; Ceramic
+                  MRF Galaxy Tiles &amp; Sanitary
                 </p>
                 <h2
                   id="outlets-heading"

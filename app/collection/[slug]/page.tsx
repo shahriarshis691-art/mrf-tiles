@@ -6,6 +6,7 @@ import {
   getRelatedProducts,
 } from "@/components/collection/collection-data";
 import { contactHref } from "@/lib/contact";
+import { createPageMetadata } from "@/lib/metadata";
 import { OUTLETS } from "@/components/outlet-data";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -33,10 +34,13 @@ export async function generateMetadata({
     return { title: "Collection Not Found" };
   }
 
-  return {
+  return createPageMetadata({
     title: product.label,
     description: product.description,
-  };
+    path: `/collection/${product.id}`,
+    image: product.image,
+    imageAlt: product.alt,
+  });
 }
 
 export default async function CollectionDetailPage({

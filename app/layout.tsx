@@ -17,6 +17,9 @@ const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: SITE_NAME,
     template: `%s | ${SITE_NAME}`,
@@ -25,6 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
+    url: "/",
     type: "website",
     locale: "en_BD",
     siteName: SITE_NAME,

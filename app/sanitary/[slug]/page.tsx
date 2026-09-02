@@ -9,6 +9,7 @@ import {
   buildProductWhatsAppUrl,
   SANITARY_CATEGORIES,
 } from "@/lib/sanitaryData";
+import { createPageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 
 type Props = {
@@ -27,10 +28,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) {
     return { title: "Category Not Found" };
   }
-  return {
+  return createPageMetadata({
     title: `${category.label} | Sanitary Solutions`,
     description: category.description,
-  };
+    path: `/sanitary/${category.id}`,
+    image: category.image,
+    imageAlt: category.alt,
+  });
 }
 
 export default async function SanitaryCategoryPage({ params }: Props) {

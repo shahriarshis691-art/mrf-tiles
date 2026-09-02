@@ -4,13 +4,16 @@ import { contactHref } from "@/lib/contact";
 import { OUTLETS } from "@/components/outlet-data";
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "About",
   description:
-    "MRF Galaxy Tiles & Ceramic — Rangpur's leading luxury showroom for premium imported tiles, porcelain slabs, and designer sanitary solutions since 2010.",
-};
+    "MRF Galaxy Tiles & Sanitary is Rangpur's luxury showroom for premium imported tiles, porcelain slabs, and designer sanitary solutions.",
+  path: "/about",
+  image: "/images/hero-display-centre.jpg",
+  imageAlt: "MRF Galaxy tiles display centre in Rangpur",
+});
 
 type Product = {
   title: string;
@@ -125,9 +128,9 @@ export default function AboutPage() {
                 id="about-hero-heading"
                 className="mt-6 font-serif text-[2.25rem] font-bold tracking-[0.03em] text-white sm:text-[3rem] md:text-[3.75rem] lg:text-[4.5rem] leading-[1.02]"
               >
-                ABOUT GALAXY TILES
+                ABOUT MRF GALAXY TILES
                 <br />
-                &amp; CERAMIC
+                &amp; SANITARY
               </h1>
               <p className="mx-auto mt-8 max-w-xl text-[13px] leading-relaxed text-neutral-400 sm:text-sm">
                 Rangpur&apos;s premier destination for premium imported tiles,
@@ -162,7 +165,7 @@ export default function AboutPage() {
             <ScrollReveal variant="fadeInUp" delay={0.15}>
               <div className="mx-auto mt-12 max-w-3xl">
                 <p className="text-[13px] leading-relaxed text-neutral-300 sm:text-[15px]">
-                  GALAXY TILES &amp; CERAMIC stands as Rangpur&apos;s leading luxury
+                  MRF GALAXY TILES &amp; SANITARY stands as Rangpur&apos;s leading luxury
                   showroom, dedicated to bringing premium imported tiles,
                   architectural porcelain slabs, and designer sanitary solutions
                   to discerning homeowners, architects, and interior designers.

@@ -1,8 +1,18 @@
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
 import { BRANDS, type Brand } from "@/lib/brands";
+import { createPageMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata = createPageMetadata({
+  title: "Tile Brands",
+  description:
+    "Explore the premium tile brands curated by MRF Galaxy for refined residential and commercial interiors.",
+  path: "/brands",
+  image: "/images/projects/architectural-tile-experience.jpg",
+  imageAlt: "Premium porcelain slab showroom display",
+});
 
 export default function BrandsPage() {
   return (

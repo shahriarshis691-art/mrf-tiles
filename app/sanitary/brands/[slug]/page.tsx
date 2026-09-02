@@ -9,6 +9,7 @@ import {
   getSanitaryBrandBySlug,
 } from "@/lib/sanitaryBrands";
 import { contactHref } from "@/lib/contact";
+import { createPageMetadata } from "@/lib/metadata";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -26,10 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Brand Not Found" };
   }
 
-  return {
+  return createPageMetadata({
     title: `${brand.name} | Sanitary Solutions`,
     description: brand.description,
-  };
+    path: `/sanitary/brands/${brand.slug}`,
+    image: brand.banner,
+    imageAlt: brand.bannerAlt,
+  });
 }
 
 export default async function SanitaryBrandPage({ params }: Props) {

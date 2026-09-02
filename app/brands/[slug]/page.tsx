@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllBrandSlugs, getBrandBySlug } from "@/lib/brands";
 import { contactHref } from "@/lib/contact";
+import { createPageMetadata } from "@/lib/metadata";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -23,10 +24,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Brand Not Found" };
   }
 
-  return {
+  return createPageMetadata({
     title: brand.name,
     description: brand.description,
-  };
+    path: `/brands/${brand.slug}`,
+    image: brand.banner,
+    imageAlt: brand.bannerAlt,
+  });
 }
 
 export default async function BrandPage({ params }: Props) {

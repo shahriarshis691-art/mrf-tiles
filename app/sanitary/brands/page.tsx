@@ -1,7 +1,17 @@
 import Navbar from "@/components/Navbar";
 import SanitaryBrandCard from "@/components/sanitary/SanitaryBrandCard";
+import { createPageMetadata } from "@/lib/metadata";
 import { SANITARY_BRANDS } from "@/lib/sanitaryBrands";
 import Link from "next/link";
+
+export const metadata = createPageMetadata({
+  title: "Sanitary Brands",
+  description:
+    "Explore world-class sanitary brands curated by MRF Galaxy for premium bathrooms and project specifications.",
+  path: "/sanitary/brands",
+  image: "/images/sanitary/luxury-water-closets.jpg",
+  imageAlt: "Premium sanitary fittings in a luxury bathroom",
+});
 
 export default function SanitaryBrandsPage() {
   return (

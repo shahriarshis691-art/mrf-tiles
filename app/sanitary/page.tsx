@@ -1,15 +1,18 @@
 import Navbar from "@/components/Navbar";
 import { SANITARY_CATEGORIES } from "@/components/sanitary/sanitary-data";
 import { contactHref } from "@/lib/contact";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Sanitary",
   description:
     "Browse MRF Galaxy sanitary collections — basins, water closets, showers, faucets, and spa bathtubs in Rangpur.",
-};
+  path: "/sanitary",
+  image: "/images/sanitary/luxury-basins-vanities.jpg",
+  imageAlt: "Premium sanitary basins and vanities",
+});
 
 export default function SanitaryPage() {
   return (

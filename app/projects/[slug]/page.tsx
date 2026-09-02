@@ -6,6 +6,7 @@ import {
   PROJECTS,
 } from "@/components/projects/projects-data";
 import { contactHref } from "@/lib/contact";
+import { createPageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,10 +30,13 @@ export async function generateMetadata({
     return { title: "Project Not Found" };
   }
 
-  return {
+  return createPageMetadata({
     title: project.title,
     description: project.description,
-  };
+    path: `/projects/${project.slug}`,
+    image: project.image,
+    imageAlt: project.title,
+  });
 }
 
 export default async function ProjectDetailPage({
