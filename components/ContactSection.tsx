@@ -76,32 +76,32 @@ export default function ContactSection() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="bg-white px-6 py-24 sm:px-10 sm:py-32 lg:px-14 lg:py-32"
+      className="bg-white px-4 py-12 sm:py-14 lg:py-14"
     >
       <div className="mx-auto max-w-[1440px]">
-        <div className="grid grid-cols-1 gap-14 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-8 lg:grid-cols-2 lg:gap-20 xl:gap-28">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-8 lg:grid-cols-2 lg:gap-16 xl:gap-20">
           <ScrollReveal variant="slideInLeft">
             <div>
-              <p className="text-[11px] font-medium tracking-[0.2em] text-neutral-500 uppercase">
+              <p className="text-[10px] font-medium tracking-[0.2em] text-neutral-500 uppercase">
                 Get In Touch
               </p>
 
               <h2
                 id="contact-heading"
-                className="mt-5 font-sans text-[2rem] font-semibold uppercase leading-[1.05] tracking-[0.06em] text-[#0F0F0F] sm:text-[2.35rem]"
+                className="mt-4 font-sans text-2xl font-semibold uppercase leading-tight tracking-[0.06em] text-[#0F0F0F] sm:text-[2.35rem]"
               >
                 Contact Us
               </h2>
 
-              <span className="mt-5 block h-px w-12 bg-neutral-900" />
+              <span className="mt-4 block h-px w-10 bg-neutral-900 sm:w-12" />
 
-              <p className="mt-7 max-w-md text-[13px] leading-relaxed text-neutral-600 sm:text-sm">
+              <p className="mt-5 max-w-md text-xs leading-relaxed text-neutral-600 sm:text-sm">
                 Visit our showrooms, request a consultation, or send a WhatsApp
                 message. Our team is ready to help you select the perfect
                 surfaces for your space.
               </p>
 
-              <div className="mt-10 space-y-8">
+              <div className="mt-8 space-y-6 sm:space-y-8">
                 {OUTLETS.map((outlet) => (
                   <div key={outlet.name}>
                     <p className="text-[10px] font-semibold tracking-[0.2em] text-[#0F0F0F] uppercase">

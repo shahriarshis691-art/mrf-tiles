@@ -3,13 +3,14 @@ import Link from "next/link";
 
 type LogoProps = {
   light?: boolean;
+  className?: string;
 };
 
-export default function Logo({ light = false }: LogoProps) {
+export default function Logo({ light = false, className }: LogoProps) {
   return (
     <Link
       href="/"
-      className={`inline-flex shrink-0 items-center focus-visible:ring-2 focus-visible:ring-offset-2 ${
+      className={`inline-flex shrink-0 items-center focus-visible:ring-2 focus-visible:ring-offset-2 ${className ?? ""} ${
         light
           ? "focus-visible:ring-white focus-visible:ring-offset-zinc-950"
           : "focus-visible:ring-neutral-900 focus-visible:ring-offset-white"
@@ -21,8 +22,8 @@ export default function Logo({ light = false }: LogoProps) {
         width={1122}
         height={1402}
         quality={90}
-        sizes="80px"
-        className="h-12 w-auto max-h-12 object-contain sm:h-[3.35rem] sm:max-h-[3.35rem]"
+        sizes="28px"
+        className="h-7 w-auto object-contain"
       />
     </Link>
   );

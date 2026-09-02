@@ -16,13 +16,13 @@ export default function SanitaryBrandCard({
       className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
     >
       <article className="flex h-full flex-col border border-neutral-200/60 bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all duration-500 ease-out hover:-translate-y-1 hover:border-neutral-900 hover:shadow-[0_18px_40px_-18px_rgba(0,0,0,0.35)]">
-        <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100 md:aspect-[4/5]">
+        <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100 md:aspect-[4/5]">
           <Image
             src={brand.cardImage}
             alt={brand.cardAlt}
             fill
             quality={90}
-            sizes="(max-width: 767px) 84vw, (max-width: 1024px) 50vw, 25vw"
+            sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1024px) 50vw, 25vw"
             className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
           />
           <span

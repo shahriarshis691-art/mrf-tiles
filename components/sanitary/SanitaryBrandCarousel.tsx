@@ -80,10 +80,10 @@ export default function SanitaryBrandCarousel({
         ref={trackRef}
         onPointerDown={pauseForInteraction}
         onScroll={handleScroll}
-        className="mt-14 grid grid-flow-col auto-cols-[84vw] grid-rows-1 snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-16 sm:auto-cols-[84vw] sm:gap-6 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-4 lg:overflow-visible lg:pb-0 lg:gap-6"
+        className="mt-14 grid grid-flow-col auto-cols-[calc(100vw-2rem)] grid-rows-1 snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-16 sm:gap-3 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-4 lg:overflow-visible lg:pb-0 lg:gap-6"
       >
         {brands.map((brand) => (
-          <div key={brand.slug} className="snap-start">
+          <div key={brand.slug} className="snap-center">
             <SanitaryBrandCard brand={brand} />
           </div>
         ))}

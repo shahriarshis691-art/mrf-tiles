@@ -122,8 +122,8 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
           : "border-b border-zinc-200 bg-white"
       }`}
     >
-      <div className="relative mx-auto flex h-[4.85rem] max-w-[1440px] items-center justify-between px-6 pr-16 sm:h-[5.25rem] sm:px-10 md:pr-10 lg:px-14">
-        <Logo light={heroNav} />
+      <div className="relative mx-auto flex h-14 items-center justify-between px-4 sm:px-6 md:px-8 lg:px-14">
+        <Logo light={heroNav} className="h-7 w-auto" />
 
         <nav
           className="hidden items-center md:flex md:gap-6 lg:gap-10 xl:gap-12"
@@ -135,7 +135,7 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
               <Link
                 key={link.label}
                 href={link.href}
-                className={`relative min-h-[44px] inline-flex items-center pb-1.5 text-[10px] font-medium tracking-[0.24em] transition-colors lg:text-[11px] ${focusRingClass} ${
+                className={`relative min-h-[44px] inline-flex items-center pb-1.5 text-[10px] font-medium tracking-[0.2em] transition-colors lg:text-[11px] ${focusRingClass} ${
                   heroNav
                     ? active
                       ? "text-white"
@@ -157,7 +157,7 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
         <button
           ref={menuButtonRef}
           type="button"
-          className={`absolute right-4 top-1/2 z-20 flex h-14 w-14 -translate-y-1/2 items-center justify-center md:hidden sm:right-8 ${focusRingClass} ${
+          className={`absolute right-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center md:hidden ${focusRingClass} ${
             heroNav ? "text-white" : "text-zinc-900"
           }`}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -185,12 +185,12 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
           <div
             aria-hidden="true"
             onMouseDown={closeMenu}
-            className="fixed inset-x-0 bottom-0 top-[4.85rem] z-0 md:hidden sm:top-[5.25rem]"
+            className="fixed inset-x-0 bottom-0 top-14 z-0 md:hidden"
           />
           <nav
             ref={menuRef}
             id="mobile-menu"
-            className={`absolute inset-x-0 top-full z-10 border-b px-6 py-5 md:hidden ${
+            className={`absolute inset-x-0 top-full z-10 border-b px-4 py-5 md:hidden ${
               heroNav
                 ? "border-white/10 bg-zinc-950/95 backdrop-blur-md"
                 : "border-zinc-200 bg-white"
@@ -205,7 +205,7 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
                     <Link
                       ref={index === 0 ? firstMenuLinkRef : undefined}
                       href={link.href}
-                      className={`text-[11px] min-h-[44px] inline-flex items-center font-medium tracking-[0.24em] ${focusRingClass} ${
+                      className={`text-[10px] min-h-[44px] inline-flex items-center font-medium tracking-[0.2em] ${focusRingClass} ${
                         heroNav
                           ? active
                             ? "text-gold"

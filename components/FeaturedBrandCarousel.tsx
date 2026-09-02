@@ -80,10 +80,10 @@ export default function FeaturedBrandCarousel({
         ref={trackRef}
         onPointerDown={pauseForInteraction}
         onScroll={handleScroll}
-        className="grid grid-flow-col auto-cols-[84vw] grid-rows-1 snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid-flow-row md:auto-cols-auto md:grid-cols-3 md:gap-5 md:overflow-visible md:pb-0 lg:gap-5"
+        className="grid grid-flow-col auto-cols-[calc(100vw-2rem)] grid-rows-1 snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid-flow-row md:auto-cols-auto md:grid-cols-3 md:gap-5 md:overflow-visible md:pb-0 lg:gap-5"
       >
         {brands.map((brand, index) => (
-          <div key={brand.slug} className="snap-start">
+          <div key={brand.slug} className="snap-center">
             <Link
               href={brand.href}
               aria-label={`Explore ${brand.name} brand products`}
@@ -96,7 +96,7 @@ export default function FeaturedBrandCarousel({
                     alt={brand.cardAlt}
                     fill
                     quality={90}
-                    sizes="(max-width: 767px) 84vw, 33vw"
+                    sizes="(max-width: 767px) calc(100vw - 2rem), 33vw"
                     className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <span

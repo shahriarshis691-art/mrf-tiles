@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section
       aria-label="MRF Galaxy highlights"
-      className="relative isolate flex min-h-[40rem] w-full flex-col overflow-hidden md:min-h-[44rem] lg:min-h-[48rem]"
+      className="relative isolate flex min-h-[520px] w-full flex-col overflow-hidden md:min-h-[44rem] lg:min-h-[48rem]"
     >
       <Image
         src={HERO_IMAGE.src}
@@ -28,7 +28,7 @@ export default function Hero() {
         className={`object-cover ${HERO_IMAGE.objectPosition}`}
       />
 
-      <div className="relative z-10 flex w-full flex-1 items-center justify-center px-6 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-32">
+      <div className="relative z-10 flex w-full flex-1 items-center justify-center px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-28 lg:px-14 lg:py-32">
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
