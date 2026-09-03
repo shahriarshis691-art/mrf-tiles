@@ -50,38 +50,12 @@ export default function OutletsSection() {
   return (
     <section
       id="outlets"
-      aria-labelledby="outlets-heading"
+      aria-label="Outlets"
       className="relative overflow-hidden bg-[#282828] px-4 py-12 sm:py-14 lg:py-14"
     >
       <div className="mx-auto max-w-[1440px]">
-        <ScrollReveal
-          variant="slideInLeft"
-          className="flex items-center md:min-h-[clamp(18rem,30vw,28rem)]"
-        >
-          <header className="max-w-md">
-            <p className="text-[10px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
-              01 / Outlets
-            </p>
-            <p className="mt-2 text-[10px] font-medium tracking-[0.2em] text-neutral-400 uppercase">
-              MRF Galaxy Tiles &amp; Sanitary
-            </p>
-            <h2
-              id="outlets-heading"
-              className="mt-4 text-[clamp(1.5rem,3.2vw,2.65rem)] font-normal leading-[1.12] tracking-[-0.01em] text-white"
-            >
-              A Space That <span className="font-bold">Inspires</span> Your{" "}
-              <span className="font-bold">Luxury Home</span>
-            </h2>
-            <p className="mt-6 text-xs leading-relaxed text-neutral-300 sm:text-sm">
-              Experience our curated collections in realistic showroom
-              environments, designed to visualize grandeur for today and
-              enduring elegance for tomorrow.
-            </p>
-          </header>
-        </ScrollReveal>
-
         <ScrollReveal variant="slideInRight" delay={0.15}>
-          <div className="mt-10 sm:mt-12">
+          <div>
             {OUTLETS.map((outlet, index) => (
               <BranchRow key={outlet.name} outlet={outlet} index={index} />
             ))}
