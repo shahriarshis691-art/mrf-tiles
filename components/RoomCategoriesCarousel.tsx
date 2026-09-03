@@ -82,7 +82,7 @@ export default function RoomCategoriesCarousel({
                 fill
                 quality={90}
                 sizes="(max-width: 767px) calc(50vw - 8px), 16vw"
-                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                className="object-cover transition-transform duration-500 hover:scale-105"
               />
             </div>
             <p className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-neutral-900 md:text-sm">
