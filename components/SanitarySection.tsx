@@ -9,14 +9,14 @@ export default function SanitarySection() {
     <section
       id="sanitary"
       aria-labelledby="sanitary-heading"
-      className="bg-[#F9F9FB] px-4 pt-0 sm:pt-0 lg:pt-0 pb-12 sm:pb-14 lg:pb-14"
+      className="bg-[#F9F9FB] px-4 pt-12 md:pt-16 pb-12 sm:pb-14 lg:pb-14"
     >
       <div className="mx-auto max-w-[1440px]">
         <ScrollReveal variant="fadeInUp">
           <header className="mx-auto max-w-3xl text-center">
             <h2
               id="sanitary-heading"
-              className="font-serif font-bold text-neutral-950 uppercase tracking-[0.12em] text-xl sm:text-2xl md:text-2xl lg:text-3xl leading-tight mt-0 mb-2 md:mb-3"
+              className="font-serif font-bold text-neutral-950 uppercase tracking-[0.12em] text-xl sm:text-2xl md:text-2xl lg:text-3xl leading-tight mt-0 mb-3 md:mb-4"
             >
               <span className="text-[#0F0F0F]">GALAXY TILES &amp; CERAMIC, RANGPUR</span>
               <span className="mt-2 block font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-neutral-700 sm:text-[12px] sm:tracking-[0.32em]">

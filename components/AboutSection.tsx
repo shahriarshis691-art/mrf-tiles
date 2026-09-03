@@ -12,7 +12,7 @@ export default function AboutSection() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="bg-[#F5F1E8] px-4 py-0 sm:py-0 lg:py-0 pb-6 md:pb-8 mb-0"
+      className="bg-[#F5F1E8] px-4 pt-0 pb-12 md:pb-16 mb-0"
     >
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 md:grid-cols-2 items-stretch gap-4 md:gap-10 lg:gap-16 xl:gap-24">
         <ScrollReveal variant="slideInLeft" className="h-full">
@@ -54,7 +54,7 @@ export default function AboutSection() {
               design, and lasting craftsmanship.
             </p>
 
-            <dl className="mt-4 mb-0 grid grid-cols-3 gap-2 border-t border-neutral-200 pt-3 text-center md:mt-5 md:gap-8 md:pt-4 md:text-left">
+            <dl className="mt-4 mb-0 grid grid-cols-3 gap-2 border-t border-neutral-200 pt-3 text-center md:mt-5 md:gap-8 md:pt-4 md:text-left pb-4 md:pb-6">
               {STATS.map((stat) => (
                 <div key={stat.label}>
                   <dt className="font-sans text-[1.25rem] font-semibold tracking-wide text-[#0F0F0F] md:text-[2rem]">
