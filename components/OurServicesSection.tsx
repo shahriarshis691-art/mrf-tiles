@@ -4,7 +4,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 
 export default function OurServicesSection() {
   return (
-    <section className="relative w-full bg-[#F9F9FB] overflow-hidden py-12 sm:py-14">
+    <section className="relative w-full bg-[#F9F9FB] overflow-hidden pb-0 sm:pb-0">
       <div className="mx-auto flex max-w-[1440px] w-full overflow-hidden px-4 sm:px-6 md:px-8 lg:px-14">
         <div className="grid w-full min-h-[17rem] grid-cols-1 md:grid-cols-2 items-stretch gap-4 md:gap-8">
           {/* Left Card (Text) */}

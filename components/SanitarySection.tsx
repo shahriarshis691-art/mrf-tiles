@@ -9,7 +9,7 @@ export default function SanitarySection() {
     <section
       id="sanitary"
       aria-labelledby="sanitary-heading"
-      className="bg-[#F9F9FB] px-4 py-12 sm:py-14 lg:py-14"
+      className="bg-[#F9F9FB] px-4 pt-0 sm:pt-0 lg:pt-0 pb-12 sm:pb-14 lg:pb-14"
     >
       <div className="mx-auto max-w-[1440px]">
         <ScrollReveal variant="fadeInUp">
