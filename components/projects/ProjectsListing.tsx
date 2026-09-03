@@ -7,24 +7,25 @@ function ProjectsGalleryFallback() {
 
 export default function ProjectsListing() {
   return (
-    <section className="px-4 pb-20 pt-28 sm:px-6 sm:pb-24 sm:pt-32 md:px-10 lg:px-14 lg:pb-28">
-      <div className="mx-auto max-w-7xl">
-        <header className="mx-auto max-w-3xl text-center">
-          <h1 className="text-[2rem] font-semibold uppercase tracking-[0.34em] text-neutral-900 sm:text-[2.35rem] lg:text-[2.6rem]">
-            PROJECTS
-          </h1>
-          <span className="mx-auto mt-5 block h-px w-12 bg-neutral-300" />
-          <p className="mt-6 text-[13px] leading-relaxed tracking-[0.04em] text-neutral-600 sm:text-sm">
-            Explore our completed architectural spaces,
-            <br className="hidden sm:block" />
-            premium tile installations and design experiences.
-          </p>
-        </header>
+    <section className="pb-20 pt-28 sm:pb-24 sm:pt-32">
+      <header className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-neutral-500 sm:text-[11px]">
+          Architectural Portfolio · Official Khadim Provider
+        </p>
+        <h1 className="mt-5 text-[2rem] font-semibold text-neutral-900 sm:text-[2.4rem] lg:text-[2.75rem]">
+          Remarkable Projects & Architectural Installations
+        </h1>
+        <span className="mx-auto mt-5 block h-px w-12 bg-neutral-300" />
+        <p className="mx-auto mt-6 max-w-2xl text-[13px] leading-relaxed text-neutral-600 sm:text-sm">
+          Explore prestigious landmarks, luxury resorts, and high-performance
+          commercial and residential spaces built with premium Khadim tiles,
+          cladding, and architectural ceramics.
+        </p>
+      </header>
 
-        <Suspense fallback={<ProjectsGalleryFallback />}>
-          <ProjectsGallery />
-        </Suspense>
-      </div>
+      <Suspense fallback={<ProjectsGalleryFallback />}>
+        <ProjectsGallery />
+      </Suspense>
     </section>
   );
 }
