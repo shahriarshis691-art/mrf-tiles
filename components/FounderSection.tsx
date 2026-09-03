@@ -18,7 +18,7 @@ export default function FounderSection() {
 
               <h2
                 id="founder-heading"
-                className="mt-2 font-serif text-2xl font-bold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 md:mt-5 md:text-[2rem] lg:text-[2.5rem] xl:text-[2.85rem]"
+                className="font-serif font-bold text-neutral-950 uppercase tracking-[0.12em] text-xl sm:text-2xl md:text-2xl lg:text-3xl leading-tight mt-0 mb-2 md:mb-3"
               >
                 Message from the Founder
               </h2>

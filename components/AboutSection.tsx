@@ -32,7 +32,7 @@ export default function AboutSection() {
           <div className="flex h-full flex-col py-0 md:block md:py-0">
             <h2
               id="about-heading"
-              className="mt-1 font-serif text-2xl font-bold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 md:mt-2 md:text-[2.5rem] lg:text-[2.85rem]"
+              className="font-serif font-bold text-neutral-950 uppercase tracking-[0.12em] text-xl sm:text-2xl md:text-2xl lg:text-3xl leading-tight mt-0 mb-2 md:mb-3"
             >
               Crafting Spaces
               <br />

@@ -42,7 +42,7 @@ export default function CollectionSection() {
         <div className="mx-auto max-w-[1440px]">
           <ScrollReveal variant="fadeInUp" delay={0.2}>
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <h2 className="font-serif font-bold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 text-2xl sm:text-[2.4rem] lg:text-[2.75rem]">
+              <h2 className="font-serif font-bold text-neutral-950 uppercase tracking-[0.12em] text-xl sm:text-2xl md:text-2xl lg:text-3xl leading-tight mt-0 mb-2 md:mb-3">
                 Explore Premium Tiles Collection
               </h2>
               <nav className="flex items-center gap-6" aria-label="Room filters">

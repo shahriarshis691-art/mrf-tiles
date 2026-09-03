@@ -43,7 +43,7 @@ export default function OurServicesSection() {
           </div>
 
           {/* Header Title */}
-          <h2 className="font-serif font-extrabold uppercase text-base sm:text-2xl md:text-4xl lg:text-5xl tracking-[0.15em] leading-tight text-neutral-950 mb-2 md:mb-4">
+          <h2 className="font-serif font-bold text-neutral-950 uppercase tracking-[0.12em] text-xl sm:text-2xl md:text-2xl lg:text-3xl leading-tight mt-0 mb-2 md:mb-3">
             OUR SERVICES
           </h2>
 
