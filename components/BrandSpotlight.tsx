@@ -19,7 +19,7 @@ export default function BrandSpotlight() {
               />
             </div>
 
-            <div className="absolute bottom-4 right-4 md:-right-10 md:top-1/2 md:-translate-y-1/2 flex w-24 h-24 md:w-32 md:h-32 rounded-full bg-white shadow-xl border border-neutral-200 flex-col items-center justify-center p-3 text-center z-10">
+            <div className="absolute bottom-4 right-4 md:-right-10 md:top-1/2 md:-translate-y-1/2 flex w-24 h-24 md:w-32 md:h-32 rounded-full bg-white shadow-xl border border-neutral-200 flex-col items-center justify-center p-3 text-center z-10 animate-float">
               <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
                 Trusted
               </span>
