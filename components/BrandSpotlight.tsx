@@ -4,7 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 export default function BrandSpotlight() {
   return (
     <section className="w-full my-0">
-      <div className="grid grid-cols-2 items-center gap-4 sm:gap-6 md:gap-12 w-full max-w-7xl mx-auto px-4 py-8 md:py-16">
+      <div className="grid grid-cols-2 items-center gap-4 sm:gap-6 md:gap-12 w-full max-w-7xl mx-auto px-4 py-8 md:py-16 pb-0 md:pb-4">
         <ScrollReveal variant="fadeInUp">
           <div className="relative w-full aspect-[4/3] md:aspect-[16/11] overflow-visible">
             <Image

@@ -10,12 +10,12 @@ export default function CollectionSection() {
       <section
         id="brands"
         aria-label="Featured Brands"
-        className="relative w-full overflow-x-hidden bg-gradient-to-b from-[#EBE1D4] via-[#E4D5C2] to-[#DDD0BD] px-4 pt-16 pb-4 md:pt-24 md:pb-6"
+        className="relative w-full overflow-x-hidden bg-gradient-to-b from-[#EBE1D4] via-[#E4D5C2] to-[#DDD0BD] px-4 pt-6 pb-4 md:pt-10 md:pb-6"
       >
         <div className="mx-auto max-w-[1440px]">
           <ScrollReveal variant="fadeInUp">
             <header className="mx-auto text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500 mb-2">
+              <p className="mt-0 text-xs font-semibold uppercase tracking-[0.25em] text-neutral-500 mb-2">
                 Featured Brands
               </p>
               <h2 className="font-serif font-bold uppercase tracking-[0.15em] text-neutral-950 text-2xl sm:text-[2.4rem] lg:text-[2.75rem]">
