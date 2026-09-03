@@ -16,8 +16,7 @@ export type SanitaryBrand = {
   tagline: string;
   description: string;
   bio: string;
-  cardImage: string;
-  cardAlt: string;
+  image: string;
   banner: string;
   bannerAlt: string;
   href: string;
@@ -33,8 +32,7 @@ export const SANITARY_BRANDS: SanitaryBrand[] = [
       "Bold, beautifully engineered bathroom and kitchen products crafted with American ingenuity and timeless silhouettes.",
     bio:
       "Founded in 1873 in Wisconsin, Kohler Co. is one of the world's most recognised names in bathroom and kitchen craftsmanship. The brand is celebrated for combining audacious industrial design with engineering precision — from intelligent bidet systems and statement colour finishes to iconic cast-iron baths that anchor luxury interiors worldwide.",
-    cardImage: "/images/sanitary/products/wc-smart-bidet.jpg",
-    cardAlt: "Kohler luxury bathroom fittings and intelligent fixtures",
+    image: "/brands/kohler.jpg",
     banner: "/images/sanitary/luxury-water-closets.jpg",
     bannerAlt: "Kohler signature bathroom interior with premium fittings",
     href: "/sanitary/brands/kohler",
@@ -151,8 +149,7 @@ export const SANITARY_BRANDS: SanitaryBrand[] = [
       "Precision-engineered brassware and shower systems that bring German engineering excellence into the most refined bathroom interiors.",
     bio:
       "GROHE is Germany's leading premium brand for sanitary fittings, blending over a century of engineering heritage with award-winning design. From thermostatic showers that maintain temperature to a fraction of a degree, to faucets with diamond-hard chrome finishes, GROHE defines reliable water luxury for residential and hospitality projects across the globe.",
-    cardImage: "/images/sanitary/products/faucet-basin-chrome.jpg",
-    cardAlt: "Grohe premium brassware and shower systems",
+    image: "/brands/grohe.jpg",
     banner: "/images/sanitary/luxury-showers-faucets.jpg",
     bannerAlt: "Grohe shower system and brassware display",
     href: "/sanitary/brands/grohe",
@@ -269,8 +266,7 @@ export const SANITARY_BRANDS: SanitaryBrand[] = [
       "Pioneering Japanese sanitary technology — from the Washlet to cyclone-flush innovation — designed around hygiene, calm, and daily wellness.",
     bio:
       "TOTO is Japan's most influential sanitary brand, founded in 1917 in Kitakyushu. Globally recognised for inventing the Washlet and refining the modern toilet experience, TOTO combines quiet engineering with thoughtful Japanese design principles to create bathrooms that feel calm, hygienic, and effortlessly refined.",
-    cardImage: "/images/sanitary/products/wc-smart-bidet.jpg",
-    cardAlt: "Toto intelligent Washlet and bathroom technology",
+    image: "/brands/toto.jpg",
     banner: "/images/sanitary/products/wc-smart-bidet.jpg",
     bannerAlt: "Toto Washlet intelligent toilet display",
     href: "/sanitary/brands/toto",
@@ -387,8 +383,7 @@ export const SANITARY_BRANDS: SanitaryBrand[] = [
       "Designer bathroom ceramics and furniture crafted in collaboration with the world's leading industrial designers for expressive, modern bathrooms.",
     bio:
       "Founded in 1817 in Hornberg, Germany, Duravit has become one of the most influential design-led bathroom brands in the world. With long-standing design collaborations with Philippe Starck, Cecilie Manz, and Sebastian Herkner, Duravit crafts ceramic basins, baths, and bathroom furniture that balance sculptural form with everyday practicality.",
-    cardImage: "/images/sanitary/luxury-basins-vanities.jpg",
-    cardAlt: "Duravit designer ceramic basins and baths",
+    image: "/brands/duravit.jpg",
     banner: "/images/sanitary/luxury-basins-vanities.jpg",
     bannerAlt: "Duravit designer bathroom ceramic interior",
     href: "/sanitary/brands/duravit",
