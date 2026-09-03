@@ -26,9 +26,6 @@ export default function OutletsSection() {
               />
               <div className="absolute inset-0 bg-black/25 transition-opacity group-hover:bg-black/35" />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:p-10">
-                <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl text-white font-bold uppercase leading-[1.15] tracking-[0.15em] max-w-sm mb-2">
-                  {outlet.displayTitle ?? outlet.name}
-                </h3>
                 {outlet.displaySubtitle ? (
                   <p className="text-[11px] md:text-xs font-medium uppercase tracking-[0.2em] text-white/85 mb-6">
                     {outlet.displaySubtitle}

@@ -30,10 +30,6 @@ export default function AboutSection() {
 
         <ScrollReveal variant="slideInRight" delay={0.15} className="h-full">
           <div className="flex h-full flex-col py-0 md:block md:py-0">
-            <p className="text-[10px] font-medium tracking-[0.2em] text-neutral-500 uppercase">
-              Our Story
-            </p>
-
             <h2
               id="about-heading"
               className="mt-1 font-serif text-2xl font-bold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 md:mt-2 md:text-[2.5rem] lg:text-[2.85rem]"

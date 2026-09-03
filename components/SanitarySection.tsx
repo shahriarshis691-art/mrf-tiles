@@ -14,9 +14,6 @@ export default function SanitarySection() {
       <div className="mx-auto max-w-[1440px]">
         <ScrollReveal variant="fadeInUp">
           <header className="mx-auto max-w-3xl text-center">
-            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500">
-              CURATED WORLD-CLASS PARTNERSHIPS
-            </p>
             <h2
               id="sanitary-heading"
               className="mt-4 font-serif text-2xl font-bold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 sm:text-[2.5rem] lg:text-[3rem]"
