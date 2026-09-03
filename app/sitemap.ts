@@ -40,6 +40,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     { url: `${base}/brands`, changeFrequency: "monthly", priority: 0.8 },
     {
+      url: `${base}/partners/galaxy-tiles-ceramic`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${base}/sanitary/brands`,
       changeFrequency: "monthly",
       priority: 0.8,

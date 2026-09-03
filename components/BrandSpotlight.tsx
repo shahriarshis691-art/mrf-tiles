@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function BrandSpotlight() {
@@ -47,12 +48,23 @@ export default function BrandSpotlight() {
               GALAXY TILES &amp; CERAMIC is the official provider of KHADIM, bringing world-class porcelain tiles, vitrified surfaces, and refined sanitary solutions. Engineered for exceptional durability and timeless architectural aesthetics, our curated KHADIM collections provide unmatched surface perfection for luxury residences, commercial spaces, and bespoke interior projects.
             </p>
 
-            <a
-              href="#contact"
-              className="inline-block bg-black text-white px-3 py-1.5 sm:px-6 sm:py-3 text-[9px] sm:text-xs font-semibold tracking-widest uppercase rounded-none hover:bg-neutral-800 transition-colors"
+            <Link
+              href="/partners/galaxy-tiles-ceramic"
+              className="group relative inline-flex items-center gap-2 bg-black text-white px-3 py-1.5 sm:px-6 sm:py-3 text-[9px] sm:text-xs font-semibold tracking-widest uppercase rounded-none overflow-hidden transition-all duration-300 ease-out hover:scale-[1.02] hover:bg-[#0A3826] active:scale-95 active:duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A3826] focus-visible:ring-offset-2"
+              aria-label="Know more about Galaxy Tiles and Ceramic partnership with Khadim"
             >
-              KNOW MORE
-            </a>
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+              />
+              <span className="relative">Know More</span>
+              <span
+                aria-hidden="true"
+                className="relative inline-block transition-transform duration-300 ease-out group-hover:translate-x-1.5"
+              >
+                →
+              </span>
+            </Link>
           </div>
         </ScrollReveal>
       </div>
