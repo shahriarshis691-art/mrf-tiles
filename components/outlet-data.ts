@@ -27,7 +27,7 @@ export const OUTLETS: Outlet[] = [
     phoneDisplay: "01870402966",
     whatsapp: "8801870402966",
     mapsUrl: "https://maps.google.com/?q=Gomosto+para,+Rangpur+MRF+Galaxy+Tiles",
-    image: "/images/projects/mrf-experience-showroom.jpg",
+    image: "/outlets/branch-1.jpg",
     alt: "MRF Galaxy luxury tiles display centre interior",
   },
   {
@@ -43,7 +43,7 @@ export const OUTLETS: Outlet[] = [
     whatsapp: "8801743182524",
     mapsUrl:
       "https://maps.google.com/?q=Burirhat,+Mohipur+Road,+Rangpur+MRF+Galaxy+Tiles",
-    image: "/images/hero-display-centre.jpg",
+    image: "/outlets/branch-2.jpg",
     alt: "Premium design center with large-format porcelain displays",
   },
 ];
