@@ -7,14 +7,14 @@ export default function OutletsSection() {
     <section
       id="outlets"
       aria-label="Outlets"
-      className="bg-[#282828]"
+      className="bg-gradient-to-b from-[#EFF1F3] via-[#E6E8EB] to-[#DEE1E5]"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {OUTLETS.map((outlet) => (
             <article
               key={outlet.name}
-              className="group relative aspect-[4/5] md:aspect-square overflow-hidden bg-neutral-900"
+              className="group relative aspect-[4/5] md:aspect-square overflow-hidden bg-neutral-200"
             >
               <Image
                 src={outlet.image}
@@ -36,7 +36,7 @@ export default function OutletsSection() {
                 ) : null}
                 <Link
                   href={outlet.displayHref ?? "/contact"}
-                  className="bg-[#f5f2ed] hover:bg-white text-neutral-900 px-6 py-2.5 text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase rounded-none transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
+                  className="bg-[#f5f2ed] hover:bg-white text-neutral-900 px-6 py-2.5 text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase rounded-none transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100"
                 >
                   Visit Outlet
                 </Link>

@@ -10,7 +10,7 @@ export default function CollectionSection() {
       <section
         id="brands"
         aria-label="Featured Brands"
-        className="relative w-full overflow-x-hidden bg-gradient-to-b from-[#EBE1D4] via-[#E4D5C2] to-[#DDD0BD] px-4 py-16 md:py-24"
+        className="relative w-full overflow-x-hidden bg-gradient-to-b from-[#EBE1D4] via-[#E4D5C2] to-[#DDD0BD] px-4 pt-16 pb-4 md:pt-24 md:pb-6"
       >
         <div className="mx-auto max-w-[1440px]">
           <ScrollReveal variant="fadeInUp">
@@ -37,7 +37,7 @@ export default function CollectionSection() {
 
       <section
         aria-label="Premium Tiles Collection"
-        className="relative w-full overflow-x-hidden px-4 py-16 md:py-24"
+        className="relative w-full overflow-x-hidden px-4 pt-4 pb-16 md:pt-8 md:pb-24"
         style={{
           background:
             "linear-gradient(90deg, #E62A1B 0%, #B81D22 35%, #781318 70%, #400B0E 100%)",
@@ -45,32 +45,30 @@ export default function CollectionSection() {
       >
         <div className="mx-auto max-w-[1440px]">
           <ScrollReveal variant="fadeInUp" delay={0.2}>
-            <div className="mt-0 md:mt-0">
-              <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                <h2 className="font-serif text-2xl font-extrabold uppercase leading-[1.15] tracking-[0.15em] text-white sm:text-[2.4rem] lg:text-[2.75rem]">
-                  Explore Premium Tiles Collection
-                </h2>
-                <nav className="flex items-center gap-6" aria-label="Room filters">
-                  {ROOM_FILTERS.map((filter) => (
-                    <button
-                      key={filter.id}
-                      type="button"
-                      className={`text-xs font-medium tracking-wider md:text-sm ${
-                        filter.active
-                          ? "border-b-2 border-white pb-1 text-white"
-                          : "text-white/70 hover:text-white"
-                      }`}
-                    >
-                      {filter.label}
-                    </button>
-                  ))}
-                </nav>
-              </div>
-              <div className="mt-6 md:mt-8">
-                <RoomCategoriesCarousel categories={ROOM_CATEGORIES} />
-              </div>
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <h2 className="font-serif text-2xl font-extrabold uppercase leading-[1.15] tracking-[0.15em] text-white sm:text-[2.4rem] lg:text-[2.75rem]">
+                Explore Premium Tiles Collection
+              </h2>
+              <nav className="flex items-center gap-6" aria-label="Room filters">
+                {ROOM_FILTERS.map((filter) => (
+                  <button
+                    key={filter.id}
+                    type="button"
+                    className={`text-xs font-medium tracking-wider md:text-sm ${
+                      filter.active
+                        ? "border-b-2 border-white pb-1 text-white"
+                        : "text-white/70 hover:text-white"
+                    }`}
+                  >
+                    {filter.label}
+                  </button>
+                ))}
+              </nav>
             </div>
-          </ScrollReveal>
+            <div className="mt-6 md:mt-8">
+              <RoomCategoriesCarousel categories={ROOM_CATEGORIES} />
+            </div>
+            </ScrollReveal>
         </div>
       </section>
     </>
