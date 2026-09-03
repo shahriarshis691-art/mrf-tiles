@@ -12,18 +12,18 @@ export default function AboutSection() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="bg-[#F5F1E8] px-4 py-0 sm:py-0 lg:py-0"
+      className="bg-[#F5F1E8] px-4 py-0 sm:py-0 lg:py-0 pb-6 md:pb-8 mb-0"
     >
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 md:grid-cols-2 items-stretch gap-4 md:gap-10 lg:gap-16 xl:gap-24">
         <ScrollReveal variant="slideInLeft" className="h-full">
-          <div className="relative h-full min-h-0 w-full overflow-hidden border border-neutral-200/60 bg-neutral-100 md:aspect-auto md:h-full md:min-h-[30rem] lg:min-h-[36rem]">
+          <div className="relative h-full min-h-0 w-full overflow-hidden border border-neutral-200/60 bg-neutral-100 md:h-full">
             <Image
               src="/images/hero-display-centre.jpg"
               alt="MRF Galaxy experience showroom with premium tile displays"
               fill
               quality={90}
               sizes="(max-width: 767px) 100vw, 50vw"
-              className="object-cover object-center"
+              className="h-full object-cover object-center"
             />
           </div>
         </ScrollReveal>
@@ -54,7 +54,7 @@ export default function AboutSection() {
               design, and lasting craftsmanship.
             </p>
 
-            <dl className="mt-4 grid grid-cols-3 gap-2 border-t border-neutral-200 pt-3 text-center md:mt-5 md:gap-8 md:pt-4 md:text-left">
+            <dl className="mt-4 mb-0 grid grid-cols-3 gap-2 border-t border-neutral-200 pt-3 text-center md:mt-5 md:gap-8 md:pt-4 md:text-left">
               {STATS.map((stat) => (
                 <div key={stat.label}>
                   <dt className="font-sans text-[1.25rem] font-semibold tracking-wide text-[#0F0F0F] md:text-[2rem]">
