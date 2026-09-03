@@ -37,16 +37,12 @@ export default function CollectionSection() {
 
       <section
         aria-label="Premium Tiles Collection"
-        className="relative w-full overflow-x-hidden px-4 pt-4 pb-16 md:pt-8 md:pb-24"
-        style={{
-          background:
-            "linear-gradient(90deg, #E62A1B 0%, #B81D22 35%, #781318 70%, #400B0E 100%)",
-        }}
+        className="relative w-full overflow-x-hidden bg-gradient-to-b from-[#EFF1F3] via-[#E7E9EC] to-[#DEE0E4] px-4 py-10 md:py-14"
       >
         <div className="mx-auto max-w-[1440px]">
           <ScrollReveal variant="fadeInUp" delay={0.2}>
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <h2 className="font-serif text-2xl font-extrabold uppercase leading-[1.15] tracking-[0.15em] text-white sm:text-[2.4rem] lg:text-[2.75rem]">
+              <h2 className="font-serif font-bold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 text-2xl sm:text-[2.4rem] lg:text-[2.75rem]">
                 Explore Premium Tiles Collection
               </h2>
               <nav className="flex items-center gap-6" aria-label="Room filters">
@@ -54,10 +50,10 @@ export default function CollectionSection() {
                   <button
                     key={filter.id}
                     type="button"
-                    className={`text-xs font-medium tracking-wider md:text-sm ${
+                    className={`text-xs font-medium tracking-widest uppercase ${
                       filter.active
-                        ? "border-b-2 border-white pb-1 text-white"
-                        : "text-white/70 hover:text-white"
+                        ? "border-b-2 border-neutral-900 pb-1 text-neutral-950"
+                        : "text-neutral-500 hover:text-neutral-900"
                     }`}
                   >
                     {filter.label}
@@ -68,7 +64,7 @@ export default function CollectionSection() {
             <div className="mt-6 md:mt-8">
               <RoomCategoriesCarousel categories={ROOM_CATEGORIES} />
             </div>
-            </ScrollReveal>
+          </ScrollReveal>
         </div>
       </section>
     </>
