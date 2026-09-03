@@ -103,7 +103,7 @@ export default function FeaturedBrandCarousel({
                   />
                 </div>
 
-                <p className="mt-3 text-center text-xs font-bold uppercase tracking-[0.12em] text-neutral-950 md:text-sm">
+                <p className="mt-4 text-center text-xs font-semibold uppercase tracking-widest text-neutral-950 md:text-sm">
                   {brand.name}
                 </p>
               </article>
