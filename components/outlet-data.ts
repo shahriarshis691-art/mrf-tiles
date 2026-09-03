@@ -2,6 +2,9 @@ export type Outlet = {
   name: string;
   address: string[];
   locationLine: string;
+  displayTitle?: string;
+  displaySubtitle?: string;
+  displayHref?: string;
   tag: string;
   phone: string;
   phoneDisplay: string;
@@ -13,9 +16,12 @@ export type Outlet = {
 
 export const OUTLETS: Outlet[] = [
   {
-    name: "First Branch",
+    name: "Main Flagship Gallery",
     address: ["MRF Galaxy Tiles & Sanitary", "Gomosto para, Rangpur"],
     locationLine: "Gomosto para, Rangpur",
+    displayTitle: "Main Flagship Gallery — Rangpur Showroom",
+    displaySubtitle: "Dhap, Jail Road, Rangpur",
+    displayHref: "/contact",
     tag: "Luxury Tiles & Ceramic",
     phone: "+8801870402966",
     phoneDisplay: "01870402966",
@@ -25,9 +31,12 @@ export const OUTLETS: Outlet[] = [
     alt: "MRF Galaxy luxury tiles display centre interior",
   },
   {
-    name: "Second Branch",
+    name: "Architectural Surface Studio",
     address: ["MRF Galaxy Tiles & Sanitary", "Burirhat, Mohipur Road, Rangpur"],
     locationLine: "Burirhat, Mohipur Road, Rangpur",
+    displayTitle: "Architectural Surface Studio — Khadim Experience Center",
+    displaySubtitle: "Premium Brick & Cladding Display",
+    displayHref: "/contact",
     tag: "Premium Design Center",
     phone: "+8801743182524",
     phoneDisplay: "01743182524",
