@@ -3,6 +3,7 @@ import { CATALOG_PRODUCTS } from "@/components/collection/collection-data";
 import { PROJECTS } from "@/components/projects/projects-data";
 import { SANITARY_CATEGORIES } from "@/components/sanitary/sanitary-data";
 import { getAllBrandSlugs } from "@/lib/brands";
+import { getAllRoomSlugs } from "@/lib/roomCategories";
 import { getAllSanitaryBrandSlugs } from "@/lib/sanitaryBrands";
 import { SANITARY_PRODUCTS } from "@/lib/sanitaryData";
 import { getSiteUrl } from "@/lib/site";
@@ -88,6 +89,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const slug of getAllSanitaryBrandSlugs()) {
     pages.push({
       url: `${base}/sanitary/brands/${slug}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
+  }
+
+  for (const slug of getAllRoomSlugs()) {
+    pages.push({
+      url: `${base}/rooms/${slug}`,
       changeFrequency: "monthly",
       priority: 0.7,
     });

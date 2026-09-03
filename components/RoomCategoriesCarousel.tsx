@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { RoomCategory } from "@/lib/roomCategories";
 
 type RoomCategoriesCarouselProps = {
@@ -75,19 +76,32 @@ export default function RoomCategoriesCarousel({
       >
         {categories.map((cat) => (
           <article key={cat.id} className="snap-center">
-            <div className="group relative aspect-[4/5] w-full overflow-hidden bg-neutral-100">
-              <Image
-                src={cat.image}
-                alt={cat.alt}
-                fill
-                quality={90}
-                sizes="(max-width: 767px) calc(50vw - 8px), 16vw"
-                className="object-cover transition-transform duration-500 hover:scale-105"
-              />
-            </div>
-            <p className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-neutral-900 md:text-sm">
-              {cat.label}
-            </p>
+            <Link
+              href={cat.path}
+              className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
+              aria-label={`Explore ${cat.label} tiles collection`}
+            >
+              <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-100">
+                <Image
+                  src={cat.image}
+                  alt={cat.alt}
+                  fill
+                  quality={90}
+                  sizes="(max-width: 767px) calc(50vw - 8px), 16vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                />
+                <span className="absolute bottom-3 left-3 translate-y-2 text-[10px] font-medium uppercase tracking-[0.24em] text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  Explore →
+                </span>
+              </div>
+              <p className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-neutral-900 transition-colors group-hover:text-neutral-600 md:text-sm">
+                {cat.label}
+              </p>
+            </Link>
           </article>
         ))}
       </div>
