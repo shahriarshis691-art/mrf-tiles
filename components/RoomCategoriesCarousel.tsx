@@ -84,17 +84,8 @@ export default function RoomCategoriesCarousel({
                 sizes="(max-width: 767px) calc(50vw - 8px), 16vw"
                 className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 md:opacity-0" />
-              <div className="absolute inset-x-0 bottom-0 p-3 md:p-4">
-                <h3 className="text-sm font-semibold text-neutral-800 md:text-base md:font-bold md:text-neutral-200">
-                  {cat.label}
-                </h3>
-                <p className="mt-1 hidden text-[10px] leading-relaxed text-neutral-300 md:block">
-                  {cat.description}
-                </p>
-              </div>
             </div>
-            <p className="mt-3 text-center text-sm font-semibold text-neutral-800 md:text-base md:font-semibold md:text-neutral-200">
+            <p className="mt-3 text-center text-sm font-semibold text-black md:text-base md:font-semibold md:text-black">
               {cat.label}
             </p>
           </article>

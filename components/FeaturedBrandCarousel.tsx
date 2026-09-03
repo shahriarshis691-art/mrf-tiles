@@ -9,7 +9,7 @@ type FeaturedBrandCarouselProps = {
   brands: Brand[];
 };
 
-const AUTO_ADVANCE_MS = 3000;
+const AUTO_ADVANCE_MS = 3500;
 const INTERACTION_PAUSE_MS = 6000;
 
 export default function FeaturedBrandCarousel({
@@ -46,7 +46,8 @@ export default function FeaturedBrandCarousel({
         Math.abs(slides[nearestIndex].offsetLeft - track.scrollLeft)
           ? index
           : nearestIndex,
-      0);
+        0,
+      );
 
       scrollToIndex((currentIndex + 1) % brands.length);
     };
@@ -69,7 +70,8 @@ export default function FeaturedBrandCarousel({
       Math.abs(slides[currentNearest].offsetLeft - track.scrollLeft)
         ? index
         : currentNearest,
-    0);
+      0,
+    );
 
     setActiveIndex(nearestIndex);
   };
@@ -80,9 +82,9 @@ export default function FeaturedBrandCarousel({
         ref={trackRef}
         onPointerDown={pauseForInteraction}
         onScroll={handleScroll}
-        className="grid grid-flow-col auto-cols-[calc(100vw-2rem)] grid-rows-1 snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid-flow-row md:auto-cols-auto md:grid-cols-3 md:gap-5 md:overflow-visible md:pb-0 lg:gap-5"
+        className="grid grid-flow-col auto-cols-[calc(50vw-8px)] grid-rows-1 gap-3 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid-flow-row md:auto-cols-auto md:grid-cols-4 md:overflow-visible md:pb-0 md:gap-4"
       >
-        {brands.map((brand, index) => (
+        {brands.map((brand) => (
           <div key={brand.slug} className="snap-center">
             <Link
               href={brand.href}
@@ -96,33 +98,14 @@ export default function FeaturedBrandCarousel({
                     alt={brand.cardAlt}
                     fill
                     quality={90}
-                    sizes="(max-width: 767px) calc(100vw - 2rem), 33vw"
+                    sizes="(max-width: 767px) calc(50vw - 8px), 25vw"
                     className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   />
                 </div>
 
-                <div className="px-3 py-4 text-center sm:px-4 sm:py-5 md:px-6 md:py-6">
-                  <h3 className="font-sans text-[12px] font-semibold uppercase leading-[1.35] tracking-[0.12em] text-[#0F0F0F]">
-                    {String(index + 1).padStart(2, "0")} / {brand.name}
-                  </h3>
-                  <span className="mx-auto mt-3 block h-px w-8 bg-gold transition-all duration-500 group-hover:w-14 md:mt-4" />
-                  <p className="mt-3 text-[9px] font-medium uppercase tracking-[0.16em] text-neutral-500 sm:text-[10px] md:mt-4 md:text-[11px] md:tracking-[0.32em]">
-                    {brand.tagline}
-                  </p>
-                  <span className="mt-4 inline-flex items-center text-[9px] font-medium uppercase tracking-[0.16em] text-neutral-700 transition-colors duration-300 group-hover:text-gold sm:text-[10px] md:mt-5 md:tracking-[0.32em]">
-                    View Products
-                    <span
-                      aria-hidden="true"
-                      className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1"
-                    >
-                      →
-                    </span>
-                  </span>
-                </div>
+                <p className="mt-3 text-center text-xs font-semibold text-black md:text-sm md:font-semibold md:text-black md:tracking-normal">
+                  {brand.name}
+                </p>
               </article>
             </Link>
           </div>
