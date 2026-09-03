@@ -28,7 +28,7 @@ export default function CollectionSection() {
           </header>
         </ScrollReveal>
 
-        <ScrollReveal variant="fadeInUp" delay={0.1}>
+        <ScrollReveal variant="fadeInUp" delay={0.1} className="mb-6 md:mb-8">
           <FeaturedBrandCarousel brands={BRANDS} />
         </ScrollReveal>
 
