@@ -19,7 +19,7 @@ export default function SanitarySection() {
             </p>
             <h2
               id="sanitary-heading"
-              className="mt-4 font-serif text-2xl font-bold uppercase leading-tight tracking-[0.08em] text-[#0F0F0F] sm:text-[2.5rem] lg:text-[3rem]"
+              className="mt-4 font-serif text-2xl font-bold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 sm:text-[2.5rem] lg:text-[3rem]"
             >
               <span className="text-[#0F0F0F]">GALAXY TILES &amp; CERAMIC, RANGPUR</span>
               <span className="mt-2 block font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-neutral-700 sm:text-[12px] sm:tracking-[0.32em]">

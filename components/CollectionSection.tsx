@@ -17,7 +17,7 @@ export default function CollectionSection() {
             <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500">
               Featured Brands
             </p>
-            <h2 className="mt-3 font-serif text-2xl font-semibold leading-tight tracking-[0.06em] text-[#0F0F0F] sm:text-[2.4rem] lg:text-[2.75rem]">
+            <h2 className="mt-3 font-serif text-2xl font-extrabold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 sm:text-[2.4rem] lg:text-[2.75rem]">
               Our House of Brands
             </h2>
             <span className="mx-auto mt-4 block h-px w-10 bg-gold sm:w-12" />
@@ -35,7 +35,7 @@ export default function CollectionSection() {
         <ScrollReveal variant="fadeInUp" delay={0.2}>
           <div className="mt-0 md:mt-0">
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <h2 className="font-serif text-2xl font-semibold leading-tight tracking-[0.06em] text-[#0F0F0F] sm:text-[2.4rem] lg:text-[2.75rem]">
+              <h2 className="font-serif text-2xl font-extrabold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 sm:text-[2.4rem] lg:text-[2.75rem]">
                 Explore Premium Tiles Collection
               </h2>
               <nav className="flex items-center gap-6" aria-label="Room filters">

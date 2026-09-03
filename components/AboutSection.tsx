@@ -36,7 +36,7 @@ export default function AboutSection() {
 
             <h2
               id="about-heading"
-              className="mt-1 font-sans text-2xl font-semibold uppercase leading-tight tracking-[0.06em] text-[#0F0F0F] md:mt-2 md:text-[2.5rem] md:leading-[1.05] lg:text-[2.85rem]"
+              className="mt-1 font-serif text-2xl font-bold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 md:mt-2 md:text-[2.5rem] lg:text-[2.85rem]"
             >
               Crafting Spaces
               <br />

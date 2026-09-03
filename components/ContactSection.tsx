@@ -88,7 +88,7 @@ export default function ContactSection() {
 
               <h2
                 id="contact-heading"
-                className="mt-4 font-sans text-2xl font-semibold uppercase leading-tight tracking-[0.06em] text-[#0F0F0F] sm:text-[2.35rem]"
+                className="mt-4 font-serif text-2xl font-bold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 sm:text-[2.35rem]"
               >
                 Contact Us
               </h2>

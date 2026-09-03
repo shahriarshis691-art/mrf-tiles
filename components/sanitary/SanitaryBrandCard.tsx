@@ -32,7 +32,7 @@ export default function SanitaryBrandCard({
         </div>
 
         <div className="px-5 py-6 text-center sm:px-6 sm:py-7">
-          <h3 className="font-serif text-[1.25rem] font-bold uppercase leading-[1.05] tracking-[0.18em] text-[#0F0F0F] sm:text-[1.4rem]">
+          <h3 className="font-serif text-[1.25rem] font-bold uppercase leading-[1.15] tracking-[0.15em] text-neutral-950 sm:text-[1.4rem]">
             {brand.name}
           </h3>
           <span className="mx-auto mt-4 block h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" />

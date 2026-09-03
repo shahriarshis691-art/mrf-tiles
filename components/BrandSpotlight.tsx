@@ -37,7 +37,7 @@ export default function BrandSpotlight() {
               OFFICIAL PARTNER · ARCHITECTURAL SURFACES
             </p>
 
-            <h2 className="text-sm sm:text-2xl md:text-4xl lg:text-5xl font-extrabold text-neutral-900 leading-tight tracking-tight mb-2 md:mb-4">
+            <h2 className="text-sm sm:text-2xl md:text-4xl lg:text-5xl font-extrabold text-neutral-950 uppercase tracking-[0.15em] leading-[1.15] mb-2 md:mb-4">
               GALAXY TILES &amp; CERAMIC Official provider of KHADIM
             </h2>
 

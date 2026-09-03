@@ -46,7 +46,7 @@ export default function OurServicesSection() {
                   </div>
 
                   {/* Header Title */}
-                  <h2 className="font-serif font-semibold text-[1.5rem] leading-[1.2] text-[#0F0F0F] my-2 md:font-bold md:text-[clamp(1.75rem,4vw,4rem)]">
+                  <h2 className="font-serif font-bold uppercase text-[1.5rem] leading-[1.15] text-neutral-950 my-2 md:text-[clamp(1.75rem,4vw,4rem)]">
                     Our Services
                   </h2>
 

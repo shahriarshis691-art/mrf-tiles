@@ -34,7 +34,7 @@
   --color-gold-soft: var(--gold-soft);
   --color-muted: var(--muted);
   --font-sans: var(--font-montserrat);
-  --font-serif: "Playfair Display", serif;
+  --font-serif: var(--font-playfair);
 }
 
 html,

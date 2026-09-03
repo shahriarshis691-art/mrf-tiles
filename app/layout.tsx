@@ -3,7 +3,7 @@ import { OUTLETS } from "@/components/outlet-data";
 import LenisProvider from "@/components/LenisProvider";
 import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -11,6 +11,13 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
+});
+
+const playfair_Display = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
+  style: ["normal"],
 });
 
 const siteUrl = getSiteUrl();
@@ -75,7 +82,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${montserrat.variable} h-full antialiased`}>
+    <html lang="en" className={`${montserrat.variable} ${playfair_Display.variable} h-full antialiased`}>
       <body className="min-h-full bg-background font-sans text-foreground">
         <a
           href="#main"

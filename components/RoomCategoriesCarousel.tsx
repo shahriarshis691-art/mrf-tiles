@@ -85,7 +85,7 @@ export default function RoomCategoriesCarousel({
                 className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
               />
             </div>
-            <p className="mt-3 text-center text-sm font-semibold text-black md:text-base md:font-semibold md:text-black">
+            <p className="mt-3 text-center text-sm font-bold uppercase tracking-[0.12em] text-neutral-950 md:text-base">
               {cat.label}
             </p>
           </article>
