@@ -18,7 +18,7 @@ export default function SanitarySection() {
               id="sanitary-heading"
               className="font-serif font-bold text-neutral-950 uppercase tracking-[0.12em] text-xl sm:text-2xl md:text-2xl lg:text-3xl leading-tight mt-0 mb-3 md:mb-4"
             >
-              <span className="text-[#0F0F0F]">GALAXY TILES &amp; CERAMIC, RANGPUR</span>
+              <span className="text-[#0F0F0F]">GALAXY TILES <span className="font-sans">&amp;</span> CERAMIC, RANGPUR</span>
               <span className="mt-2 block font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-neutral-700 sm:text-[12px] sm:tracking-[0.32em]">
                 GALAXY TILES &amp; CERAMIC PROVIDES WORLD-CLASS LUXURY
               </span>

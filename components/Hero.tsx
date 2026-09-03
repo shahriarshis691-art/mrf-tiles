@@ -49,7 +49,7 @@ export default function Hero() {
             }
             className="font-serif font-extrabold uppercase leading-[1.15] tracking-[0.15em] text-white text-balance text-[clamp(1.6rem,8vw,2.8rem)] md:text-[3.25rem] lg:text-[4rem] [text-shadow:0_2px_18px_rgba(0,0,0,0.45)]"
           >
-            GALAXY TILES &amp; CERAMIC, RANGPUR
+            GALAXY TILES <span className="font-sans">&amp;</span> CERAMIC, RANGPUR
           </motion.h1>
 
           <motion.div
