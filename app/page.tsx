@@ -1,4 +1,5 @@
 import AboutSection from "@/components/AboutSection";
+import BrandSpotlight from "@/components/BrandSpotlight";
 import ContactSection from "@/components/ContactSection";
 import FounderSection from "@/components/FounderSection";
 import Navbar from "@/components/Navbar";
@@ -16,6 +17,7 @@ export default function Home() {
         <div className="relative bg-zinc-950">
           <Hero />
         </div>
+        <BrandSpotlight />
         <CollectionSection />
         <OurServicesSection />
         <AboutSection />
