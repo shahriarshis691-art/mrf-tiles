@@ -167,6 +167,13 @@ export default function ContactSection() {
                   <a href={whatsappUrl} className={outlineButtonClass}>
                     Open WhatsApp
                   </a>
+                  <button
+                    type="button"
+                    onClick={() => setWhatsappUrl(null)}
+                    className="mt-4 text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-600 underline-offset-4 transition-colors hover:text-neutral-900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1"
+                  >
+                    Send another message
+                  </button>
                 </div>
               ) : (
                 <form
