@@ -8,6 +8,7 @@ const FOOTER_LINKS = [
   { href: "/brands", label: "BRANDS" },
   { href: "/sanitary", label: "SANITARY" },
   { href: "/projects", label: "PROJECTS" },
+  { href: "/companies", label: "GROUP" },
   { href: "/#contact", label: "CONTACT" },
 ];
 
@@ -25,9 +26,22 @@ export default function Footer() {
               className="mt-5 max-w-[16rem] text-xs leading-relaxed"
               style={{ color: "rgba(255, 255, 255, 0.8)" }}
             >
-              Premium tiles and sanitary solutions for spaces designed with
-              elegance and lasting quality.
+              A focused group across fashion, horology, ceramics, and enterprise
+              technology — engineered for category excellence.
             </p>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {["Fashion", "Horology", "Ceramics", "Tech Solutions"].map(
+                (sector) => (
+                  <li
+                    key={sector}
+                    className="border border-white/20 px-2.5 py-1 text-[9px] font-medium uppercase tracking-[0.18em]"
+                    style={{ color: "rgba(255, 255, 255, 0.75)" }}
+                  >
+                    {sector}
+                  </li>
+                ),
+              )}
+            </ul>
           </div>
 
           <div>

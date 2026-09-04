@@ -1,5 +1,6 @@
 import AboutSection from "@/components/AboutSection";
 import BrandSpotlight from "@/components/BrandSpotlight";
+import BusinessGrid from "@/components/BusinessGrid";
 import ContactSection from "@/components/ContactSection";
 import FounderSection from "@/components/FounderSection";
 import Navbar from "@/components/Navbar";
@@ -20,6 +21,11 @@ export default function Home() {
         <BrandSpotlight />
         <CollectionSection />
         <OurServicesSection />
+        <BusinessGrid
+          heading="Our Group Portfolio"
+          intro="Four focused subsidiaries spanning fashion, horology, ceramics, and enterprise technology — each engineered for category excellence."
+          compact
+        />
         <AboutSection />
         <SanitarySection />
         <OutletsSection />
