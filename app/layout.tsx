@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import { OUTLETS } from "@/components/outlet-data";
 import LenisProvider from "@/components/LenisProvider";
+import Analytics from "@/components/Analytics";
 import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
@@ -11,6 +12,10 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
+  display: "swap",
+  preload: true,
+  fallback: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+  adjustFontFallback: true,
 });
 
 const playfair_Display = Playfair_Display({
@@ -18,6 +23,10 @@ const playfair_Display = Playfair_Display({
   subsets: ["latin"],
   weight: ["700", "800", "900"],
   style: ["normal"],
+  display: "swap",
+  preload: true,
+  fallback: ["Georgia", "Times New Roman", "serif"],
+  adjustFontFallback: true,
 });
 
 const siteUrl = getSiteUrl();
@@ -98,6 +107,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
           <Footer />
         </LenisProvider>
+        <Analytics />
       </body>
     </html>
   );
