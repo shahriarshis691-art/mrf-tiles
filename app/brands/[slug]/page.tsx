@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import BrandProductCard from "@/components/brands/BrandProductCard";
+import SharifProductGrid from "@/components/brands/SharifProductGrid";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -119,7 +120,9 @@ export default async function BrandPage({ params }: Props) {
               </p>
             </header>
 
-            {brand.products.length > 0 ? (
+            {brand.slug === "sharif-fittings" ? (
+              <SharifProductGrid products={brand.products} />
+            ) : brand.products.length > 0 ? (
               <div className="grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-6 overflow-x-auto sm:auto-cols-[16rem] sm:gap-6 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-3 lg:overflow-visible lg:gap-7 xl:grid-cols-4">
                 {brand.products.map((product) => (
                   <BrandProductCard

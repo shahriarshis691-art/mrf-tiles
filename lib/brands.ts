@@ -1,3 +1,5 @@
+import { SHARIF_PRODUCTS } from "./sharif-fittings";
+
 export type BrandProduct = {
   id: string;
   title: string;
@@ -8,6 +10,8 @@ export type BrandProduct = {
   category: string;
   specifications: string[];
   priceBdt: number;
+  illustrative?: boolean;
+  priceSource?: string;
 };
 
 export type Brand = {
@@ -523,6 +527,31 @@ export const BRANDS: Brand[] = [
     ],
   },
 ];
+
+BRANDS.push({
+  slug: "sharif-fittings",
+  name: "SHARIF FITTINGS",
+  tagline: "Considered details. Everyday comfort.",
+  description: "Explore basin mixers, kitchen taps and shower fittings from Bangladesh’s Sharif Metal Ltd. Thoughtfully selected details for your bathroom and kitchen.",
+  banner: "/images/sanitary/luxury-showers-faucets.jpg",
+  bannerAlt: "Illustrative luxury shower interior with dark marble and warm lighting",
+  cardImage: "/images/sanitary/luxury-showers-faucets.jpg",
+  cardAlt: "Luxury sanitary interior concept with marble walls and metallic fittings",
+  href: "/brands/sharif-fittings",
+  products: SHARIF_PRODUCTS.map((product) => ({
+    id: product.id,
+    title: product.name,
+    description: product.description,
+    details: product.description,
+    image: product.image_placeholder,
+    alt: `Illustrative ${product.category.toLowerCase()} fitting; not an exact ${product.name} photograph`,
+    category: product.category,
+    specifications: [product.material_finish],
+    priceBdt: product.approx_price_bdt,
+    illustrative: true,
+    priceSource: product.source_url,
+  })),
+});
 
 export function getBrandBySlug(slug: string): Brand | undefined {
   return BRANDS.find((brand) => brand.slug === slug);

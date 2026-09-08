@@ -82,7 +82,7 @@ export default function FeaturedBrandCarousel({
         ref={trackRef}
         onPointerDown={pauseForInteraction}
         onScroll={handleScroll}
-        className="grid grid-flow-col auto-cols-[calc(50vw-8px)] grid-rows-1 gap-3 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid-flow-row md:auto-cols-auto md:grid-cols-4 md:overflow-visible md:pb-0 md:gap-4"
+        className="relative grid grid-flow-col auto-cols-[calc(50vw-8px)] grid-rows-1 gap-3 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid-flow-row md:auto-cols-auto md:grid-cols-3 lg:grid-cols-5 md:overflow-visible md:pb-0 md:gap-4"
       >
         {brands.map((brand) => (
           <div key={brand.slug} className="snap-center">
@@ -98,7 +98,7 @@ export default function FeaturedBrandCarousel({
                     alt={brand.cardAlt}
                     fill
                     quality={90}
-                    sizes="(max-width: 767px) calc(50vw - 8px), 25vw"
+                    sizes="(max-width: 767px) calc(50vw - 8px), (max-width: 1023px) 33vw, 20vw"
                     className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
@@ -132,3 +132,4 @@ export default function FeaturedBrandCarousel({
     </div>
   );
 }
+

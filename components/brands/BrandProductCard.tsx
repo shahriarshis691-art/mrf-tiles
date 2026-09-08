@@ -28,11 +28,12 @@ export default function BrandProductCard({
           fill
           quality={90}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+          className={`${product.illustrative ? "object-contain bg-white" : "object-cover"} object-center transition-transform duration-700 ease-out group-hover:scale-105`}
         />
         <span className="absolute left-4 top-4 inline-flex items-center bg-white/95 px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.22em] text-neutral-900 backdrop-blur-sm">
           {product.category}
         </span>
+        {product.illustrative && <span className="absolute bottom-3 left-3 bg-white/95 px-3 py-1 text-xs text-neutral-600">Illustrative image</span>}
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
@@ -66,14 +67,16 @@ export default function BrandProductCard({
 
         <div className="mt-5 flex items-baseline justify-between border-t border-neutral-200 pt-4">
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-neutral-500">
-            Price
+            {product.priceSource ? "Approx. price" : "Price"}
           </p>
           <p className="font-serif text-[1.25rem] font-bold tracking-[0.04em] text-[#0F0F0F] sm:text-[1.35rem]">
             {formatPriceBdt(product.priceBdt)}
           </p>
         </div>
 
-        <div className="mt-5 flex flex-wrap gap-3">
+        {product.priceSource && <a href={product.priceSource} target="_blank" rel="noopener noreferrer" className="mt-3 text-xs text-neutral-600 underline underline-offset-4 hover:text-neutral-950">Retail price reference ↗</a>}
+
+        <div className={product.illustrative ? "mt-auto flex flex-wrap gap-3 pt-5" : "mt-5 flex flex-wrap gap-3"}>
           <Link
             href={buildInquiryUrl(brandName, product.title)}
             target="_blank"
