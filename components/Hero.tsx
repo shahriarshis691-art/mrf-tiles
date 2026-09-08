@@ -1,74 +1,54 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { useState } from "react";
 
-const HERO_IMAGE = {
-  src: "/images/hero-tile-showroom.jpg",
-  alt: "Luxury porcelain slab display showroom with architectural lighting",
-  objectPosition: "object-center",
-};
+const views = [
+  { src: "/images/projects/luxury-villa.jpg", alt: "Luxury villa architecture" },
+  { src: "/images/villa-sun.jpg", alt: "Contemporary white villa with natural stone walls and warm architectural lighting" },
+  { src: "/images/projects/modern-residence.jpg", alt: "Modern residence exterior" },
+  { src: "/images/projects/architectural-tile-experience.jpg", alt: "Architectural tile finishes" },
+];
 
 export default function Hero() {
-  const shouldReduceMotion = useReducedMotion();
+  const [active, setActive] = useState(1);
 
   return (
-    <section
-      aria-label="MRF Galaxy highlights"
-      className="relative isolate flex min-h-[520px] w-full flex-col overflow-hidden md:min-h-[44rem] lg:min-h-[48rem]"
-    >
-      <Image
-        src={HERO_IMAGE.src}
-        alt={HERO_IMAGE.alt}
-        fill
-        priority
-        quality={90}
-        sizes="100vw"
-        className={`object-cover ${HERO_IMAGE.objectPosition}`}
-      />
-
-      <div className="relative z-10 flex w-full flex-1 items-center justify-center px-4 py-12 sm:px-6 sm:py-14 md:px-10 md:py-28 lg:px-14 lg:py-32">
-        <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={
-            shouldReduceMotion
-              ? { duration: 0 }
-              : { duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }
-          }
-          className="mx-auto flex max-w-[46rem] flex-col items-center text-center"
-        >
-          <motion.h1
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={
-              shouldReduceMotion
-                ? { duration: 0 }
-                : { duration: 0.8, ease: "easeOut", delay: 0.4 }
-            }
-            className="font-serif font-extrabold uppercase leading-[1.15] tracking-[0.15em] text-white text-balance text-[clamp(1.6rem,8vw,2.8rem)] md:text-[3.25rem] lg:text-[4rem] [text-shadow:0_2px_18px_rgba(0,0,0,0.45)]"
-          >
-            GALAXY TILES <span className="font-sans">&amp;</span> CERAMIC, RANGPUR
-          </motion.h1>
-
-          <motion.div
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={
-              shouldReduceMotion
-                ? { duration: 0 }
-                : { duration: 0.8, ease: "easeOut", delay: 0.6 }
-            }
-          >
-            <Link
-              href="/#contact"
-              className="mt-9 inline-flex min-h-[44px] items-center justify-center border border-gold px-9 py-4 text-[12px] font-semibold tracking-[0.22em] text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.45)] transition-colors duration-300 hover:bg-gold hover:text-zinc-950 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1"
-            >
-              VISIT SHOWROOM
-            </Link>
-          </motion.div>
-        </motion.div>
+    <section aria-label="Galaxy Collection" className="galaxy-hero">
+      <div className="galaxy-hero-stage">
+        <Image
+          key={views[active].src}
+          src={views[active].src}
+          alt={views[active].alt}
+          fill
+          preload={active === 1}
+          sizes="100vw"
+          className="galaxy-hero-image"
+        />
+        <div className="galaxy-hero-fade" />
+        <div className="galaxy-hero-copy">
+          <p className="galaxy-hero-eyebrow">Elegance in every detail</p>
+          <h1><span>GALAXY</span><span>COLLECTION</span></h1>
+          <div className="galaxy-hero-rule" />
+          <p className="galaxy-hero-tagline">Designed for a<br />better tomorrow</p>
+        </div>
+        <div className="galaxy-hero-pagination" role="group" aria-label="Select architectural view">
+          {views.map((view, index) => (
+            <button key={view.src} type="button" aria-label={`View ${index + 1}: ${view.alt}`} aria-pressed={active === index} onClick={() => setActive(index)}>
+              {String(index + 1).padStart(2, "0")}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="galaxy-floor-details">
+        <div className="galaxy-floor">
+          <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M9 42v-9q0-5 5-5h12q5 0 5 5v12m0-12q0-5 5-5h11q5 0 5 5v9M7 39q-5 0-5 5v12h55V44q0-5-5-5t-5 5v5H12v-5q0-5-5-5ZM7 56v6m45-6v6M61 60V18m-8 0h16L66 3H56l-3 15Zm3 42h11" /></svg>
+          <div><h2>GROUND FLOOR</h2><p>Living Room, Dining Room,<br />Kitchen, Guest Room,<br />Common Bath, Garden Area.</p></div>
+        </div>
+        <div className="galaxy-floor">
+          <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M12 31V12h48v19M8 51l7-20h42l7 20v8H8v-8Zm0 0h56M18 31v-7h15v7m5 0v-7h15v7M12 59v5h5v-5m38 0v5h5v-5" /></svg>
+          <div><h2>FIRST FLOOR</h2><p>3 Bedrooms, 2 Bathrooms,<br />Family Lounge, Balcony,<br />Terrace.</p></div>
+        </div>
       </div>
     </section>
   );

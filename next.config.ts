@@ -78,9 +78,11 @@ const nextConfig: NextConfig = {
           { key: "X-Robots-Tag", value: isProd ? "all" : "noindex, nofollow" },
         ],
       },
-    ];
+    ].filter((route) => route.headers.length > 0);
   },
   devIndicators: false,
 };
 
 export default nextConfig;
+
+

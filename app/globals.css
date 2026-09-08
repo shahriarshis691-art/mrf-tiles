@@ -108,3 +108,59 @@ body {
     transform: none;
   }
 }
+
+/* Architectural collection hero, inspired by the supplied brand reference. */
+.galaxy-hero { background: #fff; color: #292929; }
+.galaxy-hero-stage { position: relative; isolation: isolate; height: min(81vw, 970px); min-height: 650px; }
+.galaxy-hero-image { object-fit: cover; object-position: center top; }
+.galaxy-hero-fade { position: absolute; inset: 0; background: linear-gradient(0deg, #fff 0%, rgba(255,255,255,.94) 5%, transparent 28%), radial-gradient(ellipse at 12% 87%, #fff 0%, rgba(255,255,255,.94) 15%, transparent 46%); }
+.galaxy-hero-copy { position: absolute; left: 5.4%; bottom: 3%; }
+.galaxy-hero-eyebrow { color: #b78232; font-size: clamp(16px, 1.9vw, 24px); margin-bottom: 12px; }
+.galaxy-hero-copy h1 { font-weight: 400; letter-spacing: -.055em; line-height: .99; }
+.galaxy-hero-copy h1 span { display: block; font-size: clamp(64px, 10vw, 132px); }
+.galaxy-hero-copy h1 span + span { font-size: clamp(38px, 6.15vw, 81px); letter-spacing: -.045em; }
+.galaxy-hero-rule { width: 62px; height: 6px; background: #d3a14e; margin: 20px 0 23px; }
+.galaxy-hero-tagline { font-size: clamp(20px, 2.2vw, 28px); line-height: 1.25; color: #656565; font-weight: 400; }
+.galaxy-hero-pagination { position: absolute; right: 0; top: 49%; display: flex; flex-direction: column; }
+.galaxy-hero-pagination button { position: relative; min-height: 44px; width: 82px; text-align: left; font-size: 24px; color: #888; cursor: pointer; }
+.galaxy-hero-pagination button[aria-pressed="true"] { color: #bc8933; font-weight: 600; }
+.galaxy-hero-pagination button[aria-pressed="true"]::after { content: ""; position: absolute; height: 2px; background: #c8943e; left: 36px; right: 0; top: 50%; }
+.galaxy-floor-details { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; padding: 48px 6% 64px; gap: 7%; }
+.galaxy-floor { display: flex; gap: 24px; align-items: flex-start; }
+.galaxy-floor + .galaxy-floor { border-left: 1px solid #ccc; padding-left: 15%; }
+.galaxy-floor svg { width: 72px; flex-shrink: 0; color: #bd8a39; }
+.galaxy-floor h2 { color: #b78232; font-size: 16px; font-weight: 500; margin-bottom: 8px; }
+.galaxy-floor p { font-size: 16px; line-height: 1.4; }
+.galaxy-home-nav { position: relative; background: #fff; padding: 0 4.2%; border: 0; }
+.galaxy-home-nav > div:first-child { height: 148px; padding: 0; border-bottom: 1px solid #ce9b4d; }
+.galaxy-wordmark { display: flex; gap: 17px; align-items: center; color: #292929; }
+.galaxy-wordmark-emblem { position: relative; display: grid; place-items: center; width: 116px; height: 106px; font-family: Arial, sans-serif; font-size: 38px; font-style: italic; font-weight: 900; letter-spacing: -3px; }
+.galaxy-wordmark-emblem::before { content: ""; position: absolute; inset: 0 0 0 15px; border-right: 6px solid #d2a052; border-top: 4px solid #d2a052; border-bottom: 2px solid #d2a052; border-radius: 50%; }
+.galaxy-wordmark-name { display: flex; flex-direction: column; }
+.galaxy-wordmark-name strong { font-size: 38px; letter-spacing: .03em; line-height: 1.2; font-weight: 600; }
+.galaxy-wordmark-name small { font-family: Arial, sans-serif; font-size: 19px; }
+.galaxy-home-nav nav[aria-label="Primary"] { gap: clamp(16px, 2.5vw, 42px); }
+.galaxy-home-nav nav[aria-label="Primary"] a { font-size: 12px; letter-spacing: 0; }
+@media (max-width: 1100px) and (min-width: 768px) {
+  .galaxy-wordmark { gap: 9px; }
+  .galaxy-wordmark-emblem { width: 86px; height: 86px; font-size: 30px; }
+  .galaxy-wordmark-name strong { font-size: 28px; }
+  .galaxy-wordmark-name small { font-size: 14px; }
+  .galaxy-home-nav nav[aria-label="Primary"] { gap: 16px; }
+  .galaxy-home-nav nav[aria-label="Primary"] a { font-size: 10px; }
+}
+@media (max-width: 767px) {
+  .galaxy-home-nav > div:first-child { height: 100px; }
+  .galaxy-wordmark-emblem { width: 76px; height: 72px; font-size: 28px; }
+  .galaxy-wordmark-name strong { font-size: 27px; }
+  .galaxy-wordmark-name small { font-size: 13px; }
+  .galaxy-wordmark { gap: 10px; }
+  .galaxy-hero-stage { height: 730px; min-height: 0; }
+  .galaxy-hero-image { object-position: 54% top; }
+  .galaxy-hero-copy { bottom: 2%; }
+  .galaxy-hero-pagination { top: 41%; }
+  .galaxy-hero-pagination button { width: 57px; font-size: 20px; }
+  .galaxy-floor-details { padding: 38px 6% 44px; gap: 28px; grid-template-columns: 1fr; }
+  .galaxy-floor + .galaxy-floor { padding-left: 0; padding-top: 26px; border-left: 0; border-top: 1px solid #ddd; }
+  .galaxy-floor svg { width: 60px; }
+}

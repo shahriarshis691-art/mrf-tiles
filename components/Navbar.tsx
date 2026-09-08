@@ -7,7 +7,6 @@ import {
   useEffect,
   useRef,
   useState,
-  useSyncExternalStore,
 } from "react";
 import Logo from "./Logo";
 
@@ -20,15 +19,6 @@ const LINKS = [
   { href: "/projects", label: "PROJECTS" },
   { href: "/#contact", label: "CONTACT" },
 ];
-
-const subscribeToScroll = (onStoreChange: () => void) => {
-  window.addEventListener("scroll", onStoreChange, { passive: true });
-  return () => window.removeEventListener("scroll", onStoreChange);
-};
-
-const subscribeToNothing = () => () => {};
-const getScrolledSnapshot = () => window.scrollY > 72;
-const getUnscrolledSnapshot = () => false;
 
 function isActive(pathname: string, href: string) {
   if (href === "/about") {
@@ -61,12 +51,7 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
   const firstMenuLinkRef = useRef<HTMLAnchorElement>(null);
   const pathname = usePathname();
   const onHome = overHero && pathname === "/";
-  const scrolled = useSyncExternalStore(
-    onHome ? subscribeToScroll : subscribeToNothing,
-    onHome ? getScrolledSnapshot : getUnscrolledSnapshot,
-    getUnscrolledSnapshot,
-  );
-  const heroNav = dark ? true : onHome && !scrolled;
+  const heroNav = dark;
   const focusRingClass = heroNav
     ? "focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
     : "focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1";
@@ -117,14 +102,14 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+      className={`${onHome ? "galaxy-home-nav" : "fixed inset-x-0 top-0"} z-50 transition-colors duration-300 ${
         heroNav
           ? "border-b border-white/10 bg-transparent"
           : "border-b border-zinc-200 bg-white"
       }`}
     >
       <div className="relative mx-auto flex h-14 items-center justify-between px-4 sm:px-6 md:px-8 lg:px-14">
-        <Logo light={heroNav} className="h-7 w-auto" />
+        <>{onHome ? <Link href="/" className="galaxy-wordmark" aria-label="MRF Galaxy Tiles and Sanitary home"><span className="galaxy-wordmark-emblem" aria-hidden="true">MRF</span><span className="galaxy-wordmark-name"><strong>GALAXY</strong><small>TILES &amp; SANITARY</small></span></Link> : <Logo light={heroNav} className="h-7 w-auto" />}</>
 
         <nav
           className="hidden items-center md:flex md:gap-6 lg:gap-10 xl:gap-12"
@@ -229,3 +214,5 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
     </header>
   );
 }
+
+
