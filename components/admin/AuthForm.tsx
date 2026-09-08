@@ -5,7 +5,7 @@ export default function AuthForm({mode}:{mode:'login'|'forgot'|'reset'|'mfa'}) {
  const [message,setMessage]=useState('');const [busy,setBusy]=useState(false);const [factor,setFactor]=useState('');const [qr,setQr]=useState('');
  async function setupMfa(){setBusy(true);setMessage('');try{const db=browserDb();const {data,error}=await db.auth.mfa.listFactors();if(error)throw error;
  const verified=data.totp.find(f=>f.status==='verified');if(verified){setFactor(verified.id);return;}
- for(const f of data.totp.filter(f=>f.status==='unverified'))await db.auth.mfa.unenroll({factorId:f.id});
+  for(const f of data.totp.filter(f=>(f.status as string)==='unverified'))await db.auth.mfa.unenroll({factorId:f.id});
  const enrolled=await db.auth.mfa.enroll({factorType:'totp',friendlyName:'MRF Owner'});if(enrolled.error)throw enrolled.error;setFactor(enrolled.data.id);setQr(enrolled.data.totp.qr_code);
  }catch(e){setMessage(e instanceof Error?e.message:'Unable to set up MFA.');}finally{setBusy(false);}}
  async function submit(event:React.FormEvent<HTMLFormElement>){event.preventDefault();setBusy(true);setMessage('');const values=new FormData(event.currentTarget);const db=browserDb();
