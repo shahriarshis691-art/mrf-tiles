@@ -1,12 +1,12 @@
 import Navbar from "@/components/Navbar";
 import RoomProductGrid from "@/components/rooms/RoomProductGrid";
-import { getRoomProducts } from "@/components/rooms/rooms-data";
+import { getRoomProducts } from "@/lib/catalog";
 import { contactHref } from "@/lib/contact";
 import { createPageMetadata } from "@/lib/metadata";
 import {
   getAllRoomSlugs,
   getRoomCategoryBySlug,
-} from "@/lib/roomCategories";
+} from "@/lib/catalog";
 import { OUTLETS } from "@/components/outlet-data";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -17,13 +17,13 @@ type RoomPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export function generateStaticParams() {
-  return getAllRoomSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  return (await getAllRoomSlugs()).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: RoomPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const room = getRoomCategoryBySlug(slug);
+  const room = await getRoomCategoryBySlug(slug);
   if (!room) return { title: "Room Not Found" };
 
   return createPageMetadata({
@@ -40,10 +40,10 @@ const secondaryButtonClass =
 
 export default async function RoomPage({ params }: RoomPageProps) {
   const { slug } = await params;
-  const room = getRoomCategoryBySlug(slug);
+  const room = await getRoomCategoryBySlug(slug);
   if (!room) notFound();
 
-  const products = getRoomProducts(room.id);
+  const products = await getRoomProducts(room.id);
   const primaryOutlet = OUTLETS[0];
 
   return (

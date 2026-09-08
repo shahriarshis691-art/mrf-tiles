@@ -6,7 +6,7 @@ import CollectionFilter, {
   type SelectedValues,
 } from "./CollectionFilter";
 import CollectionCatalogCard from "./CollectionCatalogCard";
-import { CATALOG_PRODUCTS, type FilterId } from "./collection-data";
+import { type CatalogProduct, type FilterId } from "./collection-data";
 
 const FILTER_PARAM_MAP: Record<string, FilterId> = {
   look: "look",
@@ -32,7 +32,7 @@ function getSelectedValues(searchParams: URLSearchParams): SelectedValues {
 }
 
 function matchesFilters(
-  product: (typeof CATALOG_PRODUCTS)[number],
+  product: CatalogProduct,
   filters: SelectedValues,
 ) {
   if (filters.look && product.look !== filters.look) return false;
@@ -49,7 +49,7 @@ function toQuery(values: SelectedValues) {
   return params.toString();
 }
 
-export default function CollectionCatalog() {
+export default function CollectionCatalog({products}:{products:CatalogProduct[]}) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -68,8 +68,8 @@ export default function CollectionCatalog() {
   );
 
   const filteredProducts = useMemo(
-    () => CATALOG_PRODUCTS.filter((product) => matchesFilters(product, activeFilters)),
-    [activeFilters],
+    () => products.filter((product) => matchesFilters(product, activeFilters)),
+    [activeFilters,products],
   );
 
   const hasActiveFilters = Object.values(activeFilters).some(Boolean);

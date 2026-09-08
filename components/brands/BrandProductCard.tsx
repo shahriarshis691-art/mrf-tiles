@@ -45,6 +45,7 @@ export default function BrandProductCard({
           {product.description}
         </p>
 
+        {product.stockStatus && <p className="mt-3 text-xs text-neutral-600">Availability: {product.stockStatus.replaceAll('_', ' ')}</p>}
         <div className="mt-4 border-t border-neutral-200 pt-4">
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-neutral-500">
             Specifications
@@ -67,7 +68,7 @@ export default function BrandProductCard({
 
         <div className="mt-5 flex items-baseline justify-between border-t border-neutral-200 pt-4">
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-neutral-500">
-            {product.priceSource ? "Approx. price" : "Price"}
+            {product.priceSource || product.approximate ? "Approx. price" : "Price"}
           </p>
           <p className="font-serif text-[1.25rem] font-bold tracking-[0.04em] text-[#0F0F0F] sm:text-[1.35rem]">
             {formatPriceBdt(product.priceBdt)}

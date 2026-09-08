@@ -11,7 +11,7 @@ export type SanitaryProduct = {
   title: string;
   category: string;
   brand: string;
-  price: number;
+  price: number | null;
   description: string;
   image: string;
   specs: string[];
@@ -48,8 +48,8 @@ export function getSanitaryProductById(
   return SANITARY_PRODUCTS.find((item) => item.id === id);
 }
 
-export function formatPriceBdt(price: number): string {
-  return `৳${price.toLocaleString("en-BD")}`;
+export function formatPriceBdt(price: number | null): string {
+  return price === null ? "Request price" : `৳${price.toLocaleString("en-BD")}`;
 }
 
 export function buildProductWhatsAppUrl(productTitle: string): string {

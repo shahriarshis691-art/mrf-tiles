@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar";
 import RelatedCollections from "@/components/collection/RelatedCollections";
 import {
-  CATALOG_PRODUCTS,
+  getCollections,
   getProductBySlug,
   getRelatedProducts,
-} from "@/components/collection/collection-data";
+} from "@/lib/catalog";
 import { contactHref } from "@/lib/contact";
 import { createPageMetadata } from "@/lib/metadata";
 import { OUTLETS } from "@/components/outlet-data";
@@ -20,15 +20,15 @@ type CollectionDetailPageProps = {
 const actionButtonClass =
   "inline-flex min-h-[44px] items-center justify-center border border-neutral-900 bg-transparent px-8 text-[12px] font-medium uppercase tracking-[0.08em] text-neutral-900 transition-colors duration-300 hover:bg-neutral-900 hover:text-white focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-1 sm:w-fit";
 
-export function generateStaticParams() {
-  return CATALOG_PRODUCTS.map((product) => ({ slug: product.id }));
+export async function generateStaticParams() {
+  return (await getCollections()).map((product) => ({ slug: product.id }));
 }
 
 export async function generateMetadata({
   params,
 }: CollectionDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     return { title: "Collection Not Found" };
@@ -47,13 +47,13 @@ export default async function CollectionDetailPage({
   params,
 }: CollectionDetailPageProps) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     notFound();
   }
 
-  const relatedProducts = getRelatedProducts(product);
+  const relatedProducts = await getRelatedProducts(product);
   const primaryOutlet = OUTLETS[0];
 
   const specs = [

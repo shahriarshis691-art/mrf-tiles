@@ -3,23 +3,26 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const views = [
+const defaultViews = [
   { src: "/images/projects/luxury-villa.jpg", alt: "Luxury villa architecture" },
   { src: "/images/villa-sun.jpg", alt: "Contemporary white villa with natural stone walls and warm architectural lighting" },
   { src: "/images/projects/modern-residence.jpg", alt: "Modern residence exterior" },
   { src: "/images/projects/architectural-tile-experience.jpg", alt: "Architectural tile finishes" },
 ];
 
-export default function Hero() {
-  const [active, setActive] = useState(1);
+export default function Hero({slides}:{slides?:{src:string;alt:string;heading?:string;subtitle?:string}[]}) {
+ const views=slides ?? defaultViews;
+  const [active, setActive] = useState(slides ? 0 : 1);
 
+  if(!views.length) return null;
+  const view=views[Math.min(active,views.length-1)];
   return (
     <section aria-label="Galaxy Collection" className="galaxy-hero">
       <div className="galaxy-hero-stage">
         <Image
-          key={views[active].src}
-          src={views[active].src}
-          alt={views[active].alt}
+          key={view.src}
+          src={view.src}
+          alt={view.alt}
           fill
           preload={active === 1}
           sizes="100vw"
@@ -27,8 +30,8 @@ export default function Hero() {
         />
         <div className="galaxy-hero-fade" />
         <div className="galaxy-hero-copy">
-          <p className="galaxy-hero-eyebrow">Elegance in every detail</p>
-          <h1><span>GALAXY</span><span>COLLECTION</span></h1>
+          <p className="galaxy-hero-eyebrow">{slides ? slides[Math.min(active,slides.length-1)]?.subtitle : "Elegance in every detail"}</p>
+          <h1>{slides ? <span>{slides[Math.min(active,slides.length-1)]?.heading}</span> : <><span>GALAXY</span><span>COLLECTION</span></>}</h1>
           <div className="galaxy-hero-rule" />
           <p className="galaxy-hero-tagline">Designed for a<br />better tomorrow</p>
         </div>

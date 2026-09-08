@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { SANITARY_CATEGORIES } from "@/components/sanitary/sanitary-data";
+import {getSanitaryCategories} from "@/lib/catalog";
 import { contactHref } from "@/lib/contact";
 import { createPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
@@ -14,7 +14,8 @@ export const metadata = createPageMetadata({
   imageAlt: "Premium sanitary basins and vanities",
 });
 
-export default function SanitaryPage() {
+export default async function SanitaryPage() {
+const SANITARY_CATEGORIES=await getSanitaryCategories();
   return (
     <div className="min-h-screen bg-white">
       <Navbar />

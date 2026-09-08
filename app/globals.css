@@ -164,3 +164,14 @@ body {
   .galaxy-floor + .galaxy-floor { padding-left: 0; padding-top: 26px; border-left: 0; border-top: 1px solid #ddd; }
   .galaxy-floor svg { width: 60px; }
 }
+
+.admin-shell { font-family: Arial, Helvetica, sans-serif; }
+.admin-label { display:flex; flex-direction:column; gap:8px; font-size:14px; }
+.admin-shell input:not([type=checkbox]), .admin-shell select, .admin-shell textarea { width:100%; border:1px solid #d4d4d4; background:white; padding:11px 12px; min-height:44px; border-radius:4px; color:#171717; }
+.admin-shell textarea { min-height:110px; }
+.admin-button { display:inline-flex; justify-content:center; align-items:center; min-height:44px; padding:10px 18px; background:#171717; color:white; border:1px solid #171717; border-radius:4px; cursor:pointer; font-size:14px; }
+.admin-button:disabled { opacity:.5; cursor:wait; }
+.admin-secondary { background:white; color:#171717; border-color:#d4d4d4; }
+.admin-shell button:focus-visible,.admin-shell input:focus-visible,.admin-shell select:focus-visible { outline:2px solid #8b5a12; outline-offset:3px; }
+body:has(.admin-shell) > :not(.admin-shell) footer { display:none; }
+body:has(.admin-shell) footer { display:none; }

@@ -11,7 +11,7 @@ export default function SharifProductGrid({ products }: { products: BrandProduct
   const [category, setCategory] = useState<string>("All");
   const [sort, setSort] = useState("featured");
   const visible = products.filter((product) => category === "All" || product.category === category);
-  if (sort !== "featured") visible.sort((a, b) => sort === "price-low" ? a.priceBdt - b.priceBdt : b.priceBdt - a.priceBdt);
+  if (sort !== "featured") visible.sort((a, b) => sort === "price-low" ? (a.priceBdt ?? Infinity) - (b.priceBdt ?? Infinity) : (b.priceBdt ?? -Infinity) - (a.priceBdt ?? -Infinity));
 
   return (
     <div>

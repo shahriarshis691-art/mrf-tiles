@@ -1,10 +1,11 @@
 import ScrollReveal from "@/components/ScrollReveal";
 import FeaturedBrandCarousel from "@/components/FeaturedBrandCarousel";
 import RoomCategoriesCarousel from "@/components/RoomCategoriesCarousel";
-import { BRANDS } from "@/lib/brands";
-import { ROOM_CATEGORIES, ROOM_FILTERS } from "@/lib/roomCategories";
+import { getBrands, getRooms } from "@/lib/catalog";
+import { ROOM_FILTERS } from "@/lib/roomCategories";
 
-export default function CollectionSection() {
+export default async function CollectionSection() {
+ const [BRANDS,ROOM_CATEGORIES]=await Promise.all([getBrands(),getRooms()]);
   return (
     <>
       <section

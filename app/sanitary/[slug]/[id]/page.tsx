@@ -1,3 +1,4 @@
+import {formatPriceBdt,buildProductWhatsAppUrl} from "@/lib/sanitaryData";
 import Navbar from "@/components/Navbar";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -5,10 +6,10 @@ import Link from "next/link";
 import {
   getSanitaryCategoryBySlug,
   getSanitaryProductById,
-  formatPriceBdt,
-  buildProductWhatsAppUrl,
-  SANITARY_PRODUCTS,
-} from "@/lib/sanitaryData";
+
+
+  getSanitaryProducts,
+} from "@/lib/catalog";
 import { createPageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 
@@ -17,7 +18,7 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  return SANITARY_PRODUCTS.map((product) => ({
+  return (await getSanitaryProducts()).map((product) => ({
     slug: product.category,
     id: product.id,
   }));
@@ -25,8 +26,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, id } = await params;
-  const category = getSanitaryCategoryBySlug(slug);
-  const product = getSanitaryProductById(id);
+  const category = await getSanitaryCategoryBySlug(slug);
+  const product = await getSanitaryProductById(id);
 
   if (!category || !product || product.category !== slug) {
     return { title: "Product Not Found" };
@@ -43,8 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SanitaryProductPage({ params }: Props) {
   const { slug, id } = await params;
-  const category = getSanitaryCategoryBySlug(slug);
-  const product = getSanitaryProductById(id);
+  const category = await getSanitaryCategoryBySlug(slug);
+  const product = await getSanitaryProductById(id);
 
   if (!category || !product || product.category !== slug) {
     notFound();

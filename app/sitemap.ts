@@ -1,15 +1,16 @@
 import type { MetadataRoute } from "next";
-import { CATALOG_PRODUCTS } from "@/components/collection/collection-data";
+import {getCollections,getSanitaryCategories,getSanitaryProducts} from "@/lib/catalog";
 import { PROJECTS } from "@/components/projects/projects-data";
-import { SANITARY_CATEGORIES } from "@/components/sanitary/sanitary-data";
-import { getAllBrandSlugs } from "@/lib/brands";
+
+import { getAllBrandSlugs } from "@/lib/catalog";
 import { getAllCompanySlugs } from "@/data/companies";
-import { getAllRoomSlugs } from "@/lib/roomCategories";
+import { getAllRoomSlugs } from "@/lib/catalog";
 import { getAllSanitaryBrandSlugs } from "@/lib/sanitaryBrands";
-import { SANITARY_PRODUCTS } from "@/lib/sanitaryData";
+
 import { getSiteUrl } from "@/lib/site";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+const [CATALOG_PRODUCTS,SANITARY_CATEGORIES,SANITARY_PRODUCTS]=await Promise.all([getCollections(),getSanitaryCategories(),getSanitaryProducts()]);
   const base = getSiteUrl();
 
   const pages: MetadataRoute.Sitemap = [
@@ -84,7 +85,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  for (const slug of getAllBrandSlugs()) {
+  for (const slug of await getAllBrandSlugs()) {
     pages.push({
       url: `${base}/brands/${slug}`,
       changeFrequency: "monthly",
@@ -100,7 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  for (const slug of getAllRoomSlugs()) {
+  for (const slug of await getAllRoomSlugs()) {
     pages.push({
       url: `${base}/rooms/${slug}`,
       changeFrequency: "monthly",

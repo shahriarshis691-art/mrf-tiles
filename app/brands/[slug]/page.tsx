@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getAllBrandSlugs, getBrandBySlug } from "@/lib/brands";
+import { getAllBrandSlugs, getBrandBySlug } from "@/lib/catalog";
 import { contactHref } from "@/lib/contact";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -14,12 +14,12 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  return getAllBrandSlugs().map((slug) => ({ slug }));
+  return (await getAllBrandSlugs()).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const brand = getBrandBySlug(slug);
+  const brand = await getBrandBySlug(slug);
 
   if (!brand) {
     return { title: "Brand Not Found" };
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BrandPage({ params }: Props) {
   const { slug } = await params;
-  const brand = getBrandBySlug(slug);
+  const brand = await getBrandBySlug(slug);
 
   if (!brand) {
     notFound();

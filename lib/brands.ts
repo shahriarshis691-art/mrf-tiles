@@ -9,7 +9,9 @@ export type BrandProduct = {
   alt: string;
   category: string;
   specifications: string[];
-  priceBdt: number;
+  priceBdt: number | null;
+  approximate?: boolean;
+  stockStatus?: string;
   illustrative?: boolean;
   priceSource?: string;
 };
@@ -561,6 +563,6 @@ export function getAllBrandSlugs(): string[] {
   return BRANDS.map((brand) => brand.slug);
 }
 
-export function formatPriceBdt(price: number): string {
-  return `৳${price.toLocaleString("en-BD")}`;
+export function formatPriceBdt(price: number | null): string {
+  return price === null ? "Request price" : `৳${price.toLocaleString("en-BD")}`;
 }

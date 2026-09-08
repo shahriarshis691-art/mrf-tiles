@@ -1,3 +1,4 @@
+import {formatPriceBdt,buildProductWhatsAppUrl} from "@/lib/sanitaryData";
 import Navbar from "@/components/Navbar";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -5,10 +6,10 @@ import Link from "next/link";
 import {
   getSanitaryCategoryBySlug,
   getSanitaryListingsByCategory,
-  formatPriceBdt,
-  buildProductWhatsAppUrl,
-  SANITARY_CATEGORIES,
-} from "@/lib/sanitaryData";
+
+
+  getSanitaryCategories,
+} from "@/lib/catalog";
 import { createPageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 
@@ -17,14 +18,14 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  return SANITARY_CATEGORIES.map((category) => ({
+  return (await getSanitaryCategories()).map((category) => ({
     slug: category.id,
   }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const category = getSanitaryCategoryBySlug(slug);
+  const category = await getSanitaryCategoryBySlug(slug);
   if (!category) {
     return { title: "Category Not Found" };
   }
@@ -39,13 +40,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SanitaryCategoryPage({ params }: Props) {
   const { slug } = await params;
-  const category = getSanitaryCategoryBySlug(slug);
+  const category = await getSanitaryCategoryBySlug(slug);
 
   if (!category) {
     notFound();
   }
 
-  const products = getSanitaryListingsByCategory(slug);
+  const products = await getSanitaryListingsByCategory(slug);
 
   return (
     <div className="min-h-screen bg-white">

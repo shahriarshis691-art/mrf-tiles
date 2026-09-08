@@ -1,3 +1,4 @@
+import {getCollections} from "@/lib/catalog";
 import Navbar from "@/components/Navbar";
 import CollectionCatalog from "@/components/collection/CollectionCatalog";
 import { createPageMetadata } from "@/lib/metadata";
@@ -18,7 +19,8 @@ function CatalogFallback() {
   );
 }
 
-export default function CollectionPage() {
+export default async function CollectionPage() {
+const products=await getCollections();
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -42,7 +44,7 @@ export default function CollectionPage() {
 
           <div className="mx-auto mt-12 max-w-[960px] sm:mt-14">
             <Suspense fallback={<CatalogFallback />}>
-              <CollectionCatalog />
+              <CollectionCatalog products={products} />
             </Suspense>
           </div>
         </div>

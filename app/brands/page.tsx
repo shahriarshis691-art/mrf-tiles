@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
-import { BRANDS, type Brand } from "@/lib/brands";
+import type { Brand } from "@/lib/brands";
+import {getBrands} from "@/lib/catalog";
 import { createPageMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +15,8 @@ export const metadata = createPageMetadata({
   imageAlt: "Premium porcelain slab showroom display",
 });
 
-export default function BrandsPage() {
+export default async function BrandsPage() {
+const BRANDS=await getBrands();
   return (
     <div className="min-h-screen bg-zinc-950">
       <Navbar dark />
