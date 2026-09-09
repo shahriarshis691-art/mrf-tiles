@@ -14,10 +14,10 @@ export default function OutletPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-neutral-100">
       <Navbar dark />
-      <main id="main" className="mx-auto max-w-[1440px] px-14 pb-24 pt-44">
+      <main id="main" className="mx-auto max-w-[1440px] px-6 pb-24 pt-28 md:px-14 md:pt-44">
         <header className="mx-auto mb-20 max-w-3xl text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-gold">Experience MRF Galaxy</p>
-          <h1 className="mt-6 font-serif text-6xl font-bold">Visit Our Outlets</h1>
+          <h1 className="mt-6 font-serif text-4xl font-bold md:text-6xl">Visit Our Outlets</h1>
           <p className="mt-6 text-sm leading-7 text-neutral-400">
             Discover premium tiles, architectural surfaces, and designer sanitary
             collections in person at our Rangpur showrooms.
@@ -26,11 +26,11 @@ export default function OutletPage() {
         <div className="space-y-16">
           {OUTLETS.map((outlet, index) => (
             <section key={outlet.name} id={index === 0 ? "flagship" : "studio"}
-              aria-labelledby={`outlet-${index}`} className="grid scroll-mt-28 grid-cols-2 overflow-hidden border border-white/10 bg-neutral-900">
-              <div className="relative min-h-[480px]">
-                <Image src={outlet.image} alt={outlet.alt} fill sizes="640px" className="object-cover" />
+              aria-labelledby={`outlet-${index}`} className="grid scroll-mt-28 grid-cols-1 overflow-hidden border border-white/10 bg-neutral-900 md:grid-cols-2">
+              <div className="relative min-h-[320px] md:min-h-[480px]">
+                <Image src={outlet.image} alt={outlet.alt} fill sizes="(max-width: 767px) 100vw, 50vw" className="object-cover" />
               </div>
-              <div className="p-12">
+              <div className="p-6 md:p-12">
                 <p className="text-[10px] uppercase tracking-[0.25em] text-gold">{outlet.tag}</p>
                 <h2 id={`outlet-${index}`} className="mt-5 font-serif text-3xl font-bold">{outlet.name}</h2>
                 <address className="mt-6 text-sm not-italic leading-7 text-neutral-300">

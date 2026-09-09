@@ -54,7 +54,7 @@ while(pending.length) {
     pages.set(route,info);
     if(response.status!==200)failures.push({route,status:response.status});
     if(!route.startsWith('/admin')) {
-      for (const token of ['name="description"','property="og:title"','property="og:description"','property="og:image"','rel="canonical"','width=1280']) if(!html.includes(token))failures.push({route,missing:token});
+      for (const token of ['name="description"','property="og:title"','property="og:description"','property="og:image"','rel="canonical"','width=device-width, initial-scale=1']) if(!html.includes(token))failures.push({route,missing:token});
       const canonical=[...html.matchAll(/<link\b[^>]*>/g)].map(m=>attrs(m[0])).find(a=>a.rel==='canonical')?.href;
       if(canonical && new URL(canonical).pathname!==route.split('?')[0])failures.push({route,canonical});
     }

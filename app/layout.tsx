@@ -32,9 +32,8 @@ const playfair_Display = Playfair_Display({
 const siteUrl = getSiteUrl();
 
 export const viewport: Viewport = {
-  width: 1280,
-  // Clear Next.js's default scale so mobile browsers fit the desktop width.
-  initialScale: undefined,
+  width: "device-width",
+  initialScale: 1,
 };
 
 export const metadata: Metadata = {
@@ -116,7 +115,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <nav aria-label="Quick contact" className="fixed bottom-0 right-0 z-50 flex items-center gap-3 p-3">
           <a
             href="tel:+8801700000000"
-            className="inline-flex min-h-11 items-center justify-center rounded-none bg-[#1c1a17] px-6 py-3 text-xs font-bold uppercase tracking-widest text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-none bg-[#1c1a17] px-4 py-3 text-xs font-bold uppercase tracking-widest text-white sm:px-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             CALL NOW
           </a>
@@ -124,7 +123,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             href="https://wa.me/8801700000000"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center justify-center rounded-none bg-[#1e824c] px-6 py-3 text-xs font-bold uppercase tracking-widest text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-none bg-[#1e824c] px-4 py-3 text-xs font-bold uppercase tracking-widest text-white sm:px-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             WHATSAPP
           </a>
