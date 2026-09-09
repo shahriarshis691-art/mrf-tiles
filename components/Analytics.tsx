@@ -5,7 +5,6 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, Suspense } from "react";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-const IS_DEV = process.env.NODE_ENV !== "production";
 
 type WindowWithDataLayer = Window & {
   dataLayer: unknown[];
@@ -55,11 +54,6 @@ export default function Analytics() {
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        onLoad={() => {
-          if (IS_DEV) {
-            console.info("[analytics] GA4 loaded", GA_ID);
-          }
-        }}
       />
       <Script
         id="ga4-init"

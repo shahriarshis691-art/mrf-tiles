@@ -1,4 +1,4 @@
-const fs=require('fs');
+import fs from 'node:fs';
 function edit(path,fn){fs.writeFileSync(path,fn(fs.readFileSync(path,'utf8')));}
 edit('lib/brands.ts',s=>s.replace('priceBdt: number;','priceBdt: number | null;\n  approximate?: boolean;\n  stockStatus?: string;').replace('formatPriceBdt(price: number)','formatPriceBdt(price: number | null)').replace('return `৳${price.toLocaleString("en-BD")}`;','return price === null ? "Request price" : `৳${price.toLocaleString("en-BD")}`;'));
 edit('lib/sanitaryData.ts',s=>s.replace('price: number;','price: number | null;').replace('formatPriceBdt(price: number)','formatPriceBdt(price: number | null)').replace('return `৳${price.toLocaleString("en-BD")}`;','return price === null ? "Request price" : `৳${price.toLocaleString("en-BD")}`;'));

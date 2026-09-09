@@ -98,7 +98,7 @@ const jsonLd = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair_Display.variable} h-full antialiased`}>
-      <body className="min-h-full bg-background font-sans text-foreground">
+      <body className="min-h-full bg-background pb-28 font-sans text-foreground">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-zinc-950 focus:px-4 focus:py-3 focus:text-[12px] focus:tracking-[0.12em] focus:text-white"
