@@ -118,6 +118,23 @@ export default function Footer() {
             Elegance in every detail
           </p>
         </div>
+        <div className="mt-4 flex flex-col items-start gap-1 pb-20 text-[11px] leading-relaxed tracking-wide text-white/70 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-3 sm:pb-0">
+          <span>Developed by <span className="font-medium text-white/90">Shahriar Shis</span></span>
+          <span aria-hidden="true" className="hidden text-white/30 sm:inline">|</span>
+          <a
+            href="mailto:shahriarshis691@gmail.com"
+            className="inline-flex min-h-11 items-center break-all transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            shahriarshis691@gmail.com
+          </a>
+          <span aria-hidden="true" className="hidden text-white/30 sm:inline">|</span>
+          <a
+            href="tel:+8801979614216"
+            className="inline-flex min-h-11 items-center whitespace-nowrap transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            +880 1979-614216
+          </a>
+        </div>
       </div>
     </footer>
   );

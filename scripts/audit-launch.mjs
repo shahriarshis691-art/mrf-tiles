@@ -78,7 +78,7 @@ for(const href of external) {
   const url=new URL(href);
   if(url.protocol==='tel:'&&!/^tel:\+\d{8,15}$/.test(href))failures.push({invalidPhone:href});
   else if(url.hostname==='wa.me'&&(url.protocol!=='https:'||!/^\/\d{8,15}$/.test(url.pathname)))failures.push({invalidWhatsApp:href});
-  else if(url.protocol!=='tel:'&&url.protocol!=='https:')failures.push({invalidExternalProtocol:href});
+  else if(url.protocol!=='tel:'&&url.protocol!=='mailto:'&&url.protocol!=='https:')failures.push({invalidExternalProtocol:href});
 }
 for(const icon of ['/favicon.ico','/icon.svg']) {const response=await fetch(`${base}${icon}`);if(!response.ok)failures.push({icon,status:response.status});}
 const publicMetadataOrigin = sitemapUrls.length > 0 && sitemapUrls.every(value => {const u=new URL(value);return u.protocol==='https:'&&!['localhost','127.0.0.1','[::1]'].includes(u.hostname);});
