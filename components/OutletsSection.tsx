@@ -32,7 +32,7 @@ export default function OutletsSection() {
                   </p>
                 ) : null}
                 <Link
-                  href={outlet.displayHref ?? "/contact"}
+                  href={outlet.displayHref ?? "/outlet"}
                   className="bg-[#f5f2ed] hover:bg-white text-neutral-900 px-6 py-2.5 text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase rounded-none transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100"
                 >
                   Visit Outlet

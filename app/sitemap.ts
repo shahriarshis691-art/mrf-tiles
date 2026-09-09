@@ -15,6 +15,7 @@ const [CATALOG_PRODUCTS,SANITARY_CATEGORIES,SANITARY_PRODUCTS]=await Promise.all
 
   const pages: MetadataRoute.Sitemap = [
     { url: base, changeFrequency: "weekly", priority: 1 },
+    { url: `${base}/outlet`, changeFrequency: "monthly", priority: 0.8 },
     {
       url: `${base}/about`,
       changeFrequency: "monthly",
