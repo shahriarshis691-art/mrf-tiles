@@ -113,6 +113,22 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
           <Footer />
         </LenisProvider>
+        <nav aria-label="Quick contact" className="fixed bottom-0 right-0 z-50 flex items-center gap-3 p-3">
+          <a
+            href="tel:+8801700000000"
+            className="inline-flex min-h-11 items-center justify-center rounded-none bg-[#1c1a17] px-6 py-3 text-xs font-bold uppercase tracking-widest text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            CALL NOW
+          </a>
+          <a
+            href="https://wa.me/8801700000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 items-center justify-center rounded-none bg-[#1e824c] px-6 py-3 text-xs font-bold uppercase tracking-widest text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            WHATSAPP
+          </a>
+        </nav>
         <Analytics />
       </body>
     </html>
