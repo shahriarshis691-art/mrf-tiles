@@ -5,7 +5,7 @@ export default function FounderSection() {
   return (
     <section
       aria-labelledby="founder-heading"
-      className="bg-[#F8F8F8] px-4 py-12 sm:py-14 lg:py-14"
+      className="bg-[#F8F8F8] px-4 pt-12 pb-28 sm:pt-14"
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="flex flex-col md:flex-row items-stretch gap-4 md:gap-8 lg:gap-16 xl:gap-24">
@@ -44,14 +44,14 @@ export default function FounderSection() {
           {/* Right: Image Card */}
           <ScrollReveal variant="slideInRight" delay={0.15} className="w-full md:w-1/2">
             <div className="relative h-full w-full overflow-hidden border border-neutral-200/60 bg-neutral-100 transition-transform duration-500 ease-out hover:scale-[1.02]">
-              <div className="relative h-64 w-full bg-neutral-100 md:aspect-[3/4] md:h-[36rem] md:max-h-none">
+              <div className="relative aspect-[3/4] w-full bg-neutral-100">
                 <Image
                   src="/founder-image/founder.jpg"
                   alt="Founder and Managing Director of MRF Galaxy Tiles & Sanitary"
                   fill
                   quality={90}
                   sizes="(max-width: 767px) 100vw, 50vw"
-                  className="object-cover object-center"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
