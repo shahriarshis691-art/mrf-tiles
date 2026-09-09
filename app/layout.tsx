@@ -3,7 +3,7 @@ import { OUTLETS } from "@/components/outlet-data";
 import LenisProvider from "@/components/LenisProvider";
 import Analytics from "@/components/Analytics";
 import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -30,6 +30,12 @@ const playfair_Display = Playfair_Display({
 });
 
 const siteUrl = getSiteUrl();
+
+export const viewport: Viewport = {
+  width: 1280,
+  // Clear Next.js's default scale so mobile browsers fit the desktop width.
+  initialScale: undefined,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
