@@ -1,3 +1,5 @@
+export const dynamicParams = false;
+
 import Navbar from "@/components/Navbar";
 import RoomProductGrid from "@/components/rooms/RoomProductGrid";
 import { getRoomProducts } from "@/lib/catalog";

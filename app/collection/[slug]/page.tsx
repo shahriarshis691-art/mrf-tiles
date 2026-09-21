@@ -1,3 +1,5 @@
+export const dynamicParams = false;
+
 import Navbar from "@/components/Navbar";
 import RelatedCollections from "@/components/collection/RelatedCollections";
 import {

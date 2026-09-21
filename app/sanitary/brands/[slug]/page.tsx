@@ -1,3 +1,5 @@
+export const dynamicParams = false;
+
 import Navbar from "@/components/Navbar";
 import SanitaryBrandProductCard from "@/components/sanitary/SanitaryBrandProductCard";
 import { notFound } from "next/navigation";

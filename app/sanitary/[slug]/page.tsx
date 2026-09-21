@@ -1,3 +1,5 @@
+export const dynamicParams = false;
+
 import {formatPriceBdt,buildProductWhatsAppUrl} from "@/lib/sanitaryData";
 import Navbar from "@/components/Navbar";
 import { notFound } from "next/navigation";

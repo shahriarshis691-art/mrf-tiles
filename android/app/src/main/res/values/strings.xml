@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MRF Galaxy Tiles</string>
+    <string name="title_activity_main">MRF Galaxy Tiles</string>
+    <string name="package_name">com.mrfgalaxytiles.app</string>
+    <string name="custom_url_scheme">com.mrfgalaxytiles.app</string>
+</resources>

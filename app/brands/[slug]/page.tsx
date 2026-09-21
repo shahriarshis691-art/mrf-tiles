@@ -1,3 +1,5 @@
+export const dynamicParams = false;
+
 import Navbar from "@/components/Navbar";
 import BrandProductCard from "@/components/brands/BrandProductCard";
 import SharifProductGrid from "@/components/brands/SharifProductGrid";

@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // Local agent worktrees are not part of the application source.
     ".kilo/**",
     ".kilo/worktrees/**",
+    ".tmp-verify/**",
+    "android/**",
   ]),
 ]);
 

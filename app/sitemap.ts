@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+
+export const dynamic = 'force-static';
 import {getCollections,getSanitaryCategories,getSanitaryProducts} from "@/lib/catalog";
 import { PROJECTS } from "@/components/projects/projects-data";
 

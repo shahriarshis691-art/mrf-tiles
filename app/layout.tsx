@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import { OUTLETS } from "@/components/outlet-data";
 import LenisProvider from "@/components/LenisProvider";
 import Analytics from "@/components/Analytics";
+import InstallApp from "@/components/InstallApp";
 import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
@@ -34,10 +35,13 @@ const siteUrl = getSiteUrl();
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#09090b",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  appleWebApp: { capable: true, title: "MRF Galaxy", statusBarStyle: "default" },
+  icons: { apple: "/icons/apple-touch-icon.png" },
   alternates: {
     canonical: "/",
   },
@@ -129,6 +133,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </a>
         </nav>
         <Analytics />
+        <InstallApp />
       </body>
     </html>
   );

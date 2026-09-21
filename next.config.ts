@@ -1,92 +1,13 @@
-import type { NextConfig } from "next";
-
-const isProd = process.env.NODE_ENV === "production";
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL)
-  : undefined;
-
-const SECURITY_HEADERS = [
-  {
-    key: "X-Frame-Options",
-    value: "SAMEORIGIN",
-  },
-  {
-    key: "X-Content-Type-Options",
-    value: "nosniff",
-  },
-  {
-    key: "Referrer-Policy",
-    value: "strict-origin-when-cross-origin",
-  },
-  {
-    key: "X-DNS-Prefetch-Control",
-    value: "on",
-  },
-  {
-    key: "Strict-Transport-Security",
-    value: "max-age=63072000; includeSubDomains; preload",
-  },
-  {
-    key: "Permissions-Policy",
-    value:
-      "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()",
-  },
-  {
-    key: "Content-Security-Policy",
-    value: [
-      "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com",
-      "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: https:",
-      "font-src 'self' data:",
-      `connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com${supabaseUrl ? ` ${supabaseUrl.origin}` : ""}`,
-      "frame-ancestors 'self'",
-      "form-action 'self'",
-      "base-uri 'self'",
-      "object-src 'none'",
-      "upgrade-insecure-requests",
-    ].join("; "),
-  },
-];
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  poweredByHeader: false,
+  output: 'export',
+  trailingSlash: true,
+  // Bundle the catalog; a native APK has no request-time Next.js server.
+  env: { CATALOG_SOURCE: 'static' },
   images: {
-    formats: ["image/webp"],
-    qualities: [75, 90],
-    minimumCacheTTL: 60 * 60 * 24 * 30,
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "res.cloudinary.com" },
-      ...(supabaseUrl ? [new URL("/storage/v1/object/public/website-assets/**", supabaseUrl)] : []),
-    ],
+    unoptimized: true,
   },
-  async headers() {
-    const imageCacheHeader = isProd
-      ? [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }]
-      : [];
-
-    return [
-      {
-        source: "/:path*",
-        headers: SECURITY_HEADERS,
-      },
-      {
-        source: "/images/:path*",
-        headers: imageCacheHeader,
-      },
-      {
-        source: "/(.*)",
-        headers: [
-          { key: "X-Robots-Tag", value: isProd ? "all" : "noindex, nofollow" },
-        ],
-      },
-    ].filter((route) => route.headers.length > 0);
-  },
-  devIndicators: false,
 };
 
 export default nextConfig;
-
-

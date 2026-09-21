@@ -33,6 +33,10 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Local recovery copy and Android deliverables
+/.tmp-verify/source-recovery/
+/MRF-Galaxy-Tiles.apk
+
 # vercel
 .vercel
 
@@ -42,3 +46,4 @@ next-env.d.ts
 
 .vercel
 .env*
+!.env.production.example

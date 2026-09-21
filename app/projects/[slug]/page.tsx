@@ -1,3 +1,5 @@
+export const dynamicParams = false;
+
 import Navbar from "@/components/Navbar";
 import RelatedProjects from "@/components/projects/RelatedProjects";
 import {

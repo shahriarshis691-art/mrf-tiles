@@ -1,3 +1,5 @@
+export const dynamicParams = false;
+
 import Navbar from "@/components/Navbar";
 import PageEnter from "@/components/PageEnter";
 import ScrollReveal from "@/components/ScrollReveal";
