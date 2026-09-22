@@ -22,23 +22,7 @@ export default function Footer() {
         <div className="grid grid-cols-4 gap-2 sm:gap-5 lg:gap-10">
           <div className="min-w-0">
             <Logo className="h-7 w-auto" />
-            <p
-              className="mt-3 sm:mt-5 max-w-[16rem] text-[8px] sm:text-xs leading-relaxed"
-              style={{ color: "rgba(255, 255, 255, 0.8)" }}
-            >
-              A focused group across fashion, horology, ceramics, and enterprise
-              technology — engineered for category excellence.
-            </p>
-            <ul className="mt-3 sm:mt-5 flex flex-wrap gap-1 sm:gap-2">
-              {["Fashion", "Horology", "Ceramics", "Tech Solutions"].map(
-                (sector) => (
-                  <li
-                    key={sector}
-                    className="border border-white/20 px-1 sm:px-2.5 py-1 text-[6px] sm:text-[9px] font-medium uppercase tracking-[0.05em] sm:tracking-[0.18em]"
-                    style={{ color: "rgba(255, 255, 255, 0.75)" }}
-                  >
-                    {sector}
-                  </li>
+            
                 ),
               )}
             </ul>
@@ -139,3 +123,4 @@ export default function Footer() {
     </footer>
   );
 }
+
