@@ -22,10 +22,6 @@ export default function Footer() {
         <div className="grid grid-cols-4 gap-2 sm:gap-5 lg:gap-10">
           <div className="min-w-0">
             <Logo className="h-7 w-auto" />
-            
-                ),
-              )}
-            </ul>
           </div>
 
           <div className="min-w-0">

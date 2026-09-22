@@ -1,67 +1,70 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useState } from "react";
 
-const defaultViews = [
-  { src: "/images/projects/luxury-villa.jpg", alt: "Luxury villa architecture" },
-  { src: "/images/villa-sun.jpg", alt: "Contemporary white villa with natural stone walls and warm architectural lighting" },
-  { src: "/images/projects/modern-residence.jpg", alt: "Modern residence exterior" },
-  { src: "/images/projects/architectural-tile-experience.jpg", alt: "Architectural tile finishes" },
+const heroImages = [
+  { src: "/hero images/heroimage.png", alt: "MRF Galaxy Tiles Showcase" },
+  { src: "/hero images/hero-image.jpg", alt: "MRF Galaxy Sanitary Showcase" },
 ];
 
-export default function Hero({slides}:{slides?:{src:string;alt:string;heading?:string;subtitle?:string}[]}) {
- const views=slides ?? defaultViews;
-  const [active, setActive] = useState(slides ? 0 : 1);
+export default function Hero() {
+  const [current, setCurrent] = useState(0);
 
-  if(!views.length) return null;
-  const view=views[Math.min(active,views.length-1)];
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section aria-label="Galaxy Collection" className="galaxy-hero">
-      <div className="galaxy-hero-stage">
-        <Image
-          key={view.src}
-          src={view.src}
-          alt={view.alt}
-          fill
-          preload={active === 1}
-          sizes="100vw"
-          className="galaxy-hero-image"
-        />
-        <div className="galaxy-hero-fade" />
-        <div className="galaxy-hero-copy">
-          <p className="galaxy-hero-eyebrow">{slides ? slides[Math.min(active,slides.length-1)]?.subtitle : "Elegance in every detail"}</p>
-          <h1>{slides ? <span>{slides[Math.min(active,slides.length-1)]?.heading}</span> : <><span>GALAXY</span><span>COLLECTION</span></>}</h1>
-          <div className="galaxy-hero-rule" />
-          <p className="galaxy-hero-tagline">Designed for a<br />better tomorrow</p>
-          <a
-            href="/downloads/MRF-Galaxy-Tiles.apk"
-            download="MRF-Galaxy-Tiles.apk"
-            className="mt-6 inline-flex min-h-11 items-center gap-3 rounded-md bg-[#1c1a17] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#45351f] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1c1a17]"
-            aria-label="Download App (Android APK)"
+    <section className="relative w-full overflow-hidden bg-white">
+      {/* Hero Content & Auto Slider Image */}
+      <div className="relative w-full h-[65vh] min-h-[460px] max-h-[720px]">
+        {heroImages.map((img, idx) => (
+          <div
+            key={idx}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === current ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+            }`}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              priority={idx === 0}
+              className="object-cover object-center"
+            />
+          </div>
+        ))}
+
+        {/* Action Buttons & Badges */}
+        <div className="absolute inset-x-0 bottom-8 z-20 flex flex-col items-center justify-center gap-3 px-4">
+          <a
+            href="/mrf-galaxy-tiles.apk"
+            download="MRF-Galaxy-Tiles.apk"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-neutral-900/90 hover:bg-black text-white text-sm font-semibold rounded-xl border border-white/20 transition-all backdrop-blur-sm"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
             </svg>
-            <span>Download App <span className="ml-1 text-xs font-normal text-white/75">Android APK</span></span>
+            Download App <span className="text-xs text-neutral-400 font-normal">Android APK</span>
           </a>
-        </div>
-        <div className="galaxy-hero-pagination" role="group" aria-label="Select architectural view">
-          {views.map((view, index) => (
-            <button key={view.src} type="button" aria-label={`View ${index + 1}: ${view.alt}`} aria-pressed={active === index} onClick={() => setActive(index)}>
-              {String(index + 1).padStart(2, "0")}
-            </button>
-          ))}
-        </div>
-      </div>
-      <div className="galaxy-floor-details">
-        <div className="galaxy-floor">
-          <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M9 42v-9q0-5 5-5h12q5 0 5 5v12m0-12q0-5 5-5h11q5 0 5 5v9M7 39q-5 0-5 5v12h55V44q0-5-5-5t-5 5v5H12v-5q0-5-5-5ZM7 56v6m45-6v6M61 60V18m-8 0h16L66 3H56l-3 15Zm3 42h11" /></svg>
-          <div><h2>GROUND FLOOR</h2><p>Living Room, Dining Room,<br />Kitchen, Guest Room,<br />Common Bath, Garden Area.</p></div>
-        </div>
-        <div className="galaxy-floor">
-          <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M12 31V12h48v19M8 51l7-20h42l7 20v8H8v-8Zm0 0h56M18 31v-7h15v7m5 0v-7h15v7M12 59v5h5v-5m38 0v5h5v-5" /></svg>
-          <div><h2>FIRST FLOOR</h2><p>3 Bedrooms, 2 Bathrooms,<br />Family Lounge, Balcony,<br />Terrace.</p></div>
+
+          {/* Slider Indicators */}
+          <div className="flex gap-2 mt-2">
+            {heroImages.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-all ${
+                  current === i ? "bg-white scale-110" : "bg-white/40"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
