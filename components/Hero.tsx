@@ -34,6 +34,17 @@ export default function Hero({slides}:{slides?:{src:string;alt:string;heading?:s
           <h1>{slides ? <span>{slides[Math.min(active,slides.length-1)]?.heading}</span> : <><span>GALAXY</span><span>COLLECTION</span></>}</h1>
           <div className="galaxy-hero-rule" />
           <p className="galaxy-hero-tagline">Designed for a<br />better tomorrow</p>
+          <a
+            href="/downloads/MRF-Galaxy-Tiles.apk"
+            download="MRF-Galaxy-Tiles.apk"
+            className="mt-6 inline-flex min-h-11 items-center gap-3 rounded-md bg-[#1c1a17] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#45351f] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1c1a17]"
+            aria-label="Download App (Android APK)"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+            </svg>
+            <span>Download App <span className="ml-1 text-xs font-normal text-white/75">Android APK</span></span>
+          </a>
         </div>
         <div className="galaxy-hero-pagination" role="group" aria-label="Select architectural view">
           {views.map((view, index) => (

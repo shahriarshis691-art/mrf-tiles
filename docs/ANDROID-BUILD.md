@@ -15,6 +15,8 @@ For a web-only build, copy `.env.production.example` to `.env.production` and ru
 
 ## Install and signing
 
+The landing-page **Download App** button serves `/downloads/MRF-Galaxy-Tiles.apk` from `public/downloads/`. This is a copy of the existing debug-signed APK. After rebuilding the Android app, copy the new root `MRF-Galaxy-Tiles.apk` into `public/downloads/` and rebuild the website to publish the updated download.
+
 Share `MRF-Galaxy-Tiles.apk`. Open it on a compatible Android device and allow installation from that file-sharing/browser app when Android prompts. This is an installable **debug-signed APK**, built using the existing local Android debug keystore, not a production-signed Play Store release. Keep the same signing identity for in-place updates. A production release needs the owner's release keystore and release signing configuration.
 
 ## Static-export compatibility

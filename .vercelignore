@@ -1,0 +1,21 @@
+# Local dependencies and generated web output
+node_modules/
+.next/
+out/
+build/
+coverage/
+*.tsbuildinfo
+
+# Native builds, recovery copies, and local agent worktrees
+android/
+.tmp-verify/
+.kilo/
+temp_src/
+/MRF-Galaxy-Tiles.apk
+
+# Local configuration and logs
+.env*
+!.env.production.example
+*.log
+
+# Keep public/downloads/MRF-Galaxy-Tiles.apk for the website download button.

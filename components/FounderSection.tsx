@@ -8,24 +8,24 @@ export default function FounderSection() {
       className="bg-[#F8F8F8] px-4 pt-12 pb-28 sm:pt-14"
     >
       <div className="mx-auto max-w-[1440px]">
-        <div className="flex flex-col md:flex-row items-stretch gap-4 md:gap-8 lg:gap-16 xl:gap-24">
+        <div className="flex flex-row items-stretch gap-3 md:gap-8 lg:gap-16 xl:gap-24">
           {/* Left: Typography */}
-          <ScrollReveal variant="slideInLeft" className="w-full md:w-1/2">
-            <div className="flex h-full w-full flex-col p-3 md:p-4 lg:max-w-lg lg:p-0">
-              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 sm:text-[10px] md:text-[11px]">
+          <ScrollReveal variant="slideInLeft" className="min-w-0 w-1/2">
+            <div className="flex h-full w-full flex-col p-0 sm:p-3 md:p-4 lg:max-w-lg lg:p-0">
+              <p className="text-[8px] font-medium uppercase tracking-[0.12em] sm:tracking-[0.2em] text-neutral-500 sm:text-[10px] md:text-[11px]">
                 Leadership &amp; Vision
               </p>
 
               <h2
                 id="founder-heading"
-                className="font-serif font-bold text-neutral-950 uppercase tracking-[0.12em] text-xl sm:text-2xl md:text-2xl lg:text-3xl leading-tight mt-0 mb-2 md:mb-3"
+                className="font-serif font-bold text-neutral-950 uppercase tracking-[0.08em] sm:tracking-[0.12em] text-sm sm:text-2xl md:text-2xl lg:text-3xl leading-tight mt-0 mb-2 md:mb-3"
               >
                 Message from the Founder
               </h2>
 
               <span className="mt-3 block h-px w-10 bg-neutral-300 md:mt-5 md:w-12" />
 
-              <blockquote className="mt-4 line-clamp-4 text-xs leading-[1.45] text-neutral-600 md:mt-8 md:line-clamp-none md:text-base md:leading-relaxed lg:text-lg">
+              <blockquote className="mt-3 text-[10px] sm:text-xs leading-[1.45] text-neutral-600 md:mt-8 md:text-base md:leading-relaxed lg:text-lg">
                 &ldquo;At MRF Galaxy, our vision has always been to redefine modern
                 architectural spaces across Bangladesh. We blend world-class
                 porcelain craftsmanship with timeless design, ensuring every
@@ -33,7 +33,7 @@ export default function FounderSection() {
                 durability, and elegance.&rdquo;
               </blockquote>
 
-              <p className="mt-auto pt-4 text-[10px] font-medium uppercase tracking-[0.1em] text-neutral-900 md:mt-8 md:pt-0 md:text-[11px] md:tracking-[0.2em]">
+              <p className="mt-4 pt-0 text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.1em] text-neutral-900 md:mt-8 md:pt-0 md:text-[11px] md:tracking-[0.2em]">
                 Founder &amp; Managing Director
                 <br />
                 MRF Galaxy Tiles &amp; Sanitary
@@ -42,7 +42,7 @@ export default function FounderSection() {
           </ScrollReveal>
 
           {/* Right: Image Card */}
-          <ScrollReveal variant="slideInRight" delay={0.15} className="w-full md:w-1/2">
+          <ScrollReveal variant="slideInRight" delay={0.15} className="min-w-0 w-1/2">
             <div className="relative h-full w-full overflow-hidden border border-neutral-200/60 bg-neutral-100 transition-transform duration-500 ease-out hover:scale-[1.02]">
               <div className="relative aspect-[3/4] w-full bg-neutral-100">
                 <Image
@@ -50,7 +50,7 @@ export default function FounderSection() {
                   alt="Founder and Managing Director of MRF Galaxy Tiles & Sanitary"
                   fill
                   quality={90}
-                  sizes="(max-width: 767px) 100vw, 50vw"
+                  sizes="50vw"
                   className="object-cover object-top"
                 />
               </div>
