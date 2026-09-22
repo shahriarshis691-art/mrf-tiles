@@ -104,8 +104,8 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
     <header
       className={`${onHome ? "galaxy-home-nav" : "fixed inset-x-0 top-0"} z-50 transition-colors duration-300 ${
         heroNav
-          ? "border-b border-white/10 bg-transparent"
-          : "border-b border-zinc-200 bg-white"
+          ? " bg-transparent"
+          : " bg-transparent"
       }`}
     >
       <div className="relative mx-auto flex h-14 items-center justify-between px-4 sm:px-6 md:px-8 lg:px-14">
@@ -179,7 +179,7 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
             className={`absolute inset-x-0 top-full z-10 border-b px-4 py-5 md:hidden ${
               heroNav
                 ? "border-white/10 bg-zinc-950/95 backdrop-blur-md"
-                : "border-zinc-200 bg-white"
+                : "border-zinc-200 bg-transparent"
             }`}
             aria-label="Mobile"
           >
@@ -214,5 +214,6 @@ export default function Navbar({ overHero = false, dark = false }: NavbarProps) 
     </header>
   );
 }
+
 
 
