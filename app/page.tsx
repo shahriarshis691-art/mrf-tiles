@@ -14,7 +14,7 @@ export default async function Home() {
 const slides=await getHeroSlides();
   return (
     <>
-      <Navbar overHero />
+      <Navbar overHero dark />
       <main id="main">
         <div className="relative bg-zinc-950">
           <Hero slides={slides} />

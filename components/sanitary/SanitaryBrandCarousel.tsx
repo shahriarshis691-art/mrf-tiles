@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import type { SanitaryBrand } from "@/lib/sanitaryBrands";
 import SanitaryBrandCard from "./SanitaryBrandCard";
 
@@ -8,85 +8,56 @@ type SanitaryBrandCarouselProps = {
   brands: SanitaryBrand[];
 };
 
-const AUTO_ADVANCE_MS = 3600;
-const INTERACTION_PAUSE_MS = 6000;
+const AUTO_ADVANCE_MS = 3000;
 
 export default function SanitaryBrandCarousel({
   brands,
 }: SanitaryBrandCarouselProps) {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const pauseUntilRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const scrollToIndex = (index: number, behavior: ScrollBehavior = "smooth") => {
-    const track = trackRef.current;
-    const card = track?.children[index] as HTMLElement | undefined;
-
-    if (!track || !card) return;
-
-    track.scrollTo({ left: card.offsetLeft, behavior });
-    setActiveIndex(index);
-  };
+  const [isMobile, setIsMobile] = useState(false);
+  const cardsPerView = 2;
+  const maxIndex = Math.max(0, brands.length - cardsPerView);
 
   useEffect(() => {
     const mobileQuery = window.matchMedia("(max-width: 767px)");
-    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-    const advance = () => {
-      if (!mobileQuery.matches || reducedMotionQuery.matches || Date.now() < pauseUntilRef.current) {
-        return;
-      }
+    const updateMobileState = () => setIsMobile(mobileQuery.matches);
+    updateMobileState();
 
-      const track = trackRef.current;
-      if (!track) return;
+    mobileQuery.addEventListener("change", updateMobileState);
+    return () => mobileQuery.removeEventListener("change", updateMobileState);
+  }, []);
 
-      const cards = Array.from(track.children) as HTMLElement[];
-      const currentIndex = cards.reduce((nearestIndex, card, index) =>
-        Math.abs(card.offsetLeft - track.scrollLeft) <
-        Math.abs(cards[nearestIndex].offsetLeft - track.scrollLeft)
-          ? index
-          : nearestIndex,
-      0);
+  useEffect(() => {
+    if (!isMobile || brands.length <= 2) return;
 
-      scrollToIndex((currentIndex + 1) % brands.length);
-    };
+    const timer = window.setInterval(() => {
+      setActiveIndex((currentIndex) => (currentIndex + 1) % (maxIndex + 1));
+    }, AUTO_ADVANCE_MS);
 
-    const interval = window.setInterval(advance, AUTO_ADVANCE_MS);
-    return () => window.clearInterval(interval);
-  }, [brands.length]);
-
-  const pauseForInteraction = () => {
-    pauseUntilRef.current = Date.now() + INTERACTION_PAUSE_MS;
-  };
-
-  const handleScroll = () => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const cards = Array.from(track.children) as HTMLElement[];
-    const nearestIndex = cards.reduce((currentNearest, card, index) =>
-      Math.abs(card.offsetLeft - track.scrollLeft) <
-      Math.abs(cards[currentNearest].offsetLeft - track.scrollLeft)
-        ? index
-        : currentNearest,
-    0);
-
-    setActiveIndex(nearestIndex);
-  };
+    return () => window.clearInterval(timer);
+  }, [brands.length, isMobile, maxIndex]);
 
   return (
-    <div>
-      <div
-        ref={trackRef}
-        onPointerDown={pauseForInteraction}
-        onScroll={handleScroll}
-        className="mt-14 grid grid-flow-col auto-cols-[calc(100vw-2rem)] grid-rows-1 snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-16 sm:gap-3 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-4 lg:overflow-visible lg:pb-0 lg:gap-6"
-      >
-        {brands.map((brand) => (
-          <div key={brand.slug} className="snap-center">
-            <SanitaryBrandCard brand={brand} />
-          </div>
-        ))}
+    <div className="mt-14 sm:mt-16">
+      <div className="overflow-hidden">
+        <div
+          className={`${isMobile ? "flex transition-transform duration-500 ease-out" : "md:grid md:grid-cols-4 md:gap-6"}`}
+          style={
+            isMobile
+              ? { transform: `translateX(-${activeIndex * 50}%)` }
+              : undefined
+          }
+        >
+          {brands.map((brand) => (
+            <div
+              key={brand.slug}
+              className={isMobile ? "w-1/2 flex-none px-1.5" : "w-full md:w-auto"}
+            >
+              <SanitaryBrandCard brand={brand} />
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="mt-5 flex justify-center gap-2 md:hidden" aria-label="Sanitary brand slides">
@@ -97,8 +68,7 @@ export default function SanitaryBrandCarousel({
             aria-label={`Show ${brand.name}`}
             aria-current={index === activeIndex ? "true" : undefined}
             onClick={() => {
-              pauseForInteraction();
-              scrollToIndex(index);
+              setActiveIndex(Math.min(index, maxIndex));
             }}
             className={`h-1.5 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 ${
               index === activeIndex ? "w-5 bg-neutral-900" : "w-1.5 bg-neutral-300"
