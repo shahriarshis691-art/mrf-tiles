@@ -1,64 +1,68 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+type HeroSlide = {
+  src?: string;
+  alt?: string;
+  heading?: string;
+  subtitle?: string;
+};
 
-const heroImages = [
-  { src: "/hero images/heroimage.png", alt: "MRF Galaxy Tiles Showcase" },
-  { src: "/hero images/hero-image.jpg", alt: "MRF Galaxy Sanitary Showcase" },
-];
+const fallbackImage =
+  "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80";
 
-export default function Hero(props: any) {
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % heroImages.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
+export default function Hero({ slides }: { slides?: HeroSlide[] }) {
+  const heroImage = slides?.[0]?.src || fallbackImage;
+  const altText = slides?.[0]?.alt || "Luxury bathroom interior";
 
   return (
-    <section className="relative w-full overflow-hidden bg-white">
-      <div className="relative w-full h-[65vh] min-h-[460px] max-h-[720px]">
-        {heroImages.map((img, idx) => (
-          <div
-            key={idx}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === current ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-            }`}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              priority={idx === 0}
-              className="object-cover object-center"
-            />
+    <section className="luxury-hero" aria-label="Luxury interior hero">
+      <div
+        className="luxury-hero-bg"
+        style={{ backgroundImage: `url("${heroImage}")` }}
+        aria-hidden="true"
+      />
+      <div className="luxury-hero-overlay" aria-hidden="true" />
+
+      <div className="luxury-hero-inner">
+        <div className="luxury-hero-copy">
+          <h1>
+            <span>Transform Your Space,</span>
+            <span>Transform Your Life</span>
+          </h1>
+
+          <p>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit. Exercitation
+            veniam consequat sunt nostrud amet.
+          </p>
+
+          <div className="luxury-hero-actions">
+            <a href="#contact" className="luxury-hero-primary">
+              Schedule a Consultation
+            </a>
+            <a
+              href="/mrf-galaxy-tiles.apk"
+              download="MRF-Galaxy-Tiles.apk"
+              className="luxury-hero-apk"
+              aria-label="Download App (Android APK)"
+            >
+              Download App
+            </a>
           </div>
-        ))}
+        </div>
 
-        <div className="absolute inset-x-0 bottom-8 z-20 flex flex-col items-center justify-center gap-3 px-4">
-          <a
-            href="/mrf-galaxy-tiles.apk"
-            download="MRF-Galaxy-Tiles.apk"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-neutral-900/90 hover:bg-black text-white text-sm font-semibold rounded-xl border border-white/20 transition-all backdrop-blur-sm"
-          >
-            Download App <span className="text-xs text-neutral-400 font-normal">Android APK</span>
-          </a>
-
-          <div className="flex gap-2 mt-2">
-            {heroImages.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setCurrent(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  current === i ? "bg-white scale-110" : "bg-white/40"
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
+        <div className="luxury-hero-stats" aria-label="Key company statistics">
+          <div>
+            <strong>100+</strong>
+            <span>Success projects</span>
+          </div>
+          <div>
+            <strong>3000+</strong>
+            <span>Materials</span>
+          </div>
+          <div>
+            <strong>100+</strong>
+            <span>Happy customers</span>
           </div>
         </div>
       </div>
