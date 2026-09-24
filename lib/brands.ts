@@ -48,7 +48,7 @@ export const BRANDS: Brand[] = [
         description: "Marble-look porcelain slab with elegant veining.",
         details:
           "Large-format marble-look porcelain slab with refined veining and polished finish. Ideal for luxury living rooms, hotel lobbies, and statement feature walls.",
-        image: "/images/projects/architectural-tile-experience.jpg",
+        image: "/images/brands/khadim-tiles/marble-classic.jpg",
         alt: "Khadim marble classic porcelain slab in luxury interior",
         category: "Porcelain Slab",
         specifications: [
@@ -65,7 +65,7 @@ export const BRANDS: Brand[] = [
         description: "Stone-inspired porcelain for warm, timeless floors.",
         details:
           "Stone-look porcelain with subtle surface variation and a warm beige palette. Brings organic texture to bedrooms, living rooms, and boutique hospitality spaces.",
-        image: "/images/collection/natural-luxury.jpg",
+        image: "/images/brands/khadim-tiles/natural-stone.jpg",
         alt: "Khadim natural stone porcelain flooring",
         category: "Porcelain Tile",
         specifications: [
@@ -82,7 +82,7 @@ export const BRANDS: Brand[] = [
         description: "Concrete-look tile for modern architectural floors.",
         details:
           "Architectural concrete-look porcelain with consistent tone and structured surface. Perfect for open-plan commercial and contemporary residential environments.",
-        image: "/images/collection/urban-elegance.jpg",
+        image: "/images/brands/khadim-tiles/urban-grey.jpg",
         alt: "Khadim urban grey concrete-look porcelain tile",
         category: "Technical Porcelain",
         specifications: [
@@ -99,7 +99,7 @@ export const BRANDS: Brand[] = [
         description: "Wood-look porcelain for warm, inviting interiors.",
         details:
           "Realistic wood-grain porcelain tile combining the warmth of timber with porcelain durability. Suitable for lounges, bedrooms, and transitional living spaces.",
-        image: "/images/projects/minimalist-living-space.jpg",
+        image: "/images/brands/khadim-tiles/wood-grain.jpg",
         alt: "Khadim wood-grain porcelain tile interior",
         category: "Porcelain Tile",
         specifications: [
@@ -116,7 +116,7 @@ export const BRANDS: Brand[] = [
         description: "Deep charcoal porcelain for contemporary spaces.",
         details:
           "Deep-toned dark porcelain with subtle surface variation. Creates dramatic floor and wall compositions for open-plan kitchens and feature walls.",
-        image: "/images/collection/modern-dark.jpg",
+        image: "/images/brands/khadim-tiles/modern-dark.jpg",
         alt: "Khadim modern dark porcelain kitchen",
         category: "Porcelain Tile",
         specifications: [
@@ -144,7 +144,7 @@ export const BRANDS: Brand[] = [
         ],
         priceBdt: 21500,
       },
-    ],
+    ].slice(0, 5),
   },
   {
     slug: "marcopolo",
@@ -164,7 +164,7 @@ export const BRANDS: Brand[] = [
         description: "Statuario marble-look slab with crisp veining.",
         details:
           "Italian-inspired Statuario marble-look porcelain slab featuring crisp white background with bold grey veining. Engineered for high-end residential and hospitality interiors.",
-        image: "/images/projects/luxury-villa.jpg",
+        image: "/images/brands/marcopolo/statuario.jpg",
         alt: "Marcopolo Statuario marble-look slab",
         category: "Porcelain Slab",
         specifications: [
@@ -181,7 +181,7 @@ export const BRANDS: Brand[] = [
         description: "Calacatta gold-veined porcelain slab.",
         details:
           "Calacatta-inspired porcelain slab with warm gold veining on a luminous white surface. Creates refined focal points in luxury bathrooms and living spaces.",
-        image: "/images/projects/architectural-tile-experience.jpg",
+        image: "/images/brands/marcopolo/calacatta.jpg",
         alt: "Marcopolo Calacatta porcelain slab",
         category: "Porcelain Slab",
         specifications: [
@@ -198,7 +198,7 @@ export const BRANDS: Brand[] = [
         description: "Travertine-look surface in warm cream tones.",
         details:
           "Italian Travertino-inspired porcelain with warm cream tones and natural surface texture. Suitable for both classic and contemporary luxury interiors.",
-        image: "/images/collection/natural-luxury.jpg",
+        image: "/images/brands/marcopolo/travertino.jpg",
         alt: "Marcopolo Travertino cream porcelain",
         category: "Porcelain Tile",
         specifications: [
@@ -215,7 +215,7 @@ export const BRANDS: Brand[] = [
         description: "Translucent onyx-look slab with luminous depth.",
         details:
           "Translucent onyx-look porcelain slab with crystalline depth and refined veining. Backlit compatible for feature installations and luxury hospitality.",
-        image: "/images/projects/premium-hospitality-interior.jpg",
+        image: "/images/brands/marcopolo/onice.jpg",
         alt: "Marcopolo Onice translucent slab",
         category: "Porcelain Slab",
         specifications: [
@@ -232,7 +232,7 @@ export const BRANDS: Brand[] = [
         description: "Italian cement-look tile with minimalist tone.",
         details:
           "Italian cement-look porcelain tile with smooth minimalist finish and refined grey palette. Ideal for loft-style residences and modern commercial spaces.",
-        image: "/images/collection/urban-elegance.jpg",
+        image: "/images/brands/marcopolo/cemento.jpg",
         alt: "Marcopolo Cemento minimalist tile",
         category: "Technical Porcelain",
         specifications: [
@@ -260,7 +260,7 @@ export const BRANDS: Brand[] = [
         ],
         priceBdt: 19200,
       },
-    ],
+    ].slice(0, 5),
   },
   {
     slug: "charu",
@@ -280,7 +280,7 @@ export const BRANDS: Brand[] = [
         description: "Hand-finished marble vessel basin.",
         details:
           "Hand-finished natural marble vessel basin with soft organic rim profile. Suitable for countertop installation with polished interior for easy maintenance.",
-        image: "/images/sanitary/products/basin-vessel-marble.jpg",
+        image: "/images/brands/charu/marble-vessel.jpg",
         alt: "Charu marble vessel basin",
         category: "Basins & Vanities",
         specifications: [
@@ -297,7 +297,7 @@ export const BRANDS: Brand[] = [
         description: "Slim wall-hung basin with brushed gold faucet pairing.",
         details:
           "Ceramic wall-hung basin with concealed fixing system and brushed gold faucet pairing. Ideal for compact luxury bathrooms and powder rooms.",
-        image: "/images/sanitary/products/basin-wall-hung-gold.jpg",
+        image: "/images/brands/charu/wall-hung-gold.jpg",
         alt: "Charu wall-hung basin with gold faucet",
         category: "Basins & Vanities",
         specifications: [
@@ -314,7 +314,7 @@ export const BRANDS: Brand[] = [
         description: "Square rainfall shower head in brushed gold.",
         details:
           "300mm square rainfall shower head with silicone nozzles and anti-lime scale technology. Compatible with ceiling or wall arm installation.",
-        image: "/images/sanitary/products/shower-rainfall-gold.jpg",
+        image: "/images/brands/charu/rainfall-gold.jpg",
         alt: "Charu brushed gold rainfall shower",
         category: "Showers & Faucets",
         specifications: [
@@ -331,7 +331,7 @@ export const BRANDS: Brand[] = [
         description: "Thermostatic shower system with hand shower.",
         details:
           "Complete thermostatic shower set with overhead rainfall, hand shower, hose, and diverter. Temperature-safe valve for family bathroom use.",
-        image: "/images/sanitary/products/shower-thermostatic-set.jpg",
+        image: "/images/brands/charu/thermostatic-set.jpg",
         alt: "Charu thermostatic shower set",
         category: "Showers & Faucets",
         specifications: [
@@ -348,7 +348,7 @@ export const BRANDS: Brand[] = [
         description: "Slim rimless wall-hung WC with soft-close seat.",
         details:
           "Rimless wall-hung water closet with antibacterial glaze, soft-close slim seat, and concealed cistern compatibility for clean bathroom lines.",
-        image: "/images/sanitary/products/wc-wall-hung-rimless.jpg",
+        image: "/images/brands/charu/wall-hung-rimless.jpg",
         alt: "Charu wall-hung rimless water closet",
         category: "Water Closets",
         specifications: [
@@ -376,7 +376,7 @@ export const BRANDS: Brand[] = [
         ],
         priceBdt: 185000,
       },
-    ],
+    ].slice(0, 5),
   },
   {
     slug: "tanvir-fittings",
@@ -396,7 +396,7 @@ export const BRANDS: Brand[] = [
         description: "Single-lever basin mixer in brushed gold.",
         details:
           "Deck-mounted single-lever basin mixer with ceramic cartridge, water-saving aerator, and smooth lever operation for daily luxury use.",
-        image: "/images/sanitary/products/faucet-basin-gold.jpg",
+        image: "/images/brands/tanvir-fittings/basin-mixer-gold.jpg",
         alt: "Tanvir brushed gold basin mixer",
         category: "Basin Mixers",
         specifications: [
@@ -413,7 +413,7 @@ export const BRANDS: Brand[] = [
         description: "Minimal chrome basin mixer with clean lines.",
         details:
           "Polished chrome basin mixer with slim profile spout, ceramic disc valve, and easy-clean surface for contemporary bathroom schemes.",
-        image: "/images/sanitary/products/faucet-basin-chrome.jpg",
+        image: "/images/brands/tanvir-fittings/basin-mixer-chrome.jpg",
         alt: "Tanvir chrome basin mixer",
         category: "Basin Mixers",
         specifications: [
@@ -430,7 +430,7 @@ export const BRANDS: Brand[] = [
         description: "Matte black basin mixer for contrast palettes.",
         details:
           "Single-lever matte black basin mixer with fingerprint-resistant coating, ceramic cartridge, and coordinated luxury bathroom styling.",
-        image: "/images/sanitary/products/faucet-matte-black.jpg",
+        image: "/images/brands/tanvir-fittings/matte-black-mixer.jpg",
         alt: "Tanvir matte black basin mixer",
         category: "Basin Mixers",
         specifications: [
@@ -481,7 +481,7 @@ export const BRANDS: Brand[] = [
         description: "Concealed shower with rainfall head and wall plate.",
         details:
           "Concealed shower valve with rainfall head, diverter, and slim wall plate for clean tiled shower walls and architectural bathroom detailing.",
-        image: "/images/sanitary/products/shower-concealed-set.jpg",
+        image: "/images/brands/tanvir-fittings/concealed-shower.jpg",
         alt: "Tanvir concealed shower set",
         category: "Showers",
         specifications: [
@@ -498,7 +498,7 @@ export const BRANDS: Brand[] = [
         description: "Ultra-thin ceiling rainfall shower head.",
         details:
           "400mm square ultra-thin ceiling shower head with even water distribution and concealed mounting plate for flush ceiling integration.",
-        image: "/images/sanitary/products/shower-ceiling-rain.jpg",
+        image: "/images/brands/tanvir-fittings/ceiling-rain-400.jpg",
         alt: "Tanvir ceiling rainfall shower",
         category: "Showers",
         specifications: [
@@ -526,7 +526,7 @@ export const BRANDS: Brand[] = [
         ],
         priceBdt: 98000,
       },
-    ],
+    ].slice(0, 5),
   },
 ];
 
@@ -540,12 +540,12 @@ BRANDS.push({
   cardImage: "/images/sanitary/luxury-showers-faucets.jpg",
   cardAlt: "Luxury sanitary interior concept with marble walls and metallic fittings",
   href: "/brands/sharif-fittings",
-  products: SHARIF_PRODUCTS.map((product) => ({
+  products: SHARIF_PRODUCTS.slice(0, 5).map((product) => ({
     id: product.id,
     title: product.name,
     description: product.description,
     details: product.description,
-    image: product.image_placeholder,
+    image: `/images/brands/sharif-fittings/${product.id.replace("sharif-", "")}.jpg`,
     alt: `Illustrative ${product.category.toLowerCase()} fitting; not an exact ${product.name} photograph`,
     category: product.category,
     specifications: [product.material_finish],

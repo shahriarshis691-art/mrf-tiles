@@ -82,7 +82,7 @@ export default function FeaturedBrandCarousel({
         ref={trackRef}
         onPointerDown={pauseForInteraction}
         onScroll={handleScroll}
-        className="relative grid grid-flow-col auto-cols-[calc(50vw-8px)] grid-rows-1 gap-3 overflow-x-auto scroll-smooth pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid-flow-row md:auto-cols-auto md:grid-cols-3 lg:grid-cols-5 md:overflow-visible md:pb-0 md:gap-4"
+        className="relative grid min-w-[1200px] grid-cols-5 grid-rows-1 gap-4 overflow-visible pb-0"
       >
         {brands.map((brand) => (
           <div key={brand.slug} className="snap-center">

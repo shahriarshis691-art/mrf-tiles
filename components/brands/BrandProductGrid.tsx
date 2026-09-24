@@ -69,7 +69,7 @@ export default function BrandProductGrid({ products, brandName, brandTagline }: 
         Showing {visible.length} of {products.length} items
       </p>
       {visible.length > 0 ? (
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-7 xl:grid-cols-4">
+        <div className="grid min-w-[1200px] grid-cols-4 gap-7">
           {visible.map(({ product }) => (
             <BrandProductCard key={product.id} product={product} brandName={brandName} />
           ))}

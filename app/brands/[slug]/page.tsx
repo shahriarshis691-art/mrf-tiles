@@ -99,7 +99,7 @@ export default async function BrandPage({ params }: Props) {
                 {brand.description}
               </p>
               <p className="mt-5 text-[11px] font-medium uppercase tracking-[0.24em] text-stone-300">
-                {brand.products.length} available {brand.products.length === 1 ? "item" : "items"}
+                {brand.products.length} exclusive products
               </p>
             </div>
           </div>
