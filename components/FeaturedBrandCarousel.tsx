@@ -89,7 +89,7 @@ export default function FeaturedBrandCarousel({
             <Link
               href={brand.href}
               aria-label={`Explore ${brand.name} brand products`}
-              className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F1E8]"
+              className="group block cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5F1E8]"
             >
               <article className="flex h-full flex-col">
                 <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-100">

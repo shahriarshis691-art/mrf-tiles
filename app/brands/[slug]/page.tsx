@@ -1,8 +1,7 @@
 export const dynamicParams = false;
 
 import Navbar from "@/components/Navbar";
-import BrandProductCard from "@/components/brands/BrandProductCard";
-import SharifProductGrid from "@/components/brands/SharifProductGrid";
+import BrandProductGrid from "@/components/brands/BrandProductGrid";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -99,6 +98,9 @@ export default async function BrandPage({ params }: Props) {
               <p className="mt-6 max-w-2xl text-[13px] leading-relaxed text-stone-200 sm:text-sm">
                 {brand.description}
               </p>
+              <p className="mt-5 text-[11px] font-medium uppercase tracking-[0.24em] text-stone-300">
+                {brand.products.length} available {brand.products.length === 1 ? "item" : "items"}
+              </p>
             </div>
           </div>
         </section>
@@ -122,18 +124,12 @@ export default async function BrandPage({ params }: Props) {
               </p>
             </header>
 
-            {brand.slug === "sharif-fittings" ? (
-              <SharifProductGrid products={brand.products} />
-            ) : brand.products.length > 0 ? (
-              <div className="grid grid-flow-col auto-cols-[78vw] grid-rows-1 gap-6 overflow-x-auto sm:auto-cols-[16rem] sm:gap-6 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-3 lg:overflow-visible lg:gap-7 xl:grid-cols-4">
-                {brand.products.map((product) => (
-                  <BrandProductCard
-                    key={product.id}
-                    product={product}
-                    brandName={brand.name}
-                  />
-                ))}
-              </div>
+            {brand.products.length > 0 ? (
+              <BrandProductGrid
+                products={brand.products}
+                brandName={brand.name}
+                brandTagline={brand.tagline}
+              />
             ) : (
               <p className="mt-12 text-center text-[13px] text-neutral-600">
                 Products for this brand will be available soon.

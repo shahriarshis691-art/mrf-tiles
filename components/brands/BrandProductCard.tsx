@@ -46,6 +46,14 @@ export default function BrandProductCard({
         </p>
 
         {product.stockStatus && <p className="mt-3 text-xs text-neutral-600">Availability: {product.stockStatus.replaceAll('_', ' ')}</p>}
+        <details className="mt-4 border-y border-neutral-200 py-3">
+          <summary className="cursor-pointer text-[10px] font-semibold uppercase tracking-[0.22em] text-neutral-900">
+            View Details
+          </summary>
+          <p className="mt-3 text-[12px] leading-relaxed text-neutral-600 sm:text-[13px]">
+            {product.details}
+          </p>
+        </details>
         <div className="mt-4 border-t border-neutral-200 pt-4">
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-neutral-500">
             Specifications
@@ -84,7 +92,7 @@ export default function BrandProductCard({
             rel="noopener noreferrer"
             className="inline-flex min-h-[44px] flex-1 items-center justify-center border border-neutral-900 bg-neutral-900 px-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-white transition-colors duration-300 hover:bg-neutral-800"
           >
-            Inquire / Order
+            WhatsApp Inquiry
           </Link>
           <Link
             href={contactHref(`${brandName} ${product.title}`)}
